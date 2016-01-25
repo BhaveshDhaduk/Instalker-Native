@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "AppDelegate.h"
 
+@interface ViewController : UIViewController<UIWebViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIWebView *webview;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonSignin;
+- (IBAction)buttonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *viewWelcome;
 
 @end
 
