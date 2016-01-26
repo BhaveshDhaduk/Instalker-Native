@@ -27,7 +27,13 @@
 
     // Do any additional setup after loading the view, typically from a nib.
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -56,6 +62,7 @@
         
         NSLog(@"Access Token : %@" , [[InstagramEngine sharedEngine] accessToken]);
         
+        [Singleton sharedInstance].accessToken = [[InstagramEngine sharedEngine] accessToken];
         
         [self performSegueWithIdentifier:@"mainSegue" sender:self];
     }
