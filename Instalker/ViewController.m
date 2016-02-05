@@ -64,7 +64,7 @@
         
         [Singleton sharedInstance].accessToken = [[InstagramEngine sharedEngine] accessToken];
         
-        [self performSegueWithIdentifier:@"mainSegue" sender:self];
+        [self performSegueWithIdentifier:@"tabSegue" sender:self];
     }
     return YES;
 }

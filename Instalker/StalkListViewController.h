@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StalkListViewController : UIViewController
+@interface StalkListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

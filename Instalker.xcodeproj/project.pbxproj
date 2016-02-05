@@ -15,6 +15,11 @@
 		4C1A30241C57E1FA00BF721A /* StalkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A30231C57E1FA00BF721A /* StalkListViewController.m */; };
 		4C1A30271C57E21400BF721A /* FeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A30261C57E21400BF721A /* FeaturesViewController.m */; };
 		4C1A302D1C57E24100BF721A /* StalkProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A302C1C57E24100BF721A /* StalkProfileViewController.m */; };
+		4C1A30311C58111F00BF721A /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A30301C58111F00BF721A /* ServiceManager.m */; };
+		4C1D3E221C5D738100979F16 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D3E211C5D738100979F16 /* AsyncImageView.m */; };
+		4C1D3E251C5D7E0E00979F16 /* heart-icon@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1D3E231C5D7E0E00979F16 /* heart-icon@2.png */; };
+		4C1D3E261C5D7E0E00979F16 /* likesRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1D3E241C5D7E0E00979F16 /* likesRectangle.png */; };
+		4C1D3E2C1C5D7F5E00979F16 /* UserLikeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D3E2B1C5D7F5E00979F16 /* UserLikeTableViewCell.m */; };
 		4C1E92571C54257000237AF0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E92561C54257000237AF0 /* main.m */; };
 		4C1E925A1C54257000237AF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E92591C54257000237AF0 /* AppDelegate.m */; };
 		4C1E925D1C54257000237AF0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E925C1C54257000237AF0 /* ViewController.m */; };
@@ -27,6 +32,7 @@
 		4C1E92781C5430E800237AF0 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E92711C5430E800237AF0 /* Default-568h.png */; };
 		4C1E92791C5430E800237AF0 /* stalk-loading-img.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E92721C5430E800237AF0 /* stalk-loading-img.png */; };
 		4C1E927A1C5430E800237AF0 /* stalk-loading-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E92731C5430E800237AF0 /* stalk-loading-img@2x.png */; };
+		4C53AADA1C5BA87100C76907 /* UserLikeCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53AAD91C5BA87100C76907 /* UserLikeCountModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +51,14 @@
 		4C1A30261C57E21400BF721A /* FeaturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturesViewController.m; sourceTree = "<group>"; };
 		4C1A302B1C57E24100BF721A /* StalkProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StalkProfileViewController.h; sourceTree = "<group>"; };
 		4C1A302C1C57E24100BF721A /* StalkProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StalkProfileViewController.m; sourceTree = "<group>"; };
+		4C1A302F1C58111F00BF721A /* ServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceManager.h; sourceTree = "<group>"; };
+		4C1A30301C58111F00BF721A /* ServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceManager.m; sourceTree = "<group>"; };
+		4C1D3E201C5D738100979F16 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		4C1D3E211C5D738100979F16 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		4C1D3E231C5D7E0E00979F16 /* heart-icon@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-icon@2.png"; sourceTree = "<group>"; };
+		4C1D3E241C5D7E0E00979F16 /* likesRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likesRectangle.png; sourceTree = "<group>"; };
+		4C1D3E2A1C5D7F5E00979F16 /* UserLikeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLikeTableViewCell.h; sourceTree = "<group>"; };
+		4C1D3E2B1C5D7F5E00979F16 /* UserLikeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLikeTableViewCell.m; sourceTree = "<group>"; };
 		4C1E92521C54257000237AF0 /* Instalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1E92561C54257000237AF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C1E92581C54257000237AF0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +75,8 @@
 		4C1E92711C5430E800237AF0 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		4C1E92721C5430E800237AF0 /* stalk-loading-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-loading-img.png"; sourceTree = "<group>"; };
 		4C1E92731C5430E800237AF0 /* stalk-loading-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-loading-img@2x.png"; sourceTree = "<group>"; };
+		4C53AAD81C5BA87100C76907 /* UserLikeCountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLikeCountModel.h; sourceTree = "<group>"; };
+		4C53AAD91C5BA87100C76907 /* UserLikeCountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLikeCountModel.m; sourceTree = "<group>"; };
 		A6F03ADC76580F226A3B2C15 /* Pods-Instalker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instalker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instalker/Pods-Instalker.debug.xcconfig"; sourceTree = "<group>"; };
 		E196B65A2063B61F16CAC3E2 /* Pods-Instalker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instalker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instalker/Pods-Instalker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,11 +93,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C1A30101C56B88800BF721A /* New Group */ = {
+		4C1A30101C56B88800BF721A /* ProfilePage */ = {
 			isa = PBXGroup;
 			children = (
+				4C1D3E231C5D7E0E00979F16 /* heart-icon@2.png */,
+				4C1D3E241C5D7E0E00979F16 /* likesRectangle.png */,
 			);
-			name = "New Group";
+			name = ProfilePage;
 			sourceTree = "<group>";
 		};
 		4C1A30111C56B89400BF721A /* ViewControllers */ = {
@@ -106,6 +124,8 @@
 		4C1A30121C56B8A600BF721A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4C53AAD81C5BA87100C76907 /* UserLikeCountModel.h */,
+				4C53AAD91C5BA87100C76907 /* UserLikeCountModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -113,6 +133,8 @@
 		4C1A30131C56B8AC00BF721A /* Service Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4C1A302F1C58111F00BF721A /* ServiceManager.h */,
+				4C1A30301C58111F00BF721A /* ServiceManager.m */,
 			);
 			name = "Service Utils";
 			sourceTree = "<group>";
@@ -120,6 +142,9 @@
 		4C1A30141C56B8B400BF721A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4C1D3E1F1C5D738100979F16 /* AsyncImageView */,
+				4C1D3E2A1C5D7F5E00979F16 /* UserLikeTableViewCell.h */,
+				4C1D3E2B1C5D7F5E00979F16 /* UserLikeTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -131,6 +156,15 @@
 				4C1A30171C56B8E500BF721A /* Singleton.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		4C1D3E1F1C5D738100979F16 /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				4C1D3E201C5D738100979F16 /* AsyncImageView.h */,
+				4C1D3E211C5D738100979F16 /* AsyncImageView.m */,
+			);
+			path = AsyncImageView;
 			sourceTree = "<group>";
 		};
 		4C1E92491C54257000237AF0 = {
@@ -197,7 +231,7 @@
 		4C1E927B1C54F71800237AF0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				4C1A30101C56B88800BF721A /* New Group */,
+				4C1A30101C56B88800BF721A /* ProfilePage */,
 				4C1E926C1C5430E800237AF0 /* Login-Page */,
 			);
 			name = Assets;
@@ -282,9 +316,11 @@
 			files = (
 				4C1E92781C5430E800237AF0 /* Default-568h.png in Resources */,
 				4C1E92621C54257000237AF0 /* Assets.xcassets in Resources */,
+				4C1D3E261C5D7E0E00979F16 /* likesRectangle.png in Resources */,
 				4C1E92751C5430E800237AF0 /* instalker-logo-login@2x.png in Resources */,
 				4C1E92601C54257000237AF0 /* Main.storyboard in Resources */,
 				4C1E92791C5430E800237AF0 /* stalk-loading-img.png in Resources */,
+				4C1D3E251C5D7E0E00979F16 /* heart-icon@2.png in Resources */,
 				4C1E92741C5430E800237AF0 /* instalker-logo-login.png in Resources */,
 				4C1E927A1C5430E800237AF0 /* stalk-loading-img@2x.png in Resources */,
 				4C1E92771C5430E800237AF0 /* login-button@2x.png in Resources */,
@@ -355,7 +391,11 @@
 				4C1E925A1C54257000237AF0 /* AppDelegate.m in Sources */,
 				4C1A301C1C56D0CE00BF721A /* MainViewController.m in Sources */,
 				4C1A30211C57E14B00BF721A /* MyProfileViewController.m in Sources */,
+				4C1D3E221C5D738100979F16 /* AsyncImageView.m in Sources */,
+				4C1D3E2C1C5D7F5E00979F16 /* UserLikeTableViewCell.m in Sources */,
+				4C1A30311C58111F00BF721A /* ServiceManager.m in Sources */,
 				4C1A30241C57E1FA00BF721A /* StalkListViewController.m in Sources */,
+				4C53AADA1C5BA87100C76907 /* UserLikeCountModel.m in Sources */,
 				4C1E92571C54257000237AF0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

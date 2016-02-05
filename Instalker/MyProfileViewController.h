@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView/AsyncImageView.h"
+#import "UserLikeTableViewCell.h"
 
-@interface MyProfileViewController : UIViewController
+
+@interface MyProfileViewController : UIViewController<UIScrollViewDelegate,UIScrollViewAccessibilityDelegate,UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIView *viewStats;
+
+@property (weak,nonatomic) IBOutlet  AsyncImageView *imageViewProfile;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewMain;
+@property (weak, nonatomic) IBOutlet UIView *viewContentOfScroll;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
