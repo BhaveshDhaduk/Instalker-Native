@@ -20,6 +20,14 @@
     // Configure the view for the selected state
 }
 
+-(void)setFields:(UserLikeCountModel *)model
+{
+    _labelFullname.text=model.user.fullName;
+    _labelLikeCount.text=[NSString stringWithFormat:@"%@", model.likeCount];
+    _labelUsername.text=model.user.username;
+    _imageViewProfile.imageURL=model.user.profilePictureURL;
+}
+
 
 
 

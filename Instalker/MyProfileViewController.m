@@ -30,7 +30,10 @@
     [ServiceManager sharedManager].accessToken = [Singleton sharedInstance].accessToken;
     
     
-    [[ServiceManager sharedManager] getMedias];
+    [[ServiceManager sharedManager] getMediasWithCompletion:^(NSMutableArray *result) {
+        _arrayData=result;
+        [_tableView reloadData];
+    }];
     
     
     
@@ -41,7 +44,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UserLikeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userLikeCell" forIndexPath:indexPath];
-    
+    [cell setFields:[_arrayData objectAtIndex:indexPath.row]];
     
     return cell;
 
@@ -50,14 +53,11 @@
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (indexPath.row  == 6) {
-        _scrollViewMain.contentOffset = CGPointMake(0, 200);
-    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return  50;
+    return  _arrayData.count;
 }
 
 - (void)didReceiveMemoryWarning {

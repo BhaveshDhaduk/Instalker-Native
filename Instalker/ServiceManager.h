@@ -24,7 +24,7 @@ typedef void (^completion)(NSMutableArray *result);
 
 
 
--(void )getMedias;
+-(void )getMediasWithCompletion:(completion)completion;
 
 
 

@@ -20,4 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIView *viewContentOfScroll;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong,nonatomic) NSMutableArray *arrayData;
+
 @end

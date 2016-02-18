@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CCMPopup.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>InstagramKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2E2A37522E227CF8B0C70E9A295A64E9</key>
+		<key>320A501D19D7F97A4109C087E578AA65</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -38,6 +43,11 @@
 			<true/>
 		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB5F8984A372414832A6E4878E57C98E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

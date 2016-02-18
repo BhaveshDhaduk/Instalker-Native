@@ -87,12 +87,15 @@
 }
 
 
--(void )getMedias{
+-(void )getMediasWithCompletion:(completion)completion{
 
     
    [[InstagramEngine sharedEngine] getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
        
        [self getLikesForMedias:media withCompletion:^(NSMutableArray *result) {
+           if (completion) {
+               completion(result);
+           }
            
        }] ;
        
