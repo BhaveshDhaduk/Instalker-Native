@@ -6,15 +6,12 @@
 //  Copyright © 2016 SmartClick. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 @objc
 @IBDesignable
 class Button:UIButton{
-    @IBInspectable var insetX: CGFloat = 0
-    @IBInspectable var insetY: CGFloat = 0
+
     
     //    override func textRectForBounds(bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
     //        return CGRectInset(bounds, insetX, insetY)

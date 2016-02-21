@@ -28,7 +28,7 @@
 
 -(id)init
 {
-
+    
     if (self) {
         _followerList=[NSMutableArray array];
     }
@@ -40,7 +40,7 @@
     _followerList = nil;
     _reducedLikeList = nil;
     _arrayLikes = nil;
-
+    
     _totalLikesCount = nil;
     _follewersCount = nil;
     _follewingsCount = nil;
@@ -48,21 +48,29 @@
     _userName = nil;
     _profileImageURL = nil;
     
-
-
-
+    
+    
+    
 }
 
 #pragma mark - Profile
 
--(void)getMyProfileInfo
+-(void)getMyProfileInfoWithCompletion:(completionRaw)completion
 {
     [[InstagramEngine sharedEngine] getSelfUserDetailsWithSuccess:^(InstagramUser * _Nonnull user) {
+        
+        _follewersCount =[NSNumber numberWithInteger:user.followedByCount];
+        _follewingsCount = [NSNumber numberWithInteger:user.followsCount];
+        _totalPostCount = [NSNumber numberWithInteger:user.mediaCount];
+        _profileImageURL = user.profilePictureURL;
+        if (completion) {
+            completion();
+        }
         
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
         
     }];
-
+    
 }
 -(void)getProfileInfoWith:(NSString *)userID
 {
@@ -78,6 +86,7 @@
 -(void)getFollowersOfUser:(NSString *)userID
 {
     [[InstagramEngine sharedEngine]getFollowersOfUser:userID withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
+        _follewersCount=[NSNumber numberWithInt:(int) users.count];
         
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
         
@@ -88,8 +97,8 @@
 #pragma mark - Followings
 -(void )getFollowsOfUser:(NSString *)userID{
     
-   [[InstagramEngine sharedEngine] getUsersFollowedByUser:userID withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
-        
+    [[InstagramEngine sharedEngine] getUsersFollowedByUser:userID withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
+        _follewingsCount =[NSNumber numberWithInt:(int)users.count];
         
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
         
@@ -101,7 +110,7 @@
 -(void)getmediaOfUser:(NSString *)userID forMonths:(NSInteger)numberOfMonth withCompletion:(completion)completion
 {
     [[InstagramEngine sharedEngine] getMediaForUser:userID withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-       
+        
         [self getLikesForMedias:media withCompletion:^(NSMutableArray *result) {
             if (completion) {
                 completion(result);
@@ -112,25 +121,21 @@
         
         
     }];
-
+    
 }
 
 
 -(void )getMediasWithCompletion:(completion)completion{
-
     
-   [[InstagramEngine sharedEngine] getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-       
-       [self getLikesForMedias:media withCompletion:^(NSMutableArray *result) {
-           if (completion) {
-               completion(result);
-           }
-           
-       }] ;
-       
-   } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-       
-   }];
+    
+    [[InstagramEngine sharedEngine] getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
+        if (completion) {
+            completion(media);
+        }
+        
+    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
+        
+    }];
 }
 
 
@@ -142,13 +147,13 @@
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setDay:-numberOfDays];
     date = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:date options:0];
-
+    
     //end date
     NSDate *endDate = [NSDate date];
     NSDateComponents *endDateComponents = [[NSDateComponents alloc] init];
     [endDateComponents setDay:-endDayNumber];
     endDate = [[NSCalendar currentCalendar] dateByAddingComponents:endDateComponents toDate:endDate options:0];
-
+    
     
     
     NSMutableArray *result = [NSMutableArray array];
@@ -177,7 +182,7 @@
     [endDateComponents setMonth:-endNumberOfMonths];
     endDate = [[NSCalendar currentCalendar] dateByAddingComponents:endDateComponents toDate:endDate options:0];
     
-
+    
     
     
     NSMutableArray *result = [NSMutableArray array];
@@ -199,9 +204,9 @@
     _reducedLikeList = [NSMutableDictionary dictionary];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-      
+        
         __block int ready=0;
-
+        
         for (InstagramMedia *dict in media) {
             
             NSString *mediaID = dict.Id;
@@ -215,7 +220,7 @@
                 if (ready+1 > media.count) {
                     dispatch_semaphore_signal(sema);
                 }
-
+                
                 
             } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
                 dispatch_semaphore_signal(sema);
@@ -242,14 +247,14 @@
                 [_reducedLikeList setObject:one forKey:usr.username];
                 [users setObject:usr forKey:usr.username];
             }
-        
+            
         }
-
+        
         
         NSArray *orderedKeys = [_reducedLikeList keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2){
-        
+            
             return [obj2 compare:obj1];
-        
+            
         }];
         
         NSMutableArray *orderedUserLike = [NSMutableArray array];
@@ -258,11 +263,11 @@
             
             UserLikeCountModel *obj = [[UserLikeCountModel alloc]initWithUser:[users objectForKey:key] withLike:[_reducedLikeList objectForKey:key]];
             [orderedUserLike addObject:obj];
-
+            
             
             
         }
-    
+        
         //reduce th array
         if (completion) {
             completion(orderedUserLike);
@@ -279,7 +284,7 @@
     _arrayComments = [NSMutableArray array];
     _totalComments = [NSNumber numberWithInt:0];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-    
+        
         dispatch_semaphore_t sema = dispatch_semaphore_create(0);
         
         __block int ready=0;
@@ -296,20 +301,20 @@
                 if (ready+1 > media.count) {
                     dispatch_semaphore_signal(sema);
                 }
-
+                
                 
             } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
                 
             }];
-                
+            
             
         }
-    
+        
         dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
         if (completion) {
             completion();
         }
-    
+        
     });
     
     
@@ -322,16 +327,67 @@
 
 -(void)getSelfDataWithCompletion:(completionFinal)completion
 {
-    
     [self clean];
     
-    [self getMediasWithCompletion:^(NSMutableArray *result) {
-       
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
-    }];
-
-
+        [self getMediasWithCompletion:^(NSMutableArray *result) {
+            _allMedia = result;
+            dispatch_semaphore_signal(sema);
+        }];
+    });
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    
+    dispatch_semaphore_t sema2 = dispatch_semaphore_create(0);
+    __block int callCount = 0;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        
+        [self getMyProfileInfoWithCompletion:^{
+            callCount++;
+            if (callCount>2) {
+                dispatch_semaphore_signal(sema2);
+            }
+        }];
+        
+        [self getCommentsForMedia:_allMedia withCompletion:^{
+            callCount++;
+            if (callCount>2) {
+                dispatch_semaphore_signal(sema2);
+            }
+            
+        }];
+        
+        [self getLikesForMedias:_allMedia withCompletion:^(NSMutableArray *result) {
+            
+            _followerList  = result;
+            
+            callCount++;
+            if (callCount>2) {
+                dispatch_semaphore_signal(sema2);
+            }
+            
+        }];
+    });
+    dispatch_semaphore_wait(sema2, DISPATCH_TIME_FOREVER);
+    
+    StatsModel *model = [StatsModel new];
+    [model setImageURLString:_profileImageURL
+                    textName:_userName
+               followerCount:_follewersCount
+                followsCount:_follewingsCount
+                  totalLikes:_totalLikesCount
+              totalPostCount:_totalPostCount
+               totalComments:_totalComments];
+    
+    if (completion) {
+        completion(_followerList,model);
+    }
+    
+    
 }
+
 
 
 @end

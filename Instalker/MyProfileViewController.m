@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonChangeDate;
 @property (weak, nonatomic) IBOutlet UILabel *labelMediaCountInInterval;
 @property (weak,nonatomic) IBOutlet StatsProfileView *viewStatsProfile;
-
+@property (nonatomic,strong) StatsModel *statsModel;
 @end
 
 @implementation MyProfileViewController
@@ -39,12 +39,14 @@
 }
 
 -(void)startService{
-    [ServiceManager sharedManager].accessToken = [Singleton sharedInstance].accessToken;
     
-    
-    [[ServiceManager sharedManager] getMediasWithCompletion:^(NSMutableArray *result) {
-        _arrayData=result;
-        [_tableView reloadData];
+    [self startLoadingAnimation];
+    [[ServiceManager sharedManager] getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
+        _arrayData = likeList;
+        [_viewStatsProfile configureViews:stats];
+        _statsModel=stats;
+        [self.tableView reloadData];
+        [self removeLoadingAnimation];
     }];
     
 }
@@ -55,6 +57,18 @@
     _tableView.dataSource=self;
 }
 
+#pragma mark - Animations
+
+-(void)startLoadingAnimation
+{
+
+}
+
+-(void)removeLoadingAnimation
+{
+
+
+}
 
 #pragma mark - TableView Methods
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

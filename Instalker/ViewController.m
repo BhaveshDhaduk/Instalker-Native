@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import <InstagramKit/InstagramKit.h>
-
+#import "ServiceManager.h"
 
 
 @interface ViewController ()
@@ -63,7 +63,8 @@
         NSLog(@"Access Token : %@" , [[InstagramEngine sharedEngine] accessToken]);
         
         [Singleton sharedInstance].accessToken = [[InstagramEngine sharedEngine] accessToken];
-        
+        [ServiceManager sharedManager].accessToken = [Singleton sharedInstance].accessToken;
+
         [self performSegueWithIdentifier:@"tabSegue" sender:self];
     }
     return YES;

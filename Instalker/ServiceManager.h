@@ -23,7 +23,11 @@ typedef void (^completionRaw)(void);
 @property (nonatomic,strong) NSString *accessToken;
 
 #pragma mark - Call Variables
+//all medias for a user
+@property (nonatomic,strong) NSMutableArray *allMedia;
+//final list
 @property (nonatomic,strong) NSMutableArray *followerList;
+//method variables
 @property (nonatomic,strong) NSMutableDictionary *reducedLikeList;
 @property (nonatomic,strong) NSMutableArray *arrayLikes;
 @property (nonatomic,strong) NSMutableArray *arrayComments;
@@ -34,15 +38,14 @@ typedef void (^completionRaw)(void);
 @property (nonatomic,strong) NSNumber *follewingsCount;
 @property (nonatomic,strong) NSNumber *totalPostCount;
 @property (nonatomic,strong) NSString *userName;
-@property (nonatomic,strong) NSString *profileImageURL;
+@property (nonatomic,strong) NSURL *profileImageURL;
 
 
 
 
 #pragma mark - Service Calls
 
--(void )getMediasWithCompletion:(completion)completion;
 
-
+-(void)getSelfDataWithCompletion:(completionFinal)completion;
 
 @end

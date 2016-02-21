@@ -22,4 +22,8 @@
 @property (nonatomic,weak) IBOutlet UILabel *labelAveragePosts;
 @property (nonatomic,weak) IBOutlet UILabel *labelAverageComments;
 
+#pragma mark - Methods
+-(void)configureViews:(StatsModel *)model;
+
+
 @end
