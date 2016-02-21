@@ -23,6 +23,7 @@
               totalLikes:(NSNumber *)totalLikes
           totalPostCount:(NSNumber *)totalPostCount
            totalComments:(NSNumber *)totalComments
+                userName:(NSString *)userName
 {
     _imageURLString = imageURLString;
     _textName = textName;

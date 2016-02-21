@@ -39,7 +39,7 @@ typedef void (^completionRaw)(void);
 @property (nonatomic,strong) NSNumber *totalPostCount;
 @property (nonatomic,strong) NSString *userName;
 @property (nonatomic,strong) NSURL *profileImageURL;
-
+@property (nonatomic,strong) NSString *fullName;
 
 
 

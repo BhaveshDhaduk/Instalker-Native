@@ -26,5 +26,7 @@
             followsCount:(NSNumber *)followsCount
               totalLikes:(NSNumber *)totalLikes
           totalPostCount:(NSNumber *)totalPostCount
-           totalComments:(NSNumber *)totalComments;
+           totalComments:(NSNumber *)totalComments
+                userName:(NSString *)userName;
+
 @end

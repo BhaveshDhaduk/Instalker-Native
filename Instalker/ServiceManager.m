@@ -62,6 +62,8 @@
         _follewersCount =[NSNumber numberWithInteger:user.followedByCount];
         _follewingsCount = [NSNumber numberWithInteger:user.followsCount];
         _totalPostCount = [NSNumber numberWithInteger:user.mediaCount];
+        _userName = user.username;
+        _fullName = user.fullName;
         _profileImageURL = user.profilePictureURL;
         if (completion) {
             completion();
@@ -329,61 +331,60 @@
 {
     [self clean];
     
-    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+   
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         
         [self getMediasWithCompletion:^(NSMutableArray *result) {
             _allMedia = result;
-            dispatch_semaphore_signal(sema);
+            
+            
+
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                
+                
+                [self getMyProfileInfoWithCompletion:^{
+                 
+                    
+                   
+                }];
+                
+                [self getCommentsForMedia:_allMedia withCompletion:^{
+                   
+                    
+                  
+                    
+                }];
+                
+                [self getLikesForMedias:_allMedia withCompletion:^(NSMutableArray *result) {
+                    
+                    _followerList  = result;
+                    
+                    StatsModel *model = [StatsModel new];
+                    [model setImageURLString:_profileImageURL
+                                    textName:_fullName
+                               followerCount:_follewersCount
+                                followsCount:_follewingsCount
+                                  totalLikes:_totalLikesCount
+                              totalPostCount:_totalPostCount
+                               totalComments:_totalComments
+                                    userName:_userName];
+                    
+                    if (completion) {
+                        completion(_followerList,model);
+                    }
+                    
+                    
+                }];
+            });
+            
+           
+           
+            
+            
+            
+           
         }];
     });
-    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-    
-    dispatch_semaphore_t sema2 = dispatch_semaphore_create(0);
-    __block int callCount = 0;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        
-        
-        [self getMyProfileInfoWithCompletion:^{
-            callCount++;
-            if (callCount>2) {
-                dispatch_semaphore_signal(sema2);
-            }
-        }];
-        
-        [self getCommentsForMedia:_allMedia withCompletion:^{
-            callCount++;
-            if (callCount>2) {
-                dispatch_semaphore_signal(sema2);
-            }
-            
-        }];
-        
-        [self getLikesForMedias:_allMedia withCompletion:^(NSMutableArray *result) {
-            
-            _followerList  = result;
-            
-            callCount++;
-            if (callCount>2) {
-                dispatch_semaphore_signal(sema2);
-            }
-            
-        }];
-    });
-    dispatch_semaphore_wait(sema2, DISPATCH_TIME_FOREVER);
-    
-    StatsModel *model = [StatsModel new];
-    [model setImageURLString:_profileImageURL
-                    textName:_userName
-               followerCount:_follewersCount
-                followsCount:_follewingsCount
-                  totalLikes:_totalLikesCount
-              totalPostCount:_totalPostCount
-               totalComments:_totalComments];
-    
-    if (completion) {
-        completion(_followerList,model);
-    }
     
     
 }

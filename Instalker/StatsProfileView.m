@@ -21,7 +21,7 @@
     _labelTotalLikes.text = [self shortenNumber:model.totalLikes];
     _labelAveragePosts.text = [self averageLike:model];
     _labelAverageComments.text = [self averageComments:model];
-    
+    [self setNeedsDisplay];
 }
 
 
