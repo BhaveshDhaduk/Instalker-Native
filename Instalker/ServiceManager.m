@@ -16,6 +16,8 @@
 
 @implementation ServiceManager
 
+
+#pragma mark - Inıt
 +(ServiceManager *)sharedManager
 {
     static ServiceManager *_sharedManager = nil;
@@ -32,6 +34,26 @@
     }
     return self;
 }
+
+-(void)clean{
+    _arrayLikes = nil;
+    _followerList = nil;
+    _reducedLikeList = nil;
+    _arrayLikes = nil;
+
+    _totalLikesCount = nil;
+    _follewersCount = nil;
+    _follewingsCount = nil;
+    _totalPostCount = nil;
+    _userName = nil;
+    _profileImageURL = nil;
+    
+
+
+
+}
+
+#pragma mark - Profile
 
 -(void)getMyProfileInfo
 {
@@ -51,6 +73,8 @@
     }];
 }
 
+
+#pragma mark - Follewers
 -(void)getFollowersOfUser:(NSString *)userID
 {
     [[InstagramEngine sharedEngine]getFollowersOfUser:userID withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
@@ -61,6 +85,7 @@
     
 }
 
+#pragma mark - Followings
 -(void )getFollowsOfUser:(NSString *)userID{
     
    [[InstagramEngine sharedEngine] getUsersFollowedByUser:userID withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
@@ -72,11 +97,15 @@
     
 }
 
--(void)getmediaOfUser:(NSString *)userID forMonths:(NSInteger)numberOfMonth
+#pragma  mark - Get medias of user
+-(void)getmediaOfUser:(NSString *)userID forMonths:(NSInteger)numberOfMonth withCompletion:(completion)completion
 {
     [[InstagramEngine sharedEngine] getMediaForUser:userID withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
        
         [self getLikesForMedias:media withCompletion:^(NSMutableArray *result) {
+            if (completion) {
+                completion(result);
+            }
             
         }];
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
@@ -105,7 +134,7 @@
 }
 
 
-
+#pragma mark - Sort Media By Date Intervals
 -(NSArray *)sortMedia:(NSArray *)media from:(NSInteger )numberOfDays to:(NSInteger)endDayNumber
 {
     //daily start
@@ -134,9 +163,6 @@
     return result;
 }
 
-
-
-
 -(NSArray *)sortMedia:(NSArray *)media forMonth:(NSInteger)numberOfMonths toMonth:(NSInteger)endNumberOfMonths
 {
     //one month
@@ -162,11 +188,10 @@
         }
     }
     
-    
     return result;
 }
 
-
+#pragma mark - Likes For Medias
 
 -(void)getLikesForMedias:(NSArray *)media withCompletion:(completion)completion
 {
@@ -232,8 +257,10 @@
         for (NSString *key in orderedKeys) {
             
             UserLikeCountModel *obj = [[UserLikeCountModel alloc]initWithUser:[users objectForKey:key] withLike:[_reducedLikeList objectForKey:key]];
-
             [orderedUserLike addObject:obj];
+
+            
+            
         }
     
         //reduce th array
@@ -243,11 +270,68 @@
         
     });
     
+}
+
+#pragma mark - Comments
+
+-(void)getCommentsForMedia:(NSArray *)media withCompletion:(completionRaw)completion
+{
+    _arrayComments = [NSMutableArray array];
+    _totalComments = [NSNumber numberWithInt:0];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    
+        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+        
+        __block int ready=0;
+        for (InstagramMedia *dict in media) {
+            NSString *mediaID = dict.Id;
+            
+            [[InstagramEngine sharedEngine] getCommentsOnMedia:mediaID withSuccess:^(NSArray<InstagramComment *> * _Nonnull comments, InstagramPaginationInfo * _Nonnull paginationInfo) {
+                
+                
+                _totalComments = [NSNumber numberWithInt:[_totalComments intValue] + (int)comments.count ];
+                
+                ready++;
+                
+                if (ready+1 > media.count) {
+                    dispatch_semaphore_signal(sema);
+                }
+
+                
+            } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
+                
+            }];
+                
+            
+        }
+    
+        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+        if (completion) {
+            completion();
+        }
+    
+    });
+    
     
     
     
 }
 
+
+#pragma mark - Final Methods
+
+-(void)getSelfDataWithCompletion:(completionFinal)completion
+{
+    
+    [self clean];
+    
+    [self getMediasWithCompletion:^(NSMutableArray *result) {
+       
+        
+    }];
+
+
+}
 
 
 @end

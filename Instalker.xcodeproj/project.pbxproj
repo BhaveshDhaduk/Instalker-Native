@@ -33,6 +33,9 @@
 		4C1E92791C5430E800237AF0 /* stalk-loading-img.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E92721C5430E800237AF0 /* stalk-loading-img.png */; };
 		4C1E927A1C5430E800237AF0 /* stalk-loading-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E92731C5430E800237AF0 /* stalk-loading-img@2x.png */; };
 		4C53AADA1C5BA87100C76907 /* UserLikeCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53AAD91C5BA87100C76907 /* UserLikeCountModel.m */; };
+		4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6708271C7A0CD80077DC58 /* UIButton.swift */; };
+		4C67082C1C7A1B0B0077DC58 /* StatsProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082B1C7A1B0B0077DC58 /* StatsProfileView.m */; };
+		4C6708301C7A354C0077DC58 /* StatsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082F1C7A354C0077DC58 /* StatsModel.m */; };
 		4CC785061C75487A0029C17C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC785051C75487A0029C17C /* UIView.swift */; };
 		4CC785081C754A650029C17C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC785071C754A650029C17C /* UILabel.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +82,12 @@
 		4C1E92731C5430E800237AF0 /* stalk-loading-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-loading-img@2x.png"; sourceTree = "<group>"; };
 		4C53AAD81C5BA87100C76907 /* UserLikeCountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLikeCountModel.h; sourceTree = "<group>"; };
 		4C53AAD91C5BA87100C76907 /* UserLikeCountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLikeCountModel.m; sourceTree = "<group>"; };
+		4C6708271C7A0CD80077DC58 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		4C67082A1C7A1B0B0077DC58 /* StatsProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsProfileView.h; sourceTree = "<group>"; };
+		4C67082B1C7A1B0B0077DC58 /* StatsProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsProfileView.m; sourceTree = "<group>"; };
+		4C67082E1C7A354C0077DC58 /* StatsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsModel.h; sourceTree = "<group>"; };
+		4C67082F1C7A354C0077DC58 /* StatsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsModel.m; sourceTree = "<group>"; };
+		4C6708311C7A36330077DC58 /* ModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeader.h; sourceTree = "<group>"; };
 		4CC785041C75487A0029C17C /* Instalker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instalker-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CC785051C75487A0029C17C /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		4CC785071C754A650029C17C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -131,6 +140,9 @@
 			children = (
 				4C53AAD81C5BA87100C76907 /* UserLikeCountModel.h */,
 				4C53AAD91C5BA87100C76907 /* UserLikeCountModel.m */,
+				4C67082E1C7A354C0077DC58 /* StatsModel.h */,
+				4C67082F1C7A354C0077DC58 /* StatsModel.m */,
+				4C6708311C7A36330077DC58 /* ModelHeader.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -148,9 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				4C1D3E1F1C5D738100979F16 /* AsyncImageView */,
-				4C1D3E2A1C5D7F5E00979F16 /* UserLikeTableViewCell.h */,
-				4C1D3E2B1C5D7F5E00979F16 /* UserLikeTableViewCell.m */,
+				4C6708291C7A1AE70077DC58 /* TableViewCell */,
 				4CC785001C75475F0029C17C /* Categories */,
+				4C67082D1C7A1B0E0077DC58 /* ProfileStatsView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -243,12 +255,31 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		4C6708291C7A1AE70077DC58 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4C1D3E2A1C5D7F5E00979F16 /* UserLikeTableViewCell.h */,
+				4C1D3E2B1C5D7F5E00979F16 /* UserLikeTableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		4C67082D1C7A1B0E0077DC58 /* ProfileStatsView */ = {
+			isa = PBXGroup;
+			children = (
+				4C67082A1C7A1B0B0077DC58 /* StatsProfileView.h */,
+				4C67082B1C7A1B0B0077DC58 /* StatsProfileView.m */,
+			);
+			name = ProfileStatsView;
+			sourceTree = "<group>";
+		};
 		4CC785001C75475F0029C17C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				4CC785051C75487A0029C17C /* UIView.swift */,
 				4CC785041C75487A0029C17C /* Instalker-Bridging-Header.h */,
 				4CC785071C754A650029C17C /* UILabel.swift */,
+				4C6708271C7A0CD80077DC58 /* UIButton.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -400,9 +431,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C67082C1C7A1B0B0077DC58 /* StatsProfileView.m in Sources */,
 				4C1E925D1C54257000237AF0 /* ViewController.m in Sources */,
 				4C1A30271C57E21400BF721A /* FeaturesViewController.m in Sources */,
 				4C1A302D1C57E24100BF721A /* StalkProfileViewController.m in Sources */,
+				4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */,
 				4C1A30181C56B8E500BF721A /* Singleton.m in Sources */,
 				4C1E925A1C54257000237AF0 /* AppDelegate.m in Sources */,
 				4C1A301C1C56D0CE00BF721A /* MainViewController.m in Sources */,
@@ -411,6 +444,7 @@
 				4C1D3E2C1C5D7F5E00979F16 /* UserLikeTableViewCell.m in Sources */,
 				4C1A30311C58111F00BF721A /* ServiceManager.m in Sources */,
 				4CC785081C754A650029C17C /* UILabel.swift in Sources */,
+				4C6708301C7A354C0077DC58 /* StatsModel.m in Sources */,
 				4CC785061C75487A0029C17C /* UIView.swift in Sources */,
 				4C1A30241C57E1FA00BF721A /* StalkListViewController.m in Sources */,
 				4C53AADA1C5BA87100C76907 /* UserLikeCountModel.m in Sources */,

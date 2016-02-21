@@ -13,13 +13,15 @@
 
 @interface MyProfileViewController : UIViewController<UIScrollViewDelegate,UIScrollViewAccessibilityDelegate,UITableViewDelegate,UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIView *viewStats;
 
+#pragma mark - IBOUTLETS
 @property (weak,nonatomic) IBOutlet  AsyncImageView *imageViewProfile;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewMain;
 @property (weak, nonatomic) IBOutlet UIView *viewContentOfScroll;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *labelNameFırTitle;
 
+#pragma mark - Properties
 @property (strong,nonatomic) NSMutableArray *arrayData;
 
 @end

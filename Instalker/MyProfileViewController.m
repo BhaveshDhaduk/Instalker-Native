@@ -8,25 +8,37 @@
 
 #import "MyProfileViewController.h"
 #import "ServiceManager.h"
+#import "StatsProfileView.h"
 
 
 @interface MyProfileViewController ()
+
+- (IBAction)changeDateButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonChangeDate;
+@property (weak, nonatomic) IBOutlet UILabel *labelMediaCountInInterval;
+@property (weak,nonatomic) IBOutlet StatsProfileView *viewStatsProfile;
 
 @end
 
 @implementation MyProfileViewController
 
+#pragma  mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _scrollViewMain.delegate=self;
     
+    
+    [self setDelegates];
+    [self configureScrollview];
+    [self startService];
+    
+}
+
+#pragma mark - Initilization
+-(void)configureScrollview{
     _scrollViewMain.contentSize=CGSizeMake(_viewContentOfScroll.bounds.size.width, _viewContentOfScroll.bounds.size.height);
-    _tableView.delegate= self;
-    _tableView.dataSource=self;
-    
-    
-    
-    
+}
+
+-(void)startService{
     [ServiceManager sharedManager].accessToken = [Singleton sharedInstance].accessToken;
     
     
@@ -35,12 +47,16 @@
         [_tableView reloadData];
     }];
     
-    
-    
-    // Do any additional setup after loading the view.
+}
+-(void)setDelegates
+{
+    _scrollViewMain.delegate=self;
+    _tableView.delegate= self;
+    _tableView.dataSource=self;
 }
 
 
+#pragma mark - TableView Methods
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UserLikeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userLikeCell" forIndexPath:indexPath];
@@ -75,4 +91,8 @@
 }
 */
 
+- (IBAction)changeDateButtonPressed:(id)sender {
+    
+    
+}
 @end
