@@ -12,6 +12,8 @@
 typedef void (^completion)(NSMutableArray *result);
 typedef void (^completionFinal)(NSMutableArray *likeList, StatsModel *stats);
 typedef void (^completionRaw)(void);
+typedef void (^failed)(NSError *error);
+
 
 @interface ServiceManager : NSObject
 
@@ -32,11 +34,11 @@ typedef void (^completionRaw)(void);
 @property (nonatomic,strong) NSMutableArray *arrayLikes;
 @property (nonatomic,strong) NSMutableArray *arrayComments;
 
-@property (nonatomic,strong) NSNumber *totalComments;
-@property (nonatomic,strong) NSNumber *totalLikesCount;
-@property (nonatomic,strong) NSNumber *follewersCount;
-@property (nonatomic,strong) NSNumber *follewingsCount;
-@property (nonatomic,strong) NSNumber *totalPostCount;
+@property (nonatomic) NSInteger totalComments;
+@property (nonatomic) NSInteger totalLikesCount;
+@property (nonatomic) NSInteger follewersCount;
+@property (nonatomic) NSInteger follewingsCount;
+@property (nonatomic) NSInteger totalPostCount;
 @property (nonatomic,strong) NSString *userName;
 @property (nonatomic,strong) NSURL *profileImageURL;
 @property (nonatomic,strong) NSString *fullName;
@@ -47,5 +49,6 @@ typedef void (^completionRaw)(void);
 
 
 -(void)getSelfDataWithCompletion:(completionFinal)completion;
-
+-(void)searchUsersWithKeyword:(NSString*)keyword completion:(completion)completion failed:(failed)failed;
+-(void)getDataForUser:(NSString *)username withCompletion:(completionFinal)completion;
 @end

@@ -29,7 +29,19 @@
     
     [self setDelegates];
     [self configureScrollview];
-    [self startService];
+    if (!_user) {
+        [self startSelfService];
+    }
+    else
+    {
+        
+        [self startServiceForUser:_user];
+    }
+    
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
 }
 
@@ -37,25 +49,42 @@
 -(void)configureScrollview{
     _scrollViewMain.contentSize=CGSizeMake(_viewContentOfScroll.bounds.size.width, _viewContentOfScroll.bounds.size.height);
 }
-
--(void)startService{
-    
-    [self startLoadingAnimation];
-    [[ServiceManager sharedManager] getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
-        _arrayData = likeList;
-        [_viewStatsProfile configureViews:stats];
-        _statsModel=stats;
-        [self.tableView reloadData];
-        [self removeLoadingAnimation];
-    }];
-    
-}
 -(void)setDelegates
 {
     _scrollViewMain.delegate=self;
     _tableView.delegate= self;
     _tableView.dataSource=self;
 }
+-(void)startSelfService{
+    
+    [self startLoadingAnimation];
+    [[ServiceManager sharedManager] getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
+        _arrayData = likeList;
+        [_viewStatsProfile configureViews:stats];
+        [self.viewStatsProfile setNeedsDisplay];
+        _statsModel=stats;
+        [self.tableView reloadData];
+        [self removeLoadingAnimation];
+    }];
+    
+}
+-(void)startServiceForUser:(InstagramUser *)user
+{
+    [self startLoadingAnimation];
+    
+    [[ServiceManager sharedManager] getDataForUser:user.username withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
+        _arrayData = likeList;
+        [_viewStatsProfile configureViews:stats];
+        [self.viewStatsProfile setNeedsDisplay];
+        _statsModel=stats;
+        [self.tableView reloadData];
+        [self removeLoadingAnimation];
+
+    }];
+    
+
+}
+
 
 #pragma mark - Animations
 
@@ -75,14 +104,15 @@
 {
     UserLikeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userLikeCell" forIndexPath:indexPath];
     [cell setFields:[_arrayData objectAtIndex:indexPath.row]];
-    
+
     return cell;
 
 }
 
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -95,15 +125,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    MyProfileViewController *destinationViewController = segue.destinationViewController;
+    UserLikeTableViewCell *cell = (UserLikeTableViewCell *)sender;
+    destinationViewController.user = cell.user;
+    
 }
-*/
+
 
 - (IBAction)changeDateButtonPressed:(id)sender {
     

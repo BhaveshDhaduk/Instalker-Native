@@ -12,21 +12,21 @@
 
 @property (nonatomic,strong) NSURL *imageURLString;
 @property (nonatomic,strong) NSString *textName;
-@property (nonatomic,strong) NSNumber *followerCount;
-@property (nonatomic,strong) NSNumber *followingCount;
-@property (nonatomic,strong) NSNumber *totalLikes;
-@property (nonatomic,strong) NSNumber *totalComments;
-@property (nonatomic,strong) NSNumber *averageLikes;
-@property (nonatomic,strong) NSNumber *averageComments;
-@property (nonatomic,strong) NSNumber *totalPostCount;
+@property (nonatomic) NSInteger followerCount;
+@property (nonatomic) NSInteger followingCount;
+@property (nonatomic) NSInteger totalLikes;
+@property (nonatomic) NSInteger totalComments;
+@property (nonatomic) NSInteger averageLikes;
+@property (nonatomic) NSInteger averageComments;
+@property (nonatomic) NSInteger totalPostCount;
 
 -(void)setImageURLString:(NSURL *)imageURLString
                 textName:(NSString *)textName
-           followerCount:(NSNumber *)followerCount
-            followsCount:(NSNumber *)followsCount
-              totalLikes:(NSNumber *)totalLikes
-          totalPostCount:(NSNumber *)totalPostCount
-           totalComments:(NSNumber *)totalComments
+           followerCount:(NSInteger )followerCount
+            followsCount:(NSInteger )followsCount
+              totalLikes:(NSInteger )totalLikes
+          totalPostCount:(NSInteger )totalPostCount
+           totalComments:(NSInteger )totalComments
                 userName:(NSString *)userName;
 
 @end

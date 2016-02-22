@@ -26,6 +26,7 @@
     _labelLikeCount.text=[NSString stringWithFormat:@"%@ likes", model.likeCount];
     _labelUsername.text=model.user.username;
     _imageViewProfile.imageURL=model.user.profilePictureURL;
+    _user=model.user;
 }
 
 

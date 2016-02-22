@@ -39,6 +39,8 @@
 		4C6708341C7A710B0077DC58 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6708331C7A710B0077DC58 /* DatePickerView.m */; };
 		4CC785061C75487A0029C17C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC785051C75487A0029C17C /* UIView.swift */; };
 		4CC785081C754A650029C17C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC785071C754A650029C17C /* UILabel.swift */; };
+		4CC915381C7B33CB00FCBFD8 /* GetMediaOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC915371C7B33CB00FCBFD8 /* GetMediaOperation.m */; };
+		4CC9153C1C7B3BAF00FCBFD8 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC9153B1C7B3BAF00FCBFD8 /* SearchTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,10 @@
 		4CC785041C75487A0029C17C /* Instalker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instalker-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CC785051C75487A0029C17C /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		4CC785071C754A650029C17C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		4CC915361C7B33CB00FCBFD8 /* GetMediaOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetMediaOperation.h; sourceTree = "<group>"; };
+		4CC915371C7B33CB00FCBFD8 /* GetMediaOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMediaOperation.m; sourceTree = "<group>"; };
+		4CC9153A1C7B3BAF00FCBFD8 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		4CC9153B1C7B3BAF00FCBFD8 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		A6F03ADC76580F226A3B2C15 /* Pods-Instalker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instalker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instalker/Pods-Instalker.debug.xcconfig"; sourceTree = "<group>"; };
 		E196B65A2063B61F16CAC3E2 /* Pods-Instalker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instalker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instalker/Pods-Instalker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +173,7 @@
 				4CC785001C75475F0029C17C /* Categories */,
 				4C67082D1C7A1B0E0077DC58 /* ProfileStatsView */,
 				4C6708351C7A710F0077DC58 /* DatePicker */,
+				4CC9153D1C7B3BB600FCBFD8 /* SearchTableViewCell */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 				4C1E92661C54257000237AF0 /* Info.plist */,
 				4C1E92551C54257000237AF0 /* Supporting Files */,
 				4C1A301D1C56D42500BF721A /* Launch Screen.storyboard */,
+				4CC915391C7B33CE00FCBFD8 /* NSOperations */,
 			);
 			path = Instalker;
 			sourceTree = "<group>";
@@ -295,6 +303,24 @@
 				4C6708271C7A0CD80077DC58 /* UIButton.swift */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		4CC915391C7B33CE00FCBFD8 /* NSOperations */ = {
+			isa = PBXGroup;
+			children = (
+				4CC915361C7B33CB00FCBFD8 /* GetMediaOperation.h */,
+				4CC915371C7B33CB00FCBFD8 /* GetMediaOperation.m */,
+			);
+			name = NSOperations;
+			sourceTree = "<group>";
+		};
+		4CC9153D1C7B3BB600FCBFD8 /* SearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4CC9153A1C7B3BAF00FCBFD8 /* SearchTableViewCell.h */,
+				4CC9153B1C7B3BAF00FCBFD8 /* SearchTableViewCell.m */,
+			);
+			name = SearchTableViewCell;
 			sourceTree = "<group>";
 		};
 		6361150C760F43851D5637A6 /* Pods */ = {
@@ -449,6 +475,7 @@
 				4C1A30271C57E21400BF721A /* FeaturesViewController.m in Sources */,
 				4C1A302D1C57E24100BF721A /* StalkProfileViewController.m in Sources */,
 				4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */,
+				4CC9153C1C7B3BAF00FCBFD8 /* SearchTableViewCell.m in Sources */,
 				4C6708341C7A710B0077DC58 /* DatePickerView.m in Sources */,
 				4C1A30181C56B8E500BF721A /* Singleton.m in Sources */,
 				4C1E925A1C54257000237AF0 /* AppDelegate.m in Sources */,
@@ -463,6 +490,7 @@
 				4C1A30241C57E1FA00BF721A /* StalkListViewController.m in Sources */,
 				4C53AADA1C5BA87100C76907 /* UserLikeCountModel.m in Sources */,
 				4C1E92571C54257000237AF0 /* main.m in Sources */,
+				4CC915381C7B33CB00FCBFD8 /* GetMediaOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

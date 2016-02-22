@@ -31,9 +31,13 @@
 -(NSString *)averageLike:(StatsModel *)model
 {
     NSString *result;
-    int averageLike =[model.totalLikes intValue] / [model.totalPostCount intValue];
+    NSInteger averageLike=0;
+    if (model.totalPostCount != 0) {
+        averageLike=model.totalLikes / model.totalPostCount ;
+    }
+  
     
-    result = [self shortenNumber:[NSNumber numberWithInt:averageLike]];
+    result = [self shortenNumber:averageLike];
     
     return result;
 
@@ -43,18 +47,22 @@
 -(NSString *)averageComments:(StatsModel *)model
 {
     NSString *result;
-    int averageComments =[model.totalComments intValue] / [model.totalPostCount intValue];
+    NSInteger averageComments = 0;
+    if (model.totalPostCount) {
+        averageComments =model.totalComments  / model.totalPostCount ;
+    }
+   
     
-    result = [self shortenNumber:[NSNumber numberWithInt:averageComments]];
+    result = [self shortenNumber:averageComments];
     
     return result;
     
 }
 
--(NSString *)shortenNumber:(NSNumber *)number
+-(NSString *)shortenNumber:(NSInteger )number
 {
     NSString *result;
-    int count = [number intValue];
+    int  count =(int)number;
     
     
     if (count> 999999) {

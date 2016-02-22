@@ -17,4 +17,6 @@
 #import "Singleton.h"
 #import "ModelHeader.h"
 
+#define k_Search_History_List @"searchHistoryList"
+
 #endif /* PrefixHeader_pch */

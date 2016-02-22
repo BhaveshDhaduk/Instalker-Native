@@ -17,7 +17,6 @@
 //shared variables
 @property (nonatomic,strong) NSString *accessToken;
 
-
-
+@property (nonatomic,strong) NSMutableArray *arraySearchHistory;
 
 @end

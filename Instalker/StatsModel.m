@@ -18,11 +18,11 @@
 
 -(void)setImageURLString:(NSURL *)imageURLString
                 textName:(NSString *)textName
-           followerCount:(NSNumber *)followerCount
-            followsCount:(NSNumber *)followsCount
-              totalLikes:(NSNumber *)totalLikes
-          totalPostCount:(NSNumber *)totalPostCount
-           totalComments:(NSNumber *)totalComments
+           followerCount:(NSInteger )followerCount
+            followsCount:(NSInteger )followsCount
+              totalLikes:(NSInteger )totalLikes
+          totalPostCount:(NSInteger )totalPostCount
+           totalComments:(NSInteger )totalComments
                 userName:(NSString *)userName
 {
     _imageURLString = imageURLString;
@@ -32,9 +32,16 @@
     _totalLikes = totalLikes;
     _totalPostCount = totalPostCount;
     _totalComments = totalComments;
-
-    _averageLikes =[NSNumber numberWithInt: [_totalLikes intValue] / [_totalPostCount intValue]];
-    _averageComments =[NSNumber numberWithInt: [_totalComments intValue] / [_totalPostCount intValue]];
+    if (_totalPostCount != 0) {
+        _averageLikes =_totalLikes / _totalPostCount ;
+        _averageComments =_totalComments  / _totalPostCount;
+    }else
+    {
+        _averageComments = 0;
+        _averageLikes = 0;
+    }
+    
+    
 
 }
 

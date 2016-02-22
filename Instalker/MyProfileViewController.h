@@ -24,4 +24,6 @@
 #pragma mark - Properties
 @property (strong,nonatomic) NSMutableArray *arrayData;
 
+@property (strong,nonatomic) InstagramUser *user;
+
 @end

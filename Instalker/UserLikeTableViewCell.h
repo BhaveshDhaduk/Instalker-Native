@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelUsername;
 @property (weak, nonatomic) IBOutlet UILabel *labelFullname;
 @property (weak, nonatomic) IBOutlet UILabel *labelLikeCount;
+
+@property (nonatomic,strong) InstagramUser *user;
+
 -(void)setFields:(UserLikeCountModel *)model;
 
 @end

@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchTableViewCell.h"
+@interface StalkListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 
-@interface StalkListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+#pragma mark - IBOutlets
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+
+#pragma  mark - Variables
+
+@property (nonatomic,strong) NSMutableArray *arraySearchList;
 
 @end
