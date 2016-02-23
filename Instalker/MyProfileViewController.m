@@ -62,10 +62,8 @@
 
 -(void)configureNavigationBarWithTitle:(NSString *)title
 {
-    UINavigationItem* item = [[UINavigationItem alloc] initWithTitle:title];
-    item.titleView.tintColor = [UIColor whiteColor];
-    
-    [self.navigationController.navigationBar pushNavigationItem:item animated:YES];
+    self.navigationItem.title = title;
+    self.navigationItem.titleView.tintColor = [UIColor whiteColor];
     
 }
 
@@ -89,6 +87,8 @@
         [self.viewStatsProfile setNeedsDisplay];
         _statsModel=stats;
         [self.tableView reloadData];
+        [self removeLoadingAnimation];
+    }failure:^(NSError *error, NSString *errorType) {
         [self removeLoadingAnimation];
     }];
     
@@ -115,12 +115,12 @@
 
 -(void)startLoadingAnimation
 {
-
+    [[PopUpManager sharedManager]showLoadingPopup];
 }
 
 -(void)removeLoadingAnimation
 {
-
+//    [[PopUpManager sharedManager]removeAllPopups];
 
 }
 

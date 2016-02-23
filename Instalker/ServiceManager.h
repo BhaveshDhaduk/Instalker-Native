@@ -13,6 +13,7 @@ typedef void (^completion)(NSMutableArray *result);
 typedef void (^completionFinal)(NSMutableArray *likeList, StatsModel *stats);
 typedef void (^completionRaw)(void);
 typedef void (^failed)(NSError *error);
+typedef void (^failure)(NSError *error, NSString *errorType);
 
 
 @interface ServiceManager : NSObject
@@ -48,7 +49,7 @@ typedef void (^failed)(NSError *error);
 #pragma mark - Service Calls
 
 
--(void)getSelfDataWithCompletion:(completionFinal)completion;
+-(void)getSelfDataWithCompletion:(completionFinal)completion failure:(failure)failure;
 -(void)searchUsersWithKeyword:(NSString*)keyword completion:(completion)completion failed:(failed)failed;
 -(void)getDataForUser:(NSString *)username withCompletion:(completionFinal)completion;
 @end

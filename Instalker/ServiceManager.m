@@ -55,7 +55,7 @@
 
 #pragma mark - Profile
 
--(void)getMyProfileInfoWithCompletion:(completionRaw)completion
+-(void)getMyProfileInfoWithCompletion:(completionRaw)completion failed:(failed)failed
 {
     [[InstagramEngine sharedEngine] getSelfUserDetailsWithSuccess:^(InstagramUser * _Nonnull user) {
         
@@ -71,11 +71,13 @@
         }
         
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-        
+        if (failed) {
+            failed(error);
+        }
     }];
     
 }
--(void)getProfileInfoWith:(NSString *)userID completion:(completionRaw)completion
+-(void)getProfileInfoWith:(NSString *)userID completion:(completionRaw)completion failed:(failed)failed
 {
     [[InstagramEngine sharedEngine]getUserDetails:userID withSuccess:^(InstagramUser * _Nonnull user) {
         
@@ -93,7 +95,9 @@
         
         
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-        
+        if (failed) {
+            failed(error);
+        }
         
     }];
 }
@@ -124,7 +128,7 @@
 }
 
 #pragma  mark - Get medias of user
--(void)getmediaOfUser:(NSString *)userID forMonths:(NSInteger)numberOfMonth withCompletion:(completion)completion
+-(void)getmediaOfUser:(NSString *)userID forMonths:(NSInteger)numberOfMonth withCompletion:(completion)completion withFailure:(failed)failed
 {
     [[InstagramEngine sharedEngine] getMediaForUser:userID withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
         
@@ -134,14 +138,17 @@
             
       
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-        
+        if (failed) {
+            failed(error);
+        }
         
     }];
     
 }
 
 
--(void )getMediasWithCompletion:(completion)completion{
+-(void )getMediasWithCompletion:(completion)completion failed:(failed)failed
+{
     
     
     [[InstagramEngine sharedEngine] getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
@@ -150,7 +157,9 @@
         }
         
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-        
+        if (failed) {
+            failed(error);
+        }
     }];
 }
 
@@ -353,7 +362,7 @@
 
 #pragma mark - Final Methods
 
--(void)getSelfDataWithCompletion:(completionFinal)completion
+-(void)getSelfDataWithCompletion:(completionFinal)completion  failure:(failure)failure
 {
     [self clean];
     
@@ -372,6 +381,8 @@
                  
                     dispatch_semaphore_signal(semant);
                    
+                }failed:^(NSError *error) {
+                    
                 }];
                 
                 [self getCommentsForMedia:_allMedia withCompletion:^{
@@ -417,6 +428,12 @@
             
             
            
+        } failed:^(NSError *error) {
+           //failed get profile info
+            if (failure) {
+                failure(error,@"no-profile");
+            }
+            
         }];
     });
     
@@ -451,6 +468,8 @@ dispatch_queue_t backgroundQueue() {
                [self getProfileInfoWith:username completion:^{
                     
                     dispatch_semaphore_signal(semant);
+                    
+                }failed:^(NSError *error) {
                     
                 }];
                 
@@ -494,6 +513,8 @@ dispatch_queue_t backgroundQueue() {
             
 
             
+        } withFailure:^(NSError *error) {
+            //failed to get profile
         }];
     });
 

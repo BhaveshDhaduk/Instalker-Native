@@ -16,6 +16,7 @@
 
 #import "Singleton.h"
 #import "ModelHeader.h"
+#import "PopUpManager.h"
 
 #define k_Search_History_List @"searchHistoryList"
 
