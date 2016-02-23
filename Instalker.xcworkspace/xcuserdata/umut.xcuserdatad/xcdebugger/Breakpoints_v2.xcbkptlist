@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/MyProfileViewController.m"
-            timestampString = "477850763.261678"
+            timestampString = "477875228.094212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-startSelfService"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,29 +42,30 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/ServiceManager.m"
-            timestampString = "477844707.581712"
+            timestampString = "477872073.99898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
+            startingLineNumber = "356"
+            endingLineNumber = "356"
+            landmarkName = "-getSelfDataWithCompletion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
             landmarkName = "-getSelfDataWithCompletion:"
             landmarkType = "5">
             <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[ServiceManager getSelfDataWithCompletion:]_block_invoke_2"
-                  moduleName = "Instalker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851431.983938"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "341"
-                  endingLineNumber = "341"
-                  offsetFromSymbolStart = "89">
-               </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
@@ -73,94 +74,13 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851431.984125"
+                  timestampString = "477872142.610197"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "341"
-                  endingLineNumber = "341"
-                  offsetFromSymbolStart = "22">
+                  startingLineNumber = "371"
+                  endingLineNumber = "371"
+                  offsetFromSymbolStart = "80">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/ServiceManager.m"
-            timestampString = "477845911.473321"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
-            landmarkName = "-getSelfDataWithCompletion:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[ServiceManager getSelfDataWithCompletion:]_block_invoke150"
-                  moduleName = "Instalker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851431.998159"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "356"
-                  endingLineNumber = "356"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_151"
-                  moduleName = "Instalker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851431.998301"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_152"
-                  moduleName = "Instalker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851431.998416"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/ServiceManager.m"
-            timestampString = "477845911.473321"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
-            landmarkName = "-getSelfDataWithCompletion:"
-            landmarkType = "5">
-            <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
@@ -169,42 +89,12 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851432.000479"
+                  timestampString = "477872142.610331"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "349"
-                  endingLineNumber = "349"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_145"
-                  moduleName = "Instalker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851432.000689"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_146"
-                  moduleName = "Instalker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851432.000879"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "371"
+                  endingLineNumber = "371"
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -216,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/ServiceManager.m"
-            timestampString = "477790655.179913"
+            timestampString = "477872073.99898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-getMyProfileInfoWithCompletion:"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
+            landmarkName = "-getSelfDataWithCompletion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -231,13 +121,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Instalker/StatsProfileView.m"
-            timestampString = "477790916.495078"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477870847.872136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "-configureViews:"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-getMyProfileInfoWithCompletion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -376,11 +266,74 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/ServiceManager.m"
-            timestampString = "477845918.013765"
+            timestampString = "477872073.99898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "-getSelfDataWithCompletion:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[ServiceManager getSelfDataWithCompletion:]_block_invoke153"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.616297"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "382"
+                  endingLineNumber = "382"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_154"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.616408"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_155"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.616513"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
             landmarkName = "-getSelfDataWithCompletion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -392,13 +345,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/ServiceManager.m"
-            timestampString = "477845925.276602"
+            timestampString = "477872073.99898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
+            startingLineNumber = "376"
+            endingLineNumber = "376"
             landmarkName = "-getSelfDataWithCompletion:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[ServiceManager getSelfDataWithCompletion:]_block_invoke_3"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.618005"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "377"
+                  endingLineNumber = "377"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[ServiceManager getSelfDataWithCompletion:]_block_invoke153"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.618112"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "377"
+                  endingLineNumber = "377"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -408,43 +393,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/ServiceManager.m"
-            timestampString = "477845929.519647"
+            timestampString = "477872073.99898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
-            landmarkName = "-getSelfDataWithCompletion:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/StatsProfileView.m"
-            timestampString = "477846109.994254"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "-configureViews:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/ServiceManager.m"
-            timestampString = "477851168.80188"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "440"
-            endingLineNumber = "440"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
             landmarkName = "-getDataForUser:withCompletion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -456,11 +409,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/MyProfileViewController.m"
-            timestampString = "477851193.121935"
+            timestampString = "477874777.33663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -472,7 +425,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/MyProfileViewController.m"
-            timestampString = "477851193.715139"
+            timestampString = "477874777.33663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -488,11 +441,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/MyProfileViewController.m"
-            timestampString = "477851313.820025"
+            timestampString = "477875228.094212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-startServiceForUser:"
             landmarkType = "5">
          </BreakpointContent>
@@ -504,11 +457,122 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/ServiceManager.m"
-            timestampString = "477851330.431713"
+            timestampString = "477872073.99898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "405"
-            endingLineNumber = "405"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
+            landmarkName = "-getSelfDataWithCompletion:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[ServiceManager getSelfDataWithCompletion:]_block_invoke_2"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.621752"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "420"
+                  endingLineNumber = "420"
+                  offsetFromSymbolStart = "249">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_174"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.621906"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_175"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.622012"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "446"
+            endingLineNumber = "446"
+            landmarkName = "-getDataForUser:withCompletion:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[ServiceManager getDataForUser:withCompletion:]_block_invoke_2"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.623266"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "447"
+                  endingLineNumber = "447"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[ServiceManager getDataForUser:withCompletion:]_block_invoke_3"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.623396"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "447"
+                  endingLineNumber = "447"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
             landmarkName = "-getDataForUser:withCompletion:"
             landmarkType = "5">
             <Locations>
@@ -520,12 +584,12 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851432.025628"
+                  timestampString = "477872142.624071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "405"
-                  endingLineNumber = "405"
-                  offsetFromSymbolStart = "111">
+                  startingLineNumber = "441"
+                  endingLineNumber = "441"
+                  offsetFromSymbolStart = "96">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -535,11 +599,11 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851432.025757"
+                  timestampString = "477872142.624193"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "405"
-                  endingLineNumber = "405"
+                  startingLineNumber = "441"
+                  endingLineNumber = "441"
                   offsetFromSymbolStart = "41">
                </Location>
             </Locations>
@@ -552,12 +616,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/ServiceManager.m"
-            timestampString = "477851477.053946"
+            timestampString = "477872073.99898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "435"
-            endingLineNumber = "435"
-            landmarkName = "-getDataForUser:withCompletion:"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
+            landmarkName = "backgroundQueue()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
+            landmarkName = "-getSelfDataWithCompletion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -568,27 +648,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/ServiceManager.m"
-            timestampString = "477851477.759251"
+            timestampString = "477872073.99898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
-            landmarkName = "-getDataForUser:withCompletion:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/ServiceManager.m"
-            timestampString = "477851478.616049"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
+            startingLineNumber = "443"
+            endingLineNumber = "443"
             landmarkName = "-getDataForUser:withCompletion:"
             landmarkType = "5">
             <Locations>
@@ -596,26 +660,138 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__48-[ServiceManager getDataForUser:withCompletion:]_block_invoke184"
+                  symbolName = "__48-[ServiceManager getDataForUser:withCompletion:]_block_invoke"
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851478.618668"
+                  timestampString = "477872142.625873"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "426"
-                  endingLineNumber = "426"
+                  startingLineNumber = "443"
+                  endingLineNumber = "443"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[ServiceManager getDataForUser:withCompletion:]_block_invoke_2"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.625975"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "443"
+                  endingLineNumber = "443"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "-getmediaOfUser:forMonths:withCompletion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "-getmediaOfUser:forMonths:withCompletion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "473"
+            endingLineNumber = "473"
+            landmarkName = "-getDataForUser:withCompletion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "478"
+            endingLineNumber = "478"
+            landmarkName = "-getDataForUser:withCompletion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/ServiceManager.m"
+            timestampString = "477872073.99898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
+            landmarkName = "-getDataForUser:withCompletion:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[ServiceManager getDataForUser:withCompletion:]_block_invoke190"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
+                  timestampString = "477872142.62855"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "462"
+                  endingLineNumber = "462"
                   offsetFromSymbolStart = "28">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_185"
+                  symbolName = "__copy_helper_block_191"
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851478.61881"
+                  timestampString = "477872142.628652"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -626,11 +802,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_186"
+                  symbolName = "__destroy_helper_block_192"
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/iOSGit/Instalker/Instalker/ServiceManager.m"
-                  timestampString = "477851478.618936"
+                  timestampString = "477872142.628746"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -647,44 +823,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/ServiceManager.m"
-            timestampString = "477851479.23481"
+            timestampString = "477872073.99898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "417"
-            endingLineNumber = "417"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
             landmarkName = "-getDataForUser:withCompletion:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/ServiceManager.m"
-            timestampString = "477851542.572482"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "-getProfileInfoWith:completion:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/ServiceManager.m"
-            timestampString = "477851560.266199"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "309"
-            endingLineNumber = "309"
-            landmarkName = "-getCommentsForMedia:withCompletion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

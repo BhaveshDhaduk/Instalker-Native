@@ -12,16 +12,20 @@
 
 -(void)configureViews:(StatsModel *)model
 {
+   
     _imageViewProfile.imageURL=model.imageURLString;
-    _labelName.text = model.textName;
+    [UIView animateWithDuration:0.3 animations:^{
+        _labelName.text = model.textName;
+        
+        _labelMediaCount.text =[self shortenNumber: model.totalPostCount];
+        _labelFollewsCount.text = [self shortenNumber:model.followerCount];
+        _labelFollowingCount.text = [self shortenNumber:model.followingCount];
+        _labelTotalLikes.text = [self shortenNumber:model.totalLikes];
+        _labelAveragePosts.text = [self averageLike:model];
+        _labelAverageComments.text = [self averageComments:model];
+        
+    }];
     
-    _labelMediaCount.text =[self shortenNumber: model.totalPostCount];
-    _labelFollewsCount.text = [self shortenNumber:model.followerCount];
-    _labelFollowingCount.text = [self shortenNumber:model.followingCount];
-    _labelTotalLikes.text = [self shortenNumber:model.totalLikes];
-    _labelAveragePosts.text = [self averageLike:model];
-    _labelAverageComments.text = [self averageComments:model];
-    [self setNeedsDisplay];
 }
 
 

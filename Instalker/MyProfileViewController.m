@@ -31,6 +31,7 @@
     [self configureScrollview];
     if (!_user) {
         [self startSelfService];
+       
     }
     else
     {
@@ -42,8 +43,32 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    if (!_user ) {
+     [self configureNavigationBarForMyProfile];
+    }else
+    {
+        [self configureNavigationBarWithTitle:_user.username];
+    
+    }
     
 }
+
+#pragma mark - Navigation Bar 
+-(void)configureNavigationBarForMyProfile
+{
+        self.navigationItem.title = @"MY PROFILE";
+        self.navigationItem.titleView.tintColor = [UIColor whiteColor];
+}
+
+-(void)configureNavigationBarWithTitle:(NSString *)title
+{
+    UINavigationItem* item = [[UINavigationItem alloc] initWithTitle:title];
+    item.titleView.tintColor = [UIColor whiteColor];
+    
+    [self.navigationController.navigationBar pushNavigationItem:item animated:YES];
+    
+}
+
 
 #pragma mark - Initilization
 -(void)configureScrollview{
@@ -72,7 +97,7 @@
 {
     [self startLoadingAnimation];
     
-    [[ServiceManager sharedManager] getDataForUser:user.username withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
+    [[ServiceManager sharedManager] getDataForUser:user.Id withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
         _arrayData = likeList;
         [_viewStatsProfile configureViews:stats];
         [self.viewStatsProfile setNeedsDisplay];

@@ -103,7 +103,7 @@
     
     InstagramUser *user = [_arraySearchList objectAtIndex:indexPath.row ];
     [self updateSearchHistory:user];
-    [[ServiceManager sharedManager] getDataForUser:user.username withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
+    [[ServiceManager sharedManager] getDataForUser:user.Id withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
         
     }];
     

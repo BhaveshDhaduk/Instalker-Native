@@ -69,7 +69,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BqC-KE-FvZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y65-Kz-efA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -88,104 +88,18 @@
                         <viewControllerLayoutGuide type="bottom" id="mTd-fw-bWf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PFf-yO-6ll">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWQ-bh-3Ef">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-QJ-VkN">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-TI-hgP">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="635"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l19-oC-3v0">
-                                                        <rect key="frame" x="0.0" y="212" width="320" height="423"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="userLikeCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userLikeCell" id="wQC-PF-RrH" customClass="UserLikeTableViewCell">
-                                                                <rect key="frame" x="0.0" y="28" width="320" height="65"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wQC-PF-RrH" id="TMy-oV-fgG">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKZ-Vc-Y1X">
-                                                                            <rect key="frame" x="18" y="7" width="44" height="44"/>
-                                                                            <userDefinedRuntimeAttributes>
-                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                    <real key="value" value="22"/>
-                                                                                </userDefinedRuntimeAttribute>
-                                                                            </userDefinedRuntimeAttributes>
-                                                                        </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="mJr-bN-urz">
-                                                                            <rect key="frame" x="77" y="32" width="143" height="22"/>
-                                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4j-zp-Ox1" customClass="Label" customModule="Instalker" customModuleProvider="target">
-                                                                            <rect key="frame" x="237" y="18" width="75" height="29"/>
-                                                                            <attributedString key="attributedText">
-                                                                                <fragment content="Label">
-                                                                                    <attributes>
-                                                                                        <color key="NSColor" red="0.9137254901960784" green="0.33333333333333331" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
-                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
-                                                                                    </attributes>
-                                                                                </fragment>
-                                                                            </attributedString>
-                                                                            <nil key="highlightedColor"/>
-                                                                            <userDefinedRuntimeAttributes>
-                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                    <real key="value" value="4"/>
-                                                                                </userDefinedRuntimeAttribute>
-                                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                                    <real key="value" value="1"/>
-                                                                                </userDefinedRuntimeAttribute>
-                                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                                    <color key="value" red="0.91372549020000005" green="0.33333333329999998" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                </userDefinedRuntimeAttribute>
-                                                                                <userDefinedRuntimeAttribute type="number" keyPath="insetX">
-                                                                                    <real key="value" value="-16"/>
-                                                                                </userDefinedRuntimeAttribute>
-                                                                            </userDefinedRuntimeAttributes>
-                                                                        </label>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart-icon@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="bjk-nd-i5w">
-                                                                            <rect key="frame" x="244" y="28" width="10" height="10"/>
-                                                                        </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="uGk-WV-3tZ">
-                                                                            <rect key="frame" x="77" y="7" width="143" height="17"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </tableViewCellContentView>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                        <color key="value" red="0.68235294120000001" green="0.72156862749999995" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                        <real key="value" value="1"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <outlet property="imageViewProfile" destination="sKZ-Vc-Y1X" id="dDd-Zg-P22"/>
-                                                                    <outlet property="labelFullname" destination="mJr-bN-urz" id="AZk-eY-4kK"/>
-                                                                    <outlet property="labelLikeCount" destination="P4j-zp-Ox1" id="PzK-Uw-Htr"/>
-                                                                    <outlet property="labelUsername" destination="uGk-WV-3tZ" id="aLt-yG-IZg"/>
-                                                                    <segue destination="X0g-o5-jiz" kind="push" identifier="stalkRecursive" id="fvX-li-W5f"/>
-                                                                </connections>
-                                                            </tableViewCell>
-                                                        </prototypes>
-                                                        <sections/>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="BR4-Jq-7iE" id="xg5-8w-dIa"/>
-                                                        </connections>
-                                                    </tableView>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7q5-fL-Zri" customClass="StatsProfileView">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="212"/>
                                                         <subviews>
@@ -351,6 +265,92 @@
                                                             <outlet property="labelTotalLikes" destination="YYD-CR-YVt" id="4if-ax-E0I"/>
                                                         </connections>
                                                     </view>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l19-oC-3v0">
+                                                        <rect key="frame" x="0.0" y="212" width="320" height="423"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <prototypes>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="userLikeCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userLikeCell" id="wQC-PF-RrH" customClass="UserLikeTableViewCell">
+                                                                <rect key="frame" x="0.0" y="28" width="320" height="65"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wQC-PF-RrH" id="TMy-oV-fgG">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKZ-Vc-Y1X">
+                                                                            <rect key="frame" x="18" y="7" width="44" height="44"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="22"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="mJr-bN-urz">
+                                                                            <rect key="frame" x="77" y="32" width="143" height="22"/>
+                                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4j-zp-Ox1" customClass="Label" customModule="Instalker" customModuleProvider="target">
+                                                                            <rect key="frame" x="237" y="18" width="75" height="29"/>
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="Label">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="0.9137254901960784" green="0.33333333333333331" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="4"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                    <real key="value" value="1"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                    <color key="value" red="0.91372549020000005" green="0.33333333329999998" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="insetX">
+                                                                                    <real key="value" value="-16"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </label>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart-icon@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="bjk-nd-i5w">
+                                                                            <rect key="frame" x="244" y="28" width="10" height="10"/>
+                                                                        </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="uGk-WV-3tZ">
+                                                                            <rect key="frame" x="77" y="7" width="143" height="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </tableViewCellContentView>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.68235294120000001" green="0.72156862749999995" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="imageViewProfile" destination="sKZ-Vc-Y1X" id="dDd-Zg-P22"/>
+                                                                    <outlet property="labelFullname" destination="mJr-bN-urz" id="AZk-eY-4kK"/>
+                                                                    <outlet property="labelLikeCount" destination="P4j-zp-Ox1" id="PzK-Uw-Htr"/>
+                                                                    <outlet property="labelUsername" destination="uGk-WV-3tZ" id="aLt-yG-IZg"/>
+                                                                    <segue destination="X0g-o5-jiz" kind="push" identifier="stalkRecursive" id="fvX-li-W5f"/>
+                                                                </connections>
+                                                            </tableViewCell>
+                                                        </prototypes>
+                                                        <sections/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BR4-Jq-7iE" id="xg5-8w-dIa"/>
+                                                        </connections>
+                                                    </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.098039215690000001" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
@@ -378,11 +378,11 @@
                         <viewControllerLayoutGuide type="bottom" id="3F2-I2-r47"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3wf-sS-dZM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jdy-hP-dPN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="00i-TA-YPX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="635"/>
@@ -456,6 +456,15 @@
                                                                 <color key="value" red="0.68235294120000001" green="0.72156862749999995" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftBorderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightBorderWidth">
                                                                 <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
@@ -550,7 +559,7 @@
                                                         <color key="textColor" red="0.56470588239999997" green="0.56470588239999997" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Onur Neşvat umut afacan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1as-Ry-1bi">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Onur Neşvat umut afacan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1as-Ry-1bi">
                                                         <rect key="frame" x="8" y="108" width="144" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -578,7 +587,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-Cj-dVR" customClass="View" customModule="Instalker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="181" width="320" height="31"/>
+                                                        <rect key="frame" x="0.0" y="181" width="320" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="People who most likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDn-QY-Sjx">
                                                                 <rect key="frame" x="8" y="5" width="148" height="21"/>
@@ -629,6 +638,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
+                                                    <outlet property="imageViewProfile" destination="xmk-Sn-K6d" id="z6w-8c-c89"/>
                                                     <outlet property="labelAverageComments" destination="ot8-7f-Cxq" id="1kM-1x-TXV"/>
                                                     <outlet property="labelAveragePosts" destination="PGD-hK-dm5" id="Ajd-Ne-BwG"/>
                                                     <outlet property="labelFollewsCount" destination="ZWp-CI-nkC" id="qgQ-EH-TWK"/>
@@ -647,13 +657,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kg1-vp-uyp"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="buttonChangeDate" destination="vXP-pc-Brq" id="vCE-wD-IFi"/>
-                        <outlet property="imageViewProfile" destination="xmk-Sn-K6d" id="mJ5-do-t2U"/>
                         <outlet property="labelMediaCountInInterval" destination="c6Q-jn-ssj" id="6tt-c2-waH"/>
                         <outlet property="labelNameFırTitle" destination="VZ5-pg-vAw" id="TdA-rs-JbY"/>
                         <outlet property="scrollViewMain" destination="Jdy-hP-dPN" id="wQs-bh-Vq1"/>
@@ -671,15 +677,16 @@
             <objects>
                 <tabBarController id="IdW-ya-0Ha" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Vi7-wT-h4b"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="AOj-vd-ml2">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="AOj-vd-ml2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="RF8-cp-YiP" kind="relationship" relationship="viewControllers" id="nWG-Bi-YrM"/>
                         <segue destination="2DX-tU-Q2F" kind="relationship" relationship="viewControllers" id="u1K-fN-C4p"/>
-                        <segue destination="ST4-6K-vrK" kind="relationship" relationship="viewControllers" id="sks-tj-XHg"/>
+                        <segue destination="ST4-6K-vrK" kind="relationship" relationship="viewControllers" id="o1j-u2-zj9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iK2-9u-71d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -696,6 +703,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FYK-6r-8tg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -715,7 +724,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hlO-YC-2nZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fLB-CL-O1x">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCu-Lj-Vrw">
@@ -791,9 +800,14 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RF8-cp-YiP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="hYu-GS-A7b"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8v5-an-hWb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8v5-an-hWb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.24313725490196078" green="0.31764705882352939" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -810,9 +824,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2DX-tU-Q2F" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 2" id="Nc7-bT-Shk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uvq-uw-FmE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Uvq-uw-FmE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -829,9 +845,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ST4-6K-vrK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 2" id="ndK-fH-mdw"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9H1-lh-kwt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="9H1-lh-kwt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

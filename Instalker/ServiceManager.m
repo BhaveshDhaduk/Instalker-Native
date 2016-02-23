@@ -65,6 +65,7 @@
         _userName = user.username;
         _fullName = user.fullName;
         _profileImageURL = user.profilePictureURL;
+        
         if (completion) {
             completion();
         }
@@ -78,7 +79,21 @@
 {
     [[InstagramEngine sharedEngine]getUserDetails:userID withSuccess:^(InstagramUser * _Nonnull user) {
         
+        _follewersCount =user.followedByCount;
+        _follewingsCount = user.followsCount;
+        _totalPostCount = user.mediaCount;
+        _userName = user.username;
+        _fullName = user.fullName;
+        _profileImageURL = user.profilePictureURL;
+        
+        if (completion) {
+            completion();
+        }
+
+        
+        
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
+        
         
     }];
 }
@@ -114,7 +129,7 @@
     [[InstagramEngine sharedEngine] getMediaForUser:userID withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
         
             if (completion) {
-                completion(media);
+                completion((NSMutableArray *)media);
             }
             
       
@@ -131,7 +146,7 @@
     
     [[InstagramEngine sharedEngine] getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
         if (completion) {
-            completion(media);
+            completion((NSMutableArray *)media);
         }
         
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
@@ -225,7 +240,14 @@
                 
                 
             } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-                dispatch_semaphore_signal(sema);
+                
+                ready++;
+                if (ready+1 > media.count) {
+                    dispatch_semaphore_signal(sema);
+                }
+
+            
+            
             }];
             
         }
@@ -306,7 +328,11 @@
                 
                 
             } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-                
+                ready++;
+                if (ready+1 > media.count) {
+                    dispatch_semaphore_signal(sema);
+                }
+
             }];
             
             
@@ -396,13 +422,23 @@
     
 }
 
+dispatch_queue_t backgroundQueue() {
+    static dispatch_once_t queueCreationGuard;
+    static dispatch_queue_t queue;
+    dispatch_once(&queueCreationGuard, ^{
+        queue = dispatch_queue_create("com.smartclick.instalker.backgroundQueue", 0);
+    });
+    return queue;
+}
 
 -(void)getDataForUser:(NSString *)username withCompletion:(completionFinal)completion
 {
     
     [self clean];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+   
+    
+    dispatch_async(backgroundQueue(), ^{
         
         [self getmediaOfUser:username forMonths:3 withCompletion:^(NSMutableArray *result) {
             _allMedia = result;
@@ -432,6 +468,7 @@
                     
                     
                 }];
+                
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
