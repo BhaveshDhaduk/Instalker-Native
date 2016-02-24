@@ -78,15 +78,15 @@
             <objects>
                 <viewController id="X0g-o5-jiz" customClass="StalkProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PFf-yO-6ll">
-                        <rect key="frame" x="0.0" y="44" width="320" height="475"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="XWQ-bh-3Ef">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jwy-QJ-VkN">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="zHh-TI-hgP">
@@ -209,7 +209,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <action selector="changeDateButtonPressed:" destination="BR4-Jq-7iE" eventType="touchUpInside" id="FIH-PK-KUk"/>
+                                                                    <action selector="changeDateButtonPressed:" destination="X0g-o5-jiz" eventType="touchUpInside" id="PgD-Hk-sLS"/>
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" id="vut-6u-Khz" customClass="View" customModule="Instalker" customModuleProvider="target">
@@ -269,6 +269,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <connections>
+                                                            <outlet property="imageViewProfile" destination="YUP-yl-rxd" id="yk0-7t-bNY"/>
                                                             <outlet property="labelAverageComments" destination="eWo-ah-KqX" id="shO-Ya-6dY"/>
                                                             <outlet property="labelAveragePosts" destination="lN0-sS-VyP" id="7W9-mq-Vsf"/>
                                                             <outlet property="labelFollewsCount" destination="hWO-j9-PKW" id="nib-PS-ZQ7"/>
@@ -283,11 +284,11 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="userLikeCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userLikeCell" id="wQC-PF-RrH" customClass="UserLikeTableViewCell">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="userLikeCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userLikeCell" id="wQC-PF-RrH" customClass="UserLikeTableViewCell">
                                                                 <rect key="frame" x="0.0" y="28" width="320" height="65"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wQC-PF-RrH" id="TMy-oV-fgG">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sKZ-Vc-Y1X">
@@ -361,13 +362,13 @@
                                                                     <outlet property="labelFullname" destination="mJr-bN-urz" id="AZk-eY-4kK"/>
                                                                     <outlet property="labelLikeCount" destination="P4j-zp-Ox1" id="PzK-Uw-Htr"/>
                                                                     <outlet property="labelUsername" destination="uGk-WV-3tZ" id="aLt-yG-IZg"/>
-                                                                    <segue destination="X0g-o5-jiz" kind="push" identifier="stalkRecursive" id="fvX-li-W5f"/>
+                                                                    <segue destination="X0g-o5-jiz" kind="push" id="lY3-0S-XBN"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
                                                         <sections/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="BR4-Jq-7iE" id="xg5-8w-dIa"/>
+                                                            <outlet property="delegate" destination="X0g-o5-jiz" id="dan-6f-3gf"/>
                                                         </connections>
                                                     </tableView>
                                                 </subviews>
@@ -382,7 +383,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="UCf-ty-YWF"/>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="buttonChangeDate" destination="aw5-x4-Lsj" id="e3Z-fR-ZfI"/>
+                        <outlet property="labelMediaCountInInterval" destination="d9f-ZA-ypu" id="trY-bF-aVY"/>
+                        <outlet property="labelNameForTitle" destination="mx7-5d-1Ju" id="prt-sw-iAv"/>
+                        <outlet property="scrollViewMain" destination="jwy-QJ-VkN" id="fUu-uO-yQe"/>
+                        <outlet property="tableView" destination="l19-oC-3v0" id="bIC-FL-stb"/>
+                        <outlet property="viewContentOfScroll" destination="zHh-TI-hgP" id="2kc-25-cga"/>
+                        <outlet property="viewStatsProfile" destination="7q5-fL-Zri" id="eza-Jn-aPj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vae-jM-w4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -723,8 +733,14 @@
                     <tabBar key="tabBar" contentMode="scaleAspectFit" translucent="NO" id="AOj-vd-ml2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="RF8-cp-YiP" kind="relationship" relationship="viewControllers" id="nWG-Bi-YrM"/>
@@ -763,11 +779,11 @@
             <objects>
                 <viewController id="1u4-MV-oXh" customClass="StalkListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fLB-CL-O1x">
-                        <rect key="frame" x="0.0" y="44" width="320" height="475"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="WbH-tx-Sn3">
-                                <rect key="frame" x="0.0" y="44" width="320" height="431"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="411"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -829,6 +845,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="8rJ-wc-Vvv"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="fCu-Lj-Vrw" id="ze1-iC-Pbb"/>
                         <outlet property="tableView" destination="WbH-tx-Sn3" id="PrU-LJ-z0c"/>
@@ -863,11 +880,11 @@
             </objects>
             <point key="canvasLocation" x="1508" y="-296"/>
         </scene>
-        <!--Item 2-->
+        <!--Stalk-->
         <scene sceneID="sBs-Be-wbI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2DX-tU-Q2F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Nc7-bT-Shk"/>
+                    <tabBarItem key="tabBarItem" title="Stalk" image="eye-icon.png" selectedImage="eye-icon-white.png" id="Nc7-bT-Shk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Uvq-uw-FmE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -953,6 +970,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye-icon-white.png" width="39" height="24"/>
+        <image name="eye-icon.png" width="41" height="26"/>
         <image name="features-icon-selected.png" width="24" height="23"/>
         <image name="features-icon.png" width="24" height="23"/>
         <image name="heart-icon@2.png" width="20" height="17"/>

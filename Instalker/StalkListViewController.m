@@ -8,6 +8,8 @@
 
 #import "StalkListViewController.h"
 #import "ServiceManager.h"
+#import "StalkProfileViewController.h"
+
 
 @interface StalkListViewController ()
 
@@ -103,9 +105,7 @@
     
     InstagramUser *user = [_arraySearchList objectAtIndex:indexPath.row ];
     [self updateSearchHistory:user];
-    [[ServiceManager sharedManager] getDataForUser:user.Id withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
-        
-    }];
+   
     
     
 }
@@ -133,14 +133,22 @@
     [self getSearchHistory];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"stalk"]) {
+        StalkProfileViewController *destinationViewController = segue.destinationViewController;
+        UserLikeTableViewCell *cell = (UserLikeTableViewCell *)sender;
+        destinationViewController.user = cell.user;
+
+
+    }
+
 }
-*/
+
 
 @end

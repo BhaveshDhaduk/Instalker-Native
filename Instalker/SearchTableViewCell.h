@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelUserName;
 @property (weak, nonatomic) IBOutlet UILabel *labelFollowerCount;
 
+#pragma mark - Properties 
+
+@property (nonatomic,strong) InstagramUser *user;
+
 #pragma mark - Methods
 -(void)configureViews:(InstagramUser *)user;
 

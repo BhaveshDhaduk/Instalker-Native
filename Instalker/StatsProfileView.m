@@ -12,11 +12,11 @@
 
 -(void)configureViews:(StatsModel *)model
 {
-   
+   if([model.imageURLString isFileURL])
     _imageViewProfile.imageURL=model.imageURLString;
-    [UIView animateWithDuration:0.3 animations:^{
+    
+   
         _labelName.text = model.textName;
-        
         _labelMediaCount.text =[self shortenNumber: model.totalPostCount];
         _labelFollewsCount.text = [self shortenNumber:model.followerCount];
         _labelFollowingCount.text = [self shortenNumber:model.followingCount];
@@ -24,8 +24,8 @@
         _labelAveragePosts.text = [self averageLike:model];
         _labelAverageComments.text = [self averageComments:model];
         
-    }];
     
+    [self setNeedsDisplay];
 }
 
 

@@ -35,7 +35,7 @@
     _imageViewInnerEye.hidden=YES;
     _imageViewOuterView.hidden=YES;
     
-    [self viewDidAppear:YES];
+    [self startAnimation];
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated

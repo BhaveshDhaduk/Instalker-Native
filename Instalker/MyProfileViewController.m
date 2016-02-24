@@ -120,7 +120,7 @@
 
 -(void)removeLoadingAnimation
 {
-//    [[PopUpManager sharedManager]removeAllPopups];
+    [[PopUpManager sharedManager]removeAllPopups];
 
 }
 
@@ -157,10 +157,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    MyProfileViewController *destinationViewController = segue.destinationViewController;
-    UserLikeTableViewCell *cell = (UserLikeTableViewCell *)sender;
-    destinationViewController.user = cell.user;
-    
+    if ([segue.identifier isEqualToString:@"stalkMyFollower"]) {
+        
+        MyProfileViewController *destinationViewController = segue.destinationViewController;
+        UserLikeTableViewCell *cell = (UserLikeTableViewCell *)sender;
+        destinationViewController.user = cell.user;
+    }
 }
 
 

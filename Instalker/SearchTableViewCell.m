@@ -13,6 +13,7 @@
 
 -(void)configureViews:(InstagramUser *)user
 {
+    _user = user;
     if (user.profilePictureURL) {
         _imageViewProfile.imageURL = user.profilePictureURL;
     }
