@@ -725,10 +725,10 @@
             </objects>
             <point key="canvasLocation" x="2142" y="-301"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Instalker Tab Bar View Controller-->
         <scene sceneID="rrs-pE-sRE">
             <objects>
-                <tabBarController id="IdW-ya-0Ha" sceneMemberID="viewController">
+                <tabBarController id="IdW-ya-0Ha" customClass="InstalkerTabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Vi7-wT-h4b"/>
                     <tabBar key="tabBar" contentMode="scaleAspectFit" translucent="NO" id="AOj-vd-ml2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -736,13 +736,9 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
+                        <outlet property="tabbar" destination="AOj-vd-ml2" id="oDc-il-iXP"/>
                         <segue destination="RF8-cp-YiP" kind="relationship" relationship="viewControllers" id="nWG-Bi-YrM"/>
                         <segue destination="2DX-tU-Q2F" kind="relationship" relationship="viewControllers" id="u1K-fN-C4p"/>
                         <segue destination="ST4-6K-vrK" kind="relationship" relationship="viewControllers" id="o1j-u2-zj9"/>
@@ -880,11 +876,14 @@
             </objects>
             <point key="canvasLocation" x="1508" y="-296"/>
         </scene>
-        <!--Stalk-->
+        <!--Navigation Controller-->
         <scene sceneID="sBs-Be-wbI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2DX-tU-Q2F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stalk" image="eye-icon.png" selectedImage="eye-icon-white.png" id="Nc7-bT-Shk"/>
+                    <tabBarItem key="tabBarItem" title="" image="stalk-icon" selectedImage="stalk-icon-selected" id="Nc7-bT-Shk">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Uvq-uw-FmE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -970,8 +969,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="eye-icon-white.png" width="39" height="24"/>
-        <image name="eye-icon.png" width="41" height="26"/>
         <image name="features-icon-selected.png" width="24" height="23"/>
         <image name="features-icon.png" width="24" height="23"/>
         <image name="heart-icon@2.png" width="20" height="17"/>
@@ -981,6 +978,8 @@
         <image name="myprofile-icon-grey-selected.png" width="22" height="24"/>
         <image name="myprofile-icon-grey.png" width="22" height="24"/>
         <image name="outer-eye.png" width="63" height="39"/>
+        <image name="stalk-icon" width="62" height="49"/>
+        <image name="stalk-icon-selected" width="62" height="49"/>
         <image name="stalk-loading-img.png" width="80" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>

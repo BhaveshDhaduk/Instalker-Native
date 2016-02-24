@@ -131,10 +131,17 @@
 -(void)getmediaOfUser:(NSString *)userID forMonths:(NSInteger)numberOfMonth withCompletion:(completion)completion withFailure:(failed)failed
 {
     [[InstagramEngine sharedEngine] getMediaForUser:userID withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
+        _allMedia = [NSMutableArray array];
+        [_allMedia addObjectsFromArray:media];
         
-            if (completion) {
-                completion((NSMutableArray *)media);
-            }
+        if (paginationInfo.nextURL) {
+            [self getPaginatedData:paginationInfo completion:^{
+                if (completion) {
+                    completion((NSMutableArray *)media);
+                }
+            }];
+        }
+        
             
       
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
@@ -145,6 +152,29 @@
     }];
     
 }
+
+-(void)getPaginatedData:(InstagramPaginationInfo *)pagination completion:(completionRaw)completion
+{
+    [[InstagramEngine sharedEngine]getPaginatedItemsForInfo:pagination withSuccess:^(NSArray<InstagramModel *> * _Nonnull paginatedObjects, InstagramPaginationInfo * _Nonnull paginationInfo) {
+        [_allMedia addObjectsFromArray:paginatedObjects];
+        if (paginationInfo.nextURL) {
+            
+            [self getPaginatedData:paginationInfo completion:completion];
+            
+        }else
+        {
+            if (completion)
+                completion();
+        }
+        
+    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
+        
+        
+    }];
+    
+    
+}
+
 
 
 -(void )getMediasWithCompletion:(completion)completion failed:(failed)failed
@@ -228,18 +258,28 @@
     _arrayLikes = [NSMutableArray array];
     _reducedLikeList = [NSMutableDictionary dictionary];
     _totalLikesCount = 0;
+    NSMutableArray *likeArray = [NSMutableArray array];
+                                
+                                 
+    for (NSInteger i = 0; i < media.count; ++i)
+    {
+        [likeArray addObject:[NSNull null]];
+    }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         dispatch_semaphore_t sema = dispatch_semaphore_create(0);
         
         __block int ready=0;
         
-        for (InstagramMedia *dict in media) {
+        for (int i = 0 ; i< media.count ; i++) {
+            InstagramMedia *dict = [media objectAtIndex:i];
             
             NSString *mediaID = dict.Id;
             
             [[InstagramEngine sharedEngine] getLikesOnMedia:mediaID withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
                 
-                _totalLikesCount = _totalLikesCount + users.count;
+                
+                likeArray[i] =[NSNumber numberWithInteger:users.count];
+                
                 [_arrayLikes addObjectsFromArray:users];
                 ready++;
                 
@@ -297,8 +337,10 @@
             UserLikeCountModel *obj = [[UserLikeCountModel alloc]initWithUser:[users objectForKey:key] withLike:[_reducedLikeList objectForKey:key]];
             [orderedUserLike addObject:obj];
             
-            
-            
+        }
+        
+        for (int i = 0 ; i<likeArray.count; i++) {
+            _totalLikesCount = _totalLikesCount + [[likeArray objectAtIndex:i]integerValue] ;
         }
         
         //reduce th array
@@ -457,8 +499,8 @@ dispatch_queue_t backgroundQueue() {
     
     dispatch_async(backgroundQueue(), ^{
         
-        [self getmediaOfUser:username forMonths:3 withCompletion:^(NSMutableArray *result) {
-            _allMedia = result;
+        [self getmediaOfUser:username forMonths:100 withCompletion:^(NSMutableArray *result) {
+           
             
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{

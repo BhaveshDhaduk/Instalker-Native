@@ -17,8 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    
     [self.window makeKeyAndVisible];
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage new]];
+    
     // Override point for customization after application launch.
     return YES;
 }

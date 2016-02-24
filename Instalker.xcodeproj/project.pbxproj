@@ -51,6 +51,12 @@
 		4C67082C1C7A1B0B0077DC58 /* StatsProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082B1C7A1B0B0077DC58 /* StatsProfileView.m */; };
 		4C6708301C7A354C0077DC58 /* StatsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082F1C7A354C0077DC58 /* StatsModel.m */; };
 		4C6708341C7A710B0077DC58 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6708331C7A710B0077DC58 /* DatePickerView.m */; };
+		4C7A3F7F1C7E5F0F00DC88B2 /* stalk-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7A1C7E5F0F00DC88B2 /* stalk-icon-selected.png */; };
+		4C7A3F801C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7B1C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png */; };
+		4C7A3F811C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7C1C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png */; };
+		4C7A3F821C7E5F0F00DC88B2 /* stalk-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7D1C7E5F0F00DC88B2 /* stalk-icon.png */; };
+		4C7A3F831C7E5F0F00DC88B2 /* stalk-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7E1C7E5F0F00DC88B2 /* stalk-icon@2x.png */; };
+		4C7A3F861C7E626B00DC88B2 /* InstalkerTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A3F851C7E626B00DC88B2 /* InstalkerTabBarViewController.m */; };
 		4C92F8BE1C7CEB30006E8A37 /* eye-icon-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92F8B51C7CEB30006E8A37 /* eye-icon-white.png */; };
 		4C92F8BF1C7CEB30006E8A37 /* eye-icon-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92F8B61C7CEB30006E8A37 /* eye-icon-white@2x.png */; };
 		4C92F8C01C7CEB30006E8A37 /* eye-icon-white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92F8B71C7CEB30006E8A37 /* eye-icon-white@3x.png */; };
@@ -135,6 +141,13 @@
 		4C6708311C7A36330077DC58 /* ModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeader.h; sourceTree = "<group>"; };
 		4C6708321C7A710B0077DC58 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
 		4C6708331C7A710B0077DC58 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
+		4C7A3F7A1C7E5F0F00DC88B2 /* stalk-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected.png"; sourceTree = "<group>"; };
+		4C7A3F7B1C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected@2x.png"; sourceTree = "<group>"; };
+		4C7A3F7C1C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected@3x.png"; sourceTree = "<group>"; };
+		4C7A3F7D1C7E5F0F00DC88B2 /* stalk-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon.png"; sourceTree = "<group>"; };
+		4C7A3F7E1C7E5F0F00DC88B2 /* stalk-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon@2x.png"; sourceTree = "<group>"; };
+		4C7A3F841C7E626B00DC88B2 /* InstalkerTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstalkerTabBarViewController.h; sourceTree = "<group>"; };
+		4C7A3F851C7E626B00DC88B2 /* InstalkerTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstalkerTabBarViewController.m; sourceTree = "<group>"; };
 		4C92F8B51C7CEB30006E8A37 /* eye-icon-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-icon-white.png"; sourceTree = "<group>"; };
 		4C92F8B61C7CEB30006E8A37 /* eye-icon-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-icon-white@2x.png"; sourceTree = "<group>"; };
 		4C92F8B71C7CEB30006E8A37 /* eye-icon-white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-icon-white@3x.png"; sourceTree = "<group>"; };
@@ -237,6 +250,8 @@
 				4C67082D1C7A1B0E0077DC58 /* ProfileStatsView */,
 				4C6708351C7A710F0077DC58 /* DatePicker */,
 				4CC9153D1C7B3BB600FCBFD8 /* SearchTableViewCell */,
+				4C7A3F841C7E626B00DC88B2 /* InstalkerTabBarViewController.h */,
+				4C7A3F851C7E626B00DC88B2 /* InstalkerTabBarViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -309,6 +324,11 @@
 		4C1E927B1C54F71800237AF0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4C7A3F7A1C7E5F0F00DC88B2 /* stalk-icon-selected.png */,
+				4C7A3F7B1C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png */,
+				4C7A3F7C1C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png */,
+				4C7A3F7D1C7E5F0F00DC88B2 /* stalk-icon.png */,
+				4C7A3F7E1C7E5F0F00DC88B2 /* stalk-icon@2x.png */,
 				4C3A2DAD1C7D133E005C00B3 /* Default-568h.png */,
 				4C92F8C91C7CEFDB006E8A37 /* dot.png */,
 				4C92F8CA1C7CEFDB006E8A37 /* dot@2x.png */,
@@ -494,6 +514,7 @@
 				4C0981AB1C7C99C000CB1B6E /* stalk-loading-img@2x.png in Resources */,
 				4C92F8C31C7CEB30006E8A37 /* inner-eye@3x.png in Resources */,
 				4C09819C1C7C99C000CB1B6E /* features-icon-selected@3x.png in Resources */,
+				4C7A3F821C7E5F0F00DC88B2 /* stalk-icon.png in Resources */,
 				4C0981A21C7C99C000CB1B6E /* likesRectangle.png in Resources */,
 				4C1E92601C54257000237AF0 /* Main.storyboard in Resources */,
 				4C3A2DAE1C7D133E005C00B3 /* Default-568h.png in Resources */,
@@ -512,8 +533,12 @@
 				4C09819D1C7C99C000CB1B6E /* features-icon.png in Resources */,
 				4C09819F1C7C99C000CB1B6E /* heart-icon@2.png in Resources */,
 				4C1A301E1C56D42500BF721A /* Launch Screen.storyboard in Resources */,
+				4C7A3F811C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png in Resources */,
+				4C7A3F801C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png in Resources */,
 				4C92F8CE1C7CEFDB006E8A37 /* dot@3x.png in Resources */,
+				4C7A3F831C7E5F0F00DC88B2 /* stalk-icon@2x.png in Resources */,
 				4C0981A31C7C99C000CB1B6E /* login-button.png in Resources */,
+				4C7A3F7F1C7E5F0F00DC88B2 /* stalk-icon-selected.png in Resources */,
 				4C09819A1C7C99C000CB1B6E /* features-icon-selected.png in Resources */,
 				4C92F8C41C7CEB30006E8A37 /* outer-eye.png in Resources */,
 			);
@@ -576,6 +601,7 @@
 			files = (
 				4C67082C1C7A1B0B0077DC58 /* StatsProfileView.m in Sources */,
 				4C1E925D1C54257000237AF0 /* ViewController.m in Sources */,
+				4C7A3F861C7E626B00DC88B2 /* InstalkerTabBarViewController.m in Sources */,
 				4C1A30271C57E21400BF721A /* FeaturesViewController.m in Sources */,
 				4C1A302D1C57E24100BF721A /* StalkProfileViewController.m in Sources */,
 				4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */,

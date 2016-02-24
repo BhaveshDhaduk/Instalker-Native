@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+   
     [self setDelegates];
     [self configureScrollview];
     if (!_user) {
@@ -81,7 +81,10 @@
 -(void)startSelfService{
     
     [self startLoadingAnimation];
-    [[ServiceManager sharedManager] getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
+    
+    ServiceManager *manager = [ServiceManager new];
+    
+    [manager getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
         _arrayData = likeList;
         [_viewStatsProfile configureViews:stats];
         [self.viewStatsProfile setNeedsDisplay];
@@ -96,8 +99,8 @@
 -(void)startServiceForUser:(InstagramUser *)user
 {
     [self startLoadingAnimation];
-    
-    [[ServiceManager sharedManager] getDataForUser:user.Id withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
+     ServiceManager *manager = [ServiceManager new];
+    [manager getDataForUser:user.Id withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
         _arrayData = likeList;
         [_viewStatsProfile configureViews:stats];
         [self.viewStatsProfile setNeedsDisplay];
