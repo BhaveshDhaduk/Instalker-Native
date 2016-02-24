@@ -251,7 +251,39 @@
     return result;
 }
 
+
+
 #pragma mark - Likes For Medias
+-(void)getLikesOnMedia:(NSString *)mediaId withCompletion:(completionRaw)completion{
+    [[InstagramEngine sharedEngine] getLikesOnMedia:mediaId withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
+        
+        
+        if (paginationInfo.nextURL) {
+            
+            [self getPaginatedData:paginationInfo completion:completion];
+            
+        }else
+        {
+            if (completion)
+                completion();
+        }
+
+    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
+        
+    }];
+}
+
+-(void)getPaginatedLikesOnMediaWithPagination:(InstagramPaginationInfo *)pagination completion:(completionRaw)completion
+{
+    [[InstagramEngine sharedEngine]getPaginatedItemsForInfo:pagination withSuccess:^(NSArray<InstagramModel *> * _Nonnull paginatedObjects, InstagramPaginationInfo * _Nonnull paginationInfo) {
+        
+    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
+        
+    }];
+
+}
+
+
 
 -(void)getLikesForMedias:(NSArray *)media withCompletion:(completion)completion
 {
