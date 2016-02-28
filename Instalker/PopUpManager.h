@@ -14,7 +14,8 @@ typedef void (^removalCompletion)(void);
 @interface PopUpManager : NSObject
 
 
-@property (nonatomic,strong) KLCPopup *currentPopup;
+@property (nonatomic,strong) LoadingViewController *loadingVC;
+
 
 +(PopUpManager *)sharedManager;
 

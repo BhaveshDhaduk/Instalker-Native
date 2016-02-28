@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewOuterView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewInnerEye;
 @property (weak, nonatomic) IBOutlet UILabel *labelStalking;
+@property (weak, nonatomic) IBOutlet UILabel *labelPercentage;
 
 @end

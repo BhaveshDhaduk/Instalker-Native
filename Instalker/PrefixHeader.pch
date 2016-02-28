@@ -20,4 +20,16 @@
 
 #define k_Search_History_List @"searchHistoryList"
 
+
+#pragma mark - Enumeration
+
+typedef enum kMediaDate:NSInteger {
+    kWeek = 7,
+    kMonth = 30,
+    kThreeMonth = 90,
+    kSixMonth = 180,
+    kAll = 999999999
+} kMediaDate;
+
+
 #endif /* PrefixHeader_pch */

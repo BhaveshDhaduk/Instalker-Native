@@ -37,10 +37,13 @@
 
 -(void)clean{
     _arrayLikes = nil;
-    _followerList = nil;
-    _reducedLikeList = nil;
-    _arrayLikes = nil;
+    _followerList = [NSMutableArray array];
+    _reducedLikeList = [NSMutableDictionary dictionary];
+    _arrayLikes = [NSMutableArray array];
+    _allMedia = [NSMutableArray array];
+    _arrayComments =nil;
     
+    _fullName =nil;
     _totalLikesCount = 0;
     _follewersCount = 0;
     _follewingsCount = 0;
@@ -128,22 +131,57 @@
 }
 
 #pragma  mark - Get medias of user
--(void)getmediaOfUser:(NSString *)userID forMonths:(NSInteger)numberOfMonth withCompletion:(completion)completion withFailure:(failed)failed
+-(BOOL)cropMediaByDate:(NSArray*)media  days:(NSInteger)numberOfDays{
+    for (id medium in media) {
+        InstagramMedia *currentMedia = (InstagramMedia *)medium;
+        if ([self isMediaLaterThanInterval:currentMedia.createdDate forDays:numberOfDays]) {
+            [_allMedia addObject:currentMedia];
+            
+        }else
+        {
+            return NO;
+        }
+    
+    }
+    return YES;
+}
+
+
+-(void)getmediaOfUser:(NSString *)userID forDays:(NSInteger)numberOfdays withCompletion:(completion)completion withFailure:(failed)failed
 {
     [[InstagramEngine sharedEngine] getMediaForUser:userID withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-        _allMedia = [NSMutableArray array];
-        [_allMedia addObjectsFromArray:media];
         
-        if (paginationInfo.nextURL) {
-            [self getPaginatedData:paginationInfo completion:^{
+    
+        
+    
+        if ([self cropMediaByDate:media days:numberOfdays]) {
+            
+            if (paginationInfo.nextURL) {
+                [self getPaginatedData:paginationInfo completion:^{
+                    if (completion) {
+                        completion((NSMutableArray *)media);
+                    }
+                } numberOfDays:numberOfdays];
+            }
+            else
+            {
                 if (completion) {
-                    completion((NSMutableArray *)media);
+                    completion(media);
                 }
-            }];
+            
+            }
+            
+        }else
+        {
+            if (completion) {
+                completion((NSMutableArray *)media);
+            }
+            
+            
         }
         
-            
-      
+        
+        
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
         if (failed) {
             failed(error);
@@ -153,21 +191,31 @@
     
 }
 
--(void)getPaginatedData:(InstagramPaginationInfo *)pagination completion:(completionRaw)completion
+-(void)getPaginatedData:(InstagramPaginationInfo *)pagination completion:(completionRaw)completion numberOfDays:(NSInteger)numberOfDays
 {
     [[InstagramEngine sharedEngine]getPaginatedItemsForInfo:pagination withSuccess:^(NSArray<InstagramModel *> * _Nonnull paginatedObjects, InstagramPaginationInfo * _Nonnull paginationInfo) {
-        [_allMedia addObjectsFromArray:paginatedObjects];
-        if (paginationInfo.nextURL) {
+     
+        if ([self cropMediaByDate:paginatedObjects days:numberOfDays]) {
             
-            [self getPaginatedData:paginationInfo completion:completion];
-            
+            if (paginationInfo.nextURL) {
+                
+                [self getPaginatedData:paginationInfo completion:completion numberOfDays:numberOfDays];
+                
+            }else
+            {
+                if (completion)
+                    completion();
+            }
         }else
         {
-            if (completion)
+            if(completion)
                 completion();
+            
         }
-        
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
+        if (completion) {
+            completion();
+        }
         
         
     }];
@@ -177,14 +225,36 @@
 
 
 
--(void )getMediasWithCompletion:(completion)completion failed:(failed)failed
+-(void )getMediasWithCompletion:(completion)completion failed:(failed)failed numberOfDate:(kMediaDate)numberOfdays
 {
     
     
     [[InstagramEngine sharedEngine] getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-        if (completion) {
-            completion((NSMutableArray *)media);
+        if ([self cropMediaByDate:media days:numberOfdays]) {
+            
+            if (paginationInfo.nextURL) {
+                [self getPaginatedData:paginationInfo completion:^{
+                    if (completion) {
+                        completion((NSMutableArray *)media);
+                    }
+                } numberOfDays:numberOfdays];
+            }else
+            {
+                if (completion) {
+                    completion(media);
+                }
+            
+            }
+            
+        }else
+        {
+            if (completion) {
+                completion((NSMutableArray *)media);
+            }
+            
+            
         }
+        
         
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
         if (failed) {
@@ -195,6 +265,21 @@
 
 
 #pragma mark - Sort Media By Date Intervals
+-(BOOL)isMediaLaterThanInterval:(NSDate *)date forDays:(NSInteger)numberOfDays
+{
+    NSDate *startDate = [NSDate date];
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setDay:-numberOfDays];
+    startDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:startDate options:0];
+    
+    if ([date isEqualToDate:[date laterDate:startDate]]) {
+        return YES;
+    }
+    
+    
+    return NO;
+}
+
 -(NSArray *)sortMedia:(NSArray *)media from:(NSInteger )numberOfDays to:(NSInteger)endDayNumber
 {
     //daily start
@@ -254,13 +339,14 @@
 
 
 #pragma mark - Likes For Medias
--(void)getLikesOnMedia:(NSString *)mediaId withCompletion:(completionRaw)completion{
+-(void)getLikesOnMedia:(NSString *)mediaId index:(NSInteger)index withCompletion:(completionRaw)completion failure:(failed)failure{
     [[InstagramEngine sharedEngine] getLikesOnMedia:mediaId withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
         
         
+        [[_arrayLikes objectAtIndex:index] addObjectsFromArray:users];
         if (paginationInfo.nextURL) {
             
-            [self getPaginatedData:paginationInfo completion:completion];
+            [self getPaginatedLikesOnMediaWithPagination:paginationInfo index:0 completion:completion failure:failure];
             
         }else
         {
@@ -269,33 +355,44 @@
         }
 
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-        
+        if (failure) {
+            failure(error);
+        }
     }];
 }
 
--(void)getPaginatedLikesOnMediaWithPagination:(InstagramPaginationInfo *)pagination completion:(completionRaw)completion
+-(void)getPaginatedLikesOnMediaWithPagination:(InstagramPaginationInfo *)pagination index:(NSInteger)index completion:(completionRaw)completion failure:(failed)failure
 {
     [[InstagramEngine sharedEngine]getPaginatedItemsForInfo:pagination withSuccess:^(NSArray<InstagramModel *> * _Nonnull paginatedObjects, InstagramPaginationInfo * _Nonnull paginationInfo) {
         
+        [[_arrayLikes objectAtIndex:index] addObjectsFromArray:paginatedObjects];
+        if (paginationInfo.nextURL) {
+            [self getPaginatedLikesOnMediaWithPagination:paginationInfo index:index completion:completion failure:failure];
+        }
+        
+        
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
         
+        if (failure) {
+            failure(error);
+        }
     }];
 
 }
 
 
 
--(void)getLikesForMedias:(NSArray *)media withCompletion:(completion)completion
+-(void)getLikesForMedias:(NSArray *)media withCompletion:(completion)completion iterationBlock:(iterationBlock)iteration
 {
     _arrayLikes = [NSMutableArray array];
+ 
     _reducedLikeList = [NSMutableDictionary dictionary];
     _totalLikesCount = 0;
-    NSMutableArray *likeArray = [NSMutableArray array];
-                                
+    
                                  
     for (NSInteger i = 0; i < media.count; ++i)
     {
-        [likeArray addObject:[NSNull null]];
+        [_arrayLikes addObject:[NSMutableArray array]];
     }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         dispatch_semaphore_t sema = dispatch_semaphore_create(0);
@@ -307,38 +404,51 @@
             
             NSString *mediaID = dict.Id;
             
-            [[InstagramEngine sharedEngine] getLikesOnMedia:mediaID withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
+            [self getLikesOnMedia:mediaID index:i withCompletion:^{
+                ready++;
+                if (ready+1 > media.count) {
+                    dispatch_semaphore_signal(sema);
+                }
+                if(iteration){
+                    _iterationPercantage = _iterationPercantage + _iterationToken;
+                    iteration(_iterationPercantage);
+                }
                 
-                
-                likeArray[i] =[NSNumber numberWithInteger:users.count];
-                
-                [_arrayLikes addObjectsFromArray:users];
+            } failure:^(NSError *error) {
                 ready++;
                 
                 if (ready+1 > media.count) {
                     dispatch_semaphore_signal(sema);
                 }
-                
-                
-            } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-                
-                ready++;
-                if (ready+1 > media.count) {
-                    dispatch_semaphore_signal(sema);
+                if(iteration){
+                    _iterationPercantage = _iterationPercantage + _iterationToken;
+                    iteration(_iterationPercantage);
                 }
-
-            
-            
+                
             }];
+        }
+        if (media.count > 0) {
             
         }
+        else
+            dispatch_semaphore_signal(sema);
+       
+        
+      
         
         
         dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
         NSMutableDictionary *users = [NSMutableDictionary dictionary];
         
+        NSMutableArray *arrayLinearLikes = [NSMutableArray array];
+        for(int k = 0; k<_arrayLikes.count; k++)
+        {
+            [arrayLinearLikes addObjectsFromArray:[_arrayLikes objectAtIndex:k]];
         
-        for (InstagramUser *usr  in _arrayLikes) {
+        }
+        _totalLikesCount = arrayLinearLikes.count;
+        
+        for (InstagramUser *usr  in arrayLinearLikes) {
             
             if( [_reducedLikeList objectForKey:usr.username] )
             {
@@ -369,10 +479,6 @@
             UserLikeCountModel *obj = [[UserLikeCountModel alloc]initWithUser:[users objectForKey:key] withLike:[_reducedLikeList objectForKey:key]];
             [orderedUserLike addObject:obj];
             
-        }
-        
-        for (int i = 0 ; i<likeArray.count; i++) {
-            _totalLikesCount = _totalLikesCount + [[likeArray objectAtIndex:i]integerValue] ;
         }
         
         //reduce th array
@@ -420,6 +526,7 @@
             
             
         }
+        dispatch_semaphore_signal(sema);
         
         dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
         if (completion) {
@@ -436,7 +543,7 @@
 
 #pragma mark - Final Methods
 
--(void)getSelfDataWithCompletion:(completionFinal)completion  failure:(failure)failure
+-(void)getSelfDataWithCompletion:(completionFinal)completion  failure:(failure)failure dateinterval:(kMediaDate)numberofDays
 {
     [self clean];
     
@@ -444,9 +551,8 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         
         [self getMediasWithCompletion:^(NSMutableArray *result) {
-            _allMedia = result;
             
-
+            
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
                 
                 dispatch_semaphore_t semant = dispatch_semaphore_create(0);
@@ -456,7 +562,7 @@
                     dispatch_semaphore_signal(semant);
                    
                 }failed:^(NSError *error) {
-                    
+                    dispatch_semaphore_signal(semant);
                 }];
                 
                 [self getCommentsForMedia:_allMedia withCompletion:^{
@@ -472,7 +578,8 @@
                      dispatch_semaphore_signal(semant);
                     
                     
-                }];
+                } iterationBlock:nil];
+                
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
@@ -508,7 +615,7 @@
                 failure(error,@"no-profile");
             }
             
-        }];
+        }numberOfDate:numberofDays];
     });
     
 }
@@ -522,18 +629,18 @@ dispatch_queue_t backgroundQueue() {
     return queue;
 }
 
--(void)getDataForUser:(NSString *)username withCompletion:(completionFinal)completion
+-(void)getDataForUser:(NSString *)username mediaInterval:(kMediaDate)interval  withCompletion:(completionFinal)completion withCounting:(iterationBlock)iteration
 {
     
     [self clean];
     
-   
+
     
     dispatch_async(backgroundQueue(), ^{
         
-        [self getmediaOfUser:username forMonths:100 withCompletion:^(NSMutableArray *result) {
+        [self getmediaOfUser:username forDays:interval withCompletion:^(NSMutableArray *result) {
            
-            
+            _iterationToken  = 100.0 / _allMedia.count;
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
                 
@@ -560,7 +667,7 @@ dispatch_queue_t backgroundQueue() {
                     dispatch_semaphore_signal(semant);
                     
                     
-                }];
+                } iterationBlock:iteration];
                 
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);

@@ -11,7 +11,7 @@
 #import "UserLikeTableViewCell.h"
 
 
-@interface MyProfileViewController : UIViewController<UIScrollViewDelegate,UIScrollViewAccessibilityDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface MyProfileViewController : UIViewController<UIScrollViewDelegate,UIScrollViewAccessibilityDelegate,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource,UIPickerViewAccessibilityDelegate>
 
 
 #pragma mark - IBOUTLETS

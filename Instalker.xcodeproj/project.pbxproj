@@ -50,7 +50,6 @@
 		4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6708271C7A0CD80077DC58 /* UIButton.swift */; };
 		4C67082C1C7A1B0B0077DC58 /* StatsProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082B1C7A1B0B0077DC58 /* StatsProfileView.m */; };
 		4C6708301C7A354C0077DC58 /* StatsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082F1C7A354C0077DC58 /* StatsModel.m */; };
-		4C6708341C7A710B0077DC58 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6708331C7A710B0077DC58 /* DatePickerView.m */; };
 		4C7A3F7F1C7E5F0F00DC88B2 /* stalk-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7A1C7E5F0F00DC88B2 /* stalk-icon-selected.png */; };
 		4C7A3F801C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7B1C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png */; };
 		4C7A3F811C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7C1C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png */; };
@@ -139,8 +138,6 @@
 		4C67082E1C7A354C0077DC58 /* StatsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsModel.h; sourceTree = "<group>"; };
 		4C67082F1C7A354C0077DC58 /* StatsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsModel.m; sourceTree = "<group>"; };
 		4C6708311C7A36330077DC58 /* ModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeader.h; sourceTree = "<group>"; };
-		4C6708321C7A710B0077DC58 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
-		4C6708331C7A710B0077DC58 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
 		4C7A3F7A1C7E5F0F00DC88B2 /* stalk-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected.png"; sourceTree = "<group>"; };
 		4C7A3F7B1C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected@2x.png"; sourceTree = "<group>"; };
 		4C7A3F7C1C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected@3x.png"; sourceTree = "<group>"; };
@@ -387,8 +384,6 @@
 		4C6708351C7A710F0077DC58 /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
-				4C6708321C7A710B0077DC58 /* DatePickerView.h */,
-				4C6708331C7A710B0077DC58 /* DatePickerView.m */,
 			);
 			name = DatePicker;
 			sourceTree = "<group>";
@@ -606,7 +601,6 @@
 				4C1A302D1C57E24100BF721A /* StalkProfileViewController.m in Sources */,
 				4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */,
 				4CC9153C1C7B3BAF00FCBFD8 /* SearchTableViewCell.m in Sources */,
-				4C6708341C7A710B0077DC58 /* DatePickerView.m in Sources */,
 				4C51E42C1C7D09F100443F8E /* LoadingViewController.m in Sources */,
 				4C1A30181C56B8E500BF721A /* Singleton.m in Sources */,
 				4C1E925A1C54257000237AF0 /* AppDelegate.m in Sources */,

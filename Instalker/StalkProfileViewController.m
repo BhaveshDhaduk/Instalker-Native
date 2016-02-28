@@ -12,11 +12,14 @@
 
 
 @interface StalkProfileViewController ()
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+
 - (IBAction)changeDateButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonChangeDate;
 @property (weak, nonatomic) IBOutlet UILabel *labelMediaCountInInterval;
 @property (weak,nonatomic) IBOutlet StatsProfileView *viewStatsProfile;
 @property (nonatomic,strong) StatsModel *statsModel;
+@property (nonatomic,strong) NSMutableArray *arrayDates;
 @end
 
 @implementation StalkProfileViewController
@@ -28,14 +31,9 @@
     
     [self setDelegates];
     [self configureScrollview];
-    if (!_user) {
-
-    }
-    else
-    {
-        
-        [self startServiceForUser:_user];
-    }
+    
+    [self startServiceForBothWithMedia:kAll];
+    _arrayDates = [NSMutableArray arrayWithObjects:@"1 Week",@"1 Month",@"3 Months",@"6 Months", @"All Time",nil];
     
 }
 -(void)viewDidAppear:(BOOL)animated
@@ -48,6 +46,21 @@
         [self configureNavigationBarWithTitle:_user.username];
         
     }
+    
+}
+
+-(void)startServiceForBothWithMedia:(kMediaDate)date
+{
+    if (!_user) {
+        [self startSelfServicewithDate:date];
+        
+    }
+    else
+    {
+        
+        [self startServiceForUser:_user withDate:date];
+    }
+    
     
 }
 
@@ -76,9 +89,10 @@
     _tableView.delegate= self;
     _tableView.dataSource=self;
 }
--(void)startSelfService{
+-(void)startSelfServicewithDate:(kMediaDate)date {
     
     [self startLoadingAnimation];
+    
     ServiceManager *manager = [ServiceManager new];
     
     [manager getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
@@ -90,14 +104,14 @@
         [self removeLoadingAnimation];
     }failure:^(NSError *error, NSString *errorType) {
         [self removeLoadingAnimation];
-    }];
+    }dateinterval:date];
     
 }
--(void)startServiceForUser:(InstagramUser *)user
+-(void)startServiceForUser:(InstagramUser *)user withDate:(kMediaDate)date
 {
     [self startLoadingAnimation];
     ServiceManager *manager = [ServiceManager new];
-    [manager getDataForUser:user.Id withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
+    [manager getDataForUser:user.Id mediaInterval:date withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
         _arrayData = likeList;
         [_viewStatsProfile configureViews:stats];
         [self.viewStatsProfile setNeedsDisplay];
@@ -105,10 +119,13 @@
         [self.tableView reloadData];
         [self removeLoadingAnimation];
         
+    }withCounting:^(float percentage) {
+        
     }];
     
     
 }
+
 
 
 #pragma mark - Animations
@@ -176,5 +193,33 @@
     
     
 }
+
+#pragma mark - Date Picker
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return _arrayDates.count;
+    
+}
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
+    label.text = [_arrayDates objectAtIndex:row];
+    return label;
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    
+    
+}
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
 
 @end

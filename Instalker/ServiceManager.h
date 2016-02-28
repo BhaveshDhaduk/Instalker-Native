@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "StatsModel.h"
 
+
+#pragma mark - Blocks
 typedef void (^completion)(NSMutableArray *result);
 typedef void (^completionFinal)(NSMutableArray *likeList, StatsModel *stats);
 typedef void (^completionRaw)(void);
 typedef void (^failed)(NSError *error);
 typedef void (^failure)(NSError *error, NSString *errorType);
+typedef void (^iterationBlock)(float percentage);
+
 
 
 @interface ServiceManager : NSObject
@@ -45,11 +49,16 @@ typedef void (^failure)(NSError *error, NSString *errorType);
 @property (nonatomic,strong) NSString *fullName;
 
 
+#pragma mark - Iteration
+@property (nonatomic) float iterationPercantage;
+@property (nonatomic) float iterationToken;
+
 
 #pragma mark - Service Calls
 
 
--(void)getSelfDataWithCompletion:(completionFinal)completion failure:(failure)failure;
+-(void)getSelfDataWithCompletion:(completionFinal)completion  failure:(failure)failure dateinterval:(kMediaDate)numberofDays;
 -(void)searchUsersWithKeyword:(NSString*)keyword completion:(completion)completion failed:(failed)failed;
--(void)getDataForUser:(NSString *)username withCompletion:(completionFinal)completion;
+-(void)getDataForUser:(NSString *)username mediaInterval:(kMediaDate)interval  withCompletion:(completionFinal)completion withCounting:(iterationBlock)iteration;
+
 @end
