@@ -40,9 +40,10 @@
     
     LoadingViewController *loadingView = [storyboard instantiateViewControllerWithIdentifier:@"LoadingViewController"];
 //    loadingView = [[[NSBundle mainBundle] loadNibNamed:@"LoadingView" owner:self options:nil] objectAtIndex:0];
-    
     _loadingVC = loadingView;
-    [navController presentViewController:loadingView animated:YES completion:nil];
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:loadingView.view];
+
     
 }
 

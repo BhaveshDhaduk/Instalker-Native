@@ -102,12 +102,18 @@
 -(void)turnAroundOuterEye
 {
  
-    CGAffineTransform transform = CGAffineTransformMakeRotation(20 * M_PI);
-    [UIView animateWithDuration:3.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionRepeat animations:^{
-        _outerEye.transform = transform;
+    
+        [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionRepeat animations:^{
+    
+        _innerEye.alpha = 0.5;
+//            _outerEye.transform = CGAffineTransformConcat(                                                            _outerEye.transform,                                                               CGAffineTransformMakeRotation(M_PI*2));
+            [_outerEye setTransform:CGAffineTransformMakeRotation(M_PI*25)];
+            [self.view layoutIfNeeded];
         
     } completion:^(BOOL finished) {
-        _outerEye.transform = CGAffineTransformIdentity;
+        _innerEye.alpha=1;
+        [self.view layoutIfNeeded];
+
         
     }];
 
