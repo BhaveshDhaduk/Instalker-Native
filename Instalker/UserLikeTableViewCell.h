@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelLikeCount;
 
 @property (nonatomic,strong) InstagramUser *user;
+@property (nonatomic,strong) NSArray *arrayLikedMedias;
+
 
 -(void)setFields:(UserLikeCountModel *)model;
 

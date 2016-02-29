@@ -29,6 +29,9 @@
 		4C0981AA1C7C99C000CB1B6E /* stalk-loading-img.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0981961C7C99C000CB1B6E /* stalk-loading-img.png */; };
 		4C0981AB1C7C99C000CB1B6E /* stalk-loading-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0981971C7C99C000CB1B6E /* stalk-loading-img@2x.png */; };
 		4C0981B21C7CE52500CB1B6E /* PopUpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0981B11C7CE52500CB1B6E /* PopUpManager.m */; };
+		4C0EBDE61C849663002CF577 /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0EBDE51C849663002CF577 /* MediaViewController.m */; };
+		4C0EBDEC1C84977C002CF577 /* MediaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0EBDEA1C84977C002CF577 /* MediaCollectionViewCell.m */; };
+		4C0EBDED1C84977C002CF577 /* MediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0EBDEB1C84977C002CF577 /* MediaCollectionViewCell.xib */; };
 		4C1A30181C56B8E500BF721A /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A30171C56B8E500BF721A /* Singleton.m */; };
 		4C1A301C1C56D0CE00BF721A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A301B1C56D0CE00BF721A /* MainViewController.m */; };
 		4C1A301E1C56D42500BF721A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A301D1C56D42500BF721A /* Launch Screen.storyboard */; };
@@ -98,6 +101,11 @@
 		4C0981971C7C99C000CB1B6E /* stalk-loading-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-loading-img@2x.png"; sourceTree = "<group>"; };
 		4C0981B01C7CE52500CB1B6E /* PopUpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpManager.h; sourceTree = "<group>"; };
 		4C0981B11C7CE52500CB1B6E /* PopUpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpManager.m; sourceTree = "<group>"; };
+		4C0EBDE41C849663002CF577 /* MediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaViewController.h; sourceTree = "<group>"; };
+		4C0EBDE51C849663002CF577 /* MediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaViewController.m; sourceTree = "<group>"; };
+		4C0EBDE91C84977C002CF577 /* MediaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaCollectionViewCell.h; sourceTree = "<group>"; };
+		4C0EBDEA1C84977C002CF577 /* MediaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaCollectionViewCell.m; sourceTree = "<group>"; };
+		4C0EBDEB1C84977C002CF577 /* MediaCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C1A30161C56B8E500BF721A /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		4C1A30171C56B8E500BF721A /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		4C1A30191C56BB2300BF721A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Instalker/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
@@ -197,6 +205,25 @@
 			name = PopupManager;
 			sourceTree = "<group>";
 		};
+		4C0EBDE71C849751002CF577 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				4C7A3F841C7E626B00DC88B2 /* InstalkerTabBarViewController.h */,
+				4C7A3F851C7E626B00DC88B2 /* InstalkerTabBarViewController.m */,
+			);
+			name = Tabbar;
+			sourceTree = "<group>";
+		};
+		4C0EBDE81C849759002CF577 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4C0EBDE91C84977C002CF577 /* MediaCollectionViewCell.h */,
+				4C0EBDEA1C84977C002CF577 /* MediaCollectionViewCell.m */,
+				4C0EBDEB1C84977C002CF577 /* MediaCollectionViewCell.xib */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		4C1A30111C56B89400BF721A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +239,8 @@
 				4C1A30261C57E21400BF721A /* FeaturesViewController.m */,
 				4C1A302B1C57E24100BF721A /* StalkProfileViewController.h */,
 				4C1A302C1C57E24100BF721A /* StalkProfileViewController.m */,
+				4C0EBDE41C849663002CF577 /* MediaViewController.h */,
+				4C0EBDE51C849663002CF577 /* MediaViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -240,6 +269,7 @@
 		4C1A30141C56B8B400BF721A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4C0EBDE81C849759002CF577 /* CollectionViewCell */,
 				4C92F8AC1C7CE6EC006E8A37 /* LoadingPopUp */,
 				4C1D3E1F1C5D738100979F16 /* AsyncImageView */,
 				4C6708291C7A1AE70077DC58 /* TableViewCell */,
@@ -247,8 +277,7 @@
 				4C67082D1C7A1B0E0077DC58 /* ProfileStatsView */,
 				4C6708351C7A710F0077DC58 /* DatePicker */,
 				4CC9153D1C7B3BB600FCBFD8 /* SearchTableViewCell */,
-				4C7A3F841C7E626B00DC88B2 /* InstalkerTabBarViewController.h */,
-				4C7A3F851C7E626B00DC88B2 /* InstalkerTabBarViewController.m */,
+				4C0EBDE71C849751002CF577 /* Tabbar */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -496,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0981A91C7C99C000CB1B6E /* myprofile-icon-grey@2x.png in Resources */,
+				4C0EBDED1C84977C002CF577 /* MediaCollectionViewCell.xib in Resources */,
 				4C0981A11C7C99C000CB1B6E /* instalker-logo-login@2x.png in Resources */,
 				4C1E92621C54257000237AF0 /* Assets.xcassets in Resources */,
 				4C0981A41C7C99C000CB1B6E /* login-button@2x.png in Resources */,
@@ -601,6 +631,7 @@
 				4C1A302D1C57E24100BF721A /* StalkProfileViewController.m in Sources */,
 				4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */,
 				4CC9153C1C7B3BAF00FCBFD8 /* SearchTableViewCell.m in Sources */,
+				4C0EBDE61C849663002CF577 /* MediaViewController.m in Sources */,
 				4C51E42C1C7D09F100443F8E /* LoadingViewController.m in Sources */,
 				4C1A30181C56B8E500BF721A /* Singleton.m in Sources */,
 				4C1E925A1C54257000237AF0 /* AppDelegate.m in Sources */,
@@ -614,6 +645,7 @@
 				4C6708301C7A354C0077DC58 /* StatsModel.m in Sources */,
 				4CC785061C75487A0029C17C /* UIView.swift in Sources */,
 				4C1A30241C57E1FA00BF721A /* StalkListViewController.m in Sources */,
+				4C0EBDEC1C84977C002CF577 /* MediaCollectionViewCell.m in Sources */,
 				4C53AADA1C5BA87100C76907 /* UserLikeCountModel.m in Sources */,
 				4C1E92571C54257000237AF0 /* main.m in Sources */,
 				4C0981B21C7CE52500CB1B6E /* PopUpManager.m in Sources */,

@@ -9,6 +9,7 @@
 #import "MyProfileViewController.h"
 #import "ServiceManager.h"
 #import "StatsProfileView.h"
+#import "MediaViewController.h"
 
 
 @interface MyProfileViewController ()
@@ -194,6 +195,12 @@
         MyProfileViewController *destinationViewController = segue.destinationViewController;
         UserLikeTableViewCell *cell = (UserLikeTableViewCell *)sender;
         destinationViewController.user = cell.user;
+    }
+    if ([segue.identifier isEqualToString:@"showMedia"]) {
+        MediaViewController *mediaVC = segue.destinationViewController;
+        UserLikeTableViewCell *cell = (UserLikeTableViewCell *)[[sender superview]superview];
+        mediaVC.arrayLikedMedias =cell.arrayLikedMedias;
+
     }
 }
 

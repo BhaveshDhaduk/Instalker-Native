@@ -38,6 +38,8 @@ typedef void (^iterationBlock)(float percentage);
 @property (nonatomic,strong) NSMutableDictionary *reducedLikeList;
 @property (nonatomic,strong) NSMutableArray *arrayLikes;
 @property (nonatomic,strong) NSMutableArray *arrayComments;
+@property (nonatomic,strong) NSMutableDictionary *dictUserMedia;
+
 
 @property (nonatomic) NSInteger totalComments;
 @property (nonatomic) NSInteger totalLikesCount;

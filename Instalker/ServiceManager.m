@@ -41,6 +41,7 @@
     _reducedLikeList = [NSMutableDictionary dictionary];
     _arrayLikes = [NSMutableArray array];
     _allMedia = [NSMutableArray array];
+    _dictUserMedia = [NSMutableDictionary dictionary];
     _arrayComments =nil;
     
     _fullName =nil;
@@ -150,8 +151,6 @@
 -(void)getmediaOfUser:(NSString *)userID forDays:(NSInteger)numberOfdays withCompletion:(completion)completion withFailure:(failed)failed
 {
     [[InstagramEngine sharedEngine] getMediaForUser:userID withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-        
-    
         
     
         if ([self cropMediaByDate:media days:numberOfdays]) {
@@ -336,14 +335,44 @@
     return result;
 }
 
+#pragma mark - Media Helper
+
+-(void)allUsersForMedia:(InstagramMedia *)media users:(NSArray *)users
+{
+    for (int i = 0; i< users.count; i++) {
+        [self addMediaId:media ForUser:(InstagramUser *)[users objectAtIndex:i]];
+    }
+
+}
+
+-(void)addMediaId:(InstagramMedia *)media ForUser:(InstagramUser *)user
+{
+    if ([_dictUserMedia objectForKey:user]) {
+        NSMutableArray *arr = [_dictUserMedia objectForKey:user];
+        [arr addObject:media];
+        [_dictUserMedia setObject:arr forKey:user];
+        
+    }
+    else
+    {
+        NSMutableArray *arr = [NSMutableArray arrayWithObjects:media, nil];
+        [_dictUserMedia setObject:arr forKey:user];
+        
+    
+    }
+    
+    
+
+}
 
 
 #pragma mark - Likes For Medias
--(void)getLikesOnMedia:(NSString *)mediaId index:(NSInteger)index withCompletion:(completionRaw)completion failure:(failed)failure{
-    [[InstagramEngine sharedEngine] getLikesOnMedia:mediaId withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
+-(void)getLikesOnMedia:(InstagramMedia *)media  index:(NSInteger)index withCompletion:(completionRaw)completion failure:(failed)failure{
+    [[InstagramEngine sharedEngine] getLikesOnMedia:media.Id withSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
         
-        
+        [self allUsersForMedia:media users:users];
         [[_arrayLikes objectAtIndex:index] addObjectsFromArray:users];
+        
         if (paginationInfo.nextURL) {
             
             [self getPaginatedLikesOnMediaWithPagination:paginationInfo index:0 completion:completion failure:failure];
@@ -402,9 +431,9 @@
         for (int i = 0 ; i< media.count ; i++) {
             InstagramMedia *dict = [media objectAtIndex:i];
             
-            NSString *mediaID = dict.Id;
+//            NSString *mediaID = dict.Id;
             
-            [self getLikesOnMedia:mediaID index:i withCompletion:^{
+            [self getLikesOnMedia:dict index:i withCompletion:^{
                 ready++;
                 if (ready+1 > media.count) {
                     dispatch_semaphore_signal(sema);
@@ -477,6 +506,7 @@
         for (NSString *key in orderedKeys) {
             
             UserLikeCountModel *obj = [[UserLikeCountModel alloc]initWithUser:[users objectForKey:key] withLike:[_reducedLikeList objectForKey:key]];
+            obj.arrayMedias = [NSMutableArray arrayWithArray:[_dictUserMedia objectForKey:obj.user]];
             [orderedUserLike addObject:obj];
             
         }
@@ -602,10 +632,6 @@
                 
                 
             });
-            
-           
-           
-            
             
             
            

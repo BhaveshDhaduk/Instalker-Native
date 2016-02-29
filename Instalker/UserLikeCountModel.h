@@ -13,6 +13,7 @@
 
 @property (nonatomic,strong) InstagramUser *user;
 @property (nonatomic,strong) NSNumber *likeCount;
+@property (nonatomic,strong) NSMutableArray *arrayMedias;
 
 -(id)initWithUser:(InstagramUser *)user withLike:(NSNumber *)count;
 @end
