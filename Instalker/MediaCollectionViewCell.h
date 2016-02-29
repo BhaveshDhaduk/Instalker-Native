@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet AsyncImageView *imageView;
 
-
+-(void)configureImageView:(NSURL *)url;
+-(void)configureImageViewSelfURL;
 @end

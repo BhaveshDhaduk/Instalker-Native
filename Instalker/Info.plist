@@ -24,6 +24,12 @@
 	<string>d0bd2df8cd8f4d4e8dc7051a46588303</string>
 	<key>InstagramAppRedirectURL</key>
 	<string>http://www.umutafacan.com</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>instagram</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

@@ -53,6 +53,8 @@
 		4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6708271C7A0CD80077DC58 /* UIButton.swift */; };
 		4C67082C1C7A1B0B0077DC58 /* StatsProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082B1C7A1B0B0077DC58 /* StatsProfileView.m */; };
 		4C6708301C7A354C0077DC58 /* StatsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082F1C7A354C0077DC58 /* StatsModel.m */; };
+		4C71C96C1C84D04C003F59A4 /* BigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C71C96A1C84D04C003F59A4 /* BigImageViewController.m */; };
+		4C71C96D1C84D04C003F59A4 /* BigImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C71C96B1C84D04C003F59A4 /* BigImageViewController.xib */; };
 		4C7A3F7F1C7E5F0F00DC88B2 /* stalk-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7A1C7E5F0F00DC88B2 /* stalk-icon-selected.png */; };
 		4C7A3F801C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7B1C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png */; };
 		4C7A3F811C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7C1C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png */; };
@@ -146,6 +148,9 @@
 		4C67082E1C7A354C0077DC58 /* StatsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsModel.h; sourceTree = "<group>"; };
 		4C67082F1C7A354C0077DC58 /* StatsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsModel.m; sourceTree = "<group>"; };
 		4C6708311C7A36330077DC58 /* ModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeader.h; sourceTree = "<group>"; };
+		4C71C9691C84D04C003F59A4 /* BigImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigImageViewController.h; sourceTree = "<group>"; };
+		4C71C96A1C84D04C003F59A4 /* BigImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigImageViewController.m; sourceTree = "<group>"; };
+		4C71C96B1C84D04C003F59A4 /* BigImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigImageViewController.xib; sourceTree = "<group>"; };
 		4C7A3F7A1C7E5F0F00DC88B2 /* stalk-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected.png"; sourceTree = "<group>"; };
 		4C7A3F7B1C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected@2x.png"; sourceTree = "<group>"; };
 		4C7A3F7C1C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected@3x.png"; sourceTree = "<group>"; };
@@ -278,6 +283,7 @@
 				4C6708351C7A710F0077DC58 /* DatePicker */,
 				4CC9153D1C7B3BB600FCBFD8 /* SearchTableViewCell */,
 				4C0EBDE71C849751002CF577 /* Tabbar */,
+				4C71C96E1C84D051003F59A4 /* Big Image */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -365,10 +371,10 @@
 				4C92F8B81C7CEB30006E8A37 /* inner-eye.png */,
 				4C92F8B91C7CEB30006E8A37 /* inner-eye@2x.png */,
 				4C92F8BA1C7CEB30006E8A37 /* inner-eye@3x.png */,
-				4C92F8BB1C7CEB30006E8A37 /* outer-eye.png */,
 				4C92F8BC1C7CEB30006E8A37 /* outer-eye@2x.png */,
 				4C92F8BD1C7CEB30006E8A37 /* outer-eye@3x.png */,
 				4C0981841C7C99C000CB1B6E /* eye-icon.png */,
+				4C92F8BB1C7CEB30006E8A37 /* outer-eye.png */,
 				4C0981851C7C99C000CB1B6E /* eye-icon@2x.png */,
 				4C0981861C7C99C000CB1B6E /* features-icon-selected.png */,
 				4C0981871C7C99C000CB1B6E /* features-icon-selected@2x.png */,
@@ -415,6 +421,16 @@
 			children = (
 			);
 			name = DatePicker;
+			sourceTree = "<group>";
+		};
+		4C71C96E1C84D051003F59A4 /* Big Image */ = {
+			isa = PBXGroup;
+			children = (
+				4C71C9691C84D04C003F59A4 /* BigImageViewController.h */,
+				4C71C96A1C84D04C003F59A4 /* BigImageViewController.m */,
+				4C71C96B1C84D04C003F59A4 /* BigImageViewController.xib */,
+			);
+			name = "Big Image";
 			sourceTree = "<group>";
 		};
 		4C92F8AC1C7CE6EC006E8A37 /* LoadingPopUp */ = {
@@ -547,6 +563,7 @@
 				4C92F8BE1C7CEB30006E8A37 /* eye-icon-white.png in Resources */,
 				4C92F8CD1C7CEFDB006E8A37 /* dot@2x.png in Resources */,
 				4C0981991C7C99C000CB1B6E /* eye-icon@2x.png in Resources */,
+				4C71C96D1C84D04C003F59A4 /* BigImageViewController.xib in Resources */,
 				4C92F8C51C7CEB30006E8A37 /* outer-eye@2x.png in Resources */,
 				4C0981981C7C99C000CB1B6E /* eye-icon.png in Resources */,
 				4C0981AA1C7C99C000CB1B6E /* stalk-loading-img.png in Resources */,
@@ -631,6 +648,7 @@
 				4C1A302D1C57E24100BF721A /* StalkProfileViewController.m in Sources */,
 				4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */,
 				4CC9153C1C7B3BAF00FCBFD8 /* SearchTableViewCell.m in Sources */,
+				4C71C96C1C84D04C003F59A4 /* BigImageViewController.m in Sources */,
 				4C0EBDE61C849663002CF577 /* MediaViewController.m in Sources */,
 				4C51E42C1C7D09F100443F8E /* LoadingViewController.m in Sources */,
 				4C1A30181C56B8E500BF721A /* Singleton.m in Sources */,

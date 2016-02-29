@@ -19,7 +19,7 @@ typedef void (^removalCompletion)(void);
 
 +(PopUpManager *)sharedManager;
 
--(void)showLoadingPopup;
+-(void)showLoadingPopup:(UINavigationController *)navController;
 
 -(void)removeAllPopups;
 

@@ -132,7 +132,7 @@
 
 -(void)startLoadingAnimation
 {
-    [[PopUpManager sharedManager]showLoadingPopup];
+    [[PopUpManager sharedManager]showLoadingPopup:self.navigationController];
 }
 
 -(void)removeLoadingAnimation

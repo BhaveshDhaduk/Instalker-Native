@@ -27,7 +27,7 @@
     _labelUsername.text=model.user.username;
     _imageViewProfile.imageURL=model.user.profilePictureURL;
     _user=model.user;
-    _arrayLikedMedias =model.arrayMedias;
+    _arrayLikedMedias = [NSArray arrayWithArray:model.arrayMedias];
 }
 
 

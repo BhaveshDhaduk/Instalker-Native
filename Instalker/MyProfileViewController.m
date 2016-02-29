@@ -30,10 +30,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
+    
     [self setDelegates];
     [self configureScrollview];
-   
+    
     _arrayDates = [NSMutableArray arrayWithObjects:@"1 Week",@"1 Month",@"3 Months",@"6 Months", @"All Time",nil];
     
 }
@@ -41,16 +41,16 @@
 {
     [super viewDidAppear:animated];
     if (!_isDataObtained) {
-     [self startServiceForBothWithMedia:kAll];
+        [self startServiceForBothWithMedia:kAll];
         _isDataObtained = YES;
     }
     
     if (!_user ) {
-     [self configureNavigationBarForMyProfile];
+        [self configureNavigationBarForMyProfile];
     }else
     {
         [self configureNavigationBarWithTitle:_user.username];
-    
+        
     }
     
 }
@@ -59,14 +59,14 @@
     [super viewWillDisappear:animated];
     
     [[PopUpManager sharedManager] removeAllPopups];
-
+    
 }
 
-#pragma mark - Navigation Bar 
+#pragma mark - Navigation Bar
 -(void)configureNavigationBarForMyProfile
 {
-        self.navigationItem.title = @"MY PROFILE";
-        self.navigationItem.titleView.tintColor = [UIColor whiteColor];
+    self.navigationItem.title = @"MY PROFILE";
+    self.navigationItem.titleView.tintColor = [UIColor whiteColor];
 }
 
 -(void)configureNavigationBarWithTitle:(NSString *)title
@@ -99,8 +99,8 @@
         
         [self startServiceForUser:_user withDate:date];
     }
-
-
+    
+    
 }
 -(void)startSelfServicewithDate:(kMediaDate)date {
     
@@ -109,14 +109,17 @@
     ServiceManager *manager = [ServiceManager new];
     
     [manager getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
-        _arrayData = likeList;
-        [self.tableView reloadData];
-        _statsModel=stats;
-        [_viewStatsProfile configureViews:stats];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self removeLoadingAnimation];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _arrayData = likeList;
+            [self.tableView reloadData];
+            _statsModel=stats;
+            [_viewStatsProfile configureViews:stats];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self removeLoadingAnimation];
+            });
+            
         });
-
+        
     }failure:^(NSError *error, NSString *errorType) {
         [self removeLoadingAnimation];
     }dateinterval:date];
@@ -125,22 +128,25 @@
 -(void)startServiceForUser:(InstagramUser *)user withDate:(kMediaDate)date
 {
     [self startLoadingAnimation];
-     ServiceManager *manager = [ServiceManager new];
+    ServiceManager *manager = [ServiceManager new];
     [manager getDataForUser:user.Id mediaInterval:date withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
-        _arrayData = likeList;
-        [_viewStatsProfile configureViews:stats];
-        [self.viewStatsProfile setNeedsDisplay];
-        _statsModel=stats;
-        [self.tableView reloadData];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self removeLoadingAnimation];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _arrayData = likeList;
+            [_viewStatsProfile configureViews:stats];
+            [self.viewStatsProfile setNeedsDisplay];
+            _statsModel=stats;
+            [self.tableView reloadData];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self removeLoadingAnimation];
+            });
+            
         });
-
+        
     }withCounting:^(float percentage) {
         
     }];
     
-
+    
 }
 
 
@@ -148,13 +154,13 @@
 
 -(void)startLoadingAnimation
 {
-    [[PopUpManager sharedManager]showLoadingPopup];
+    [[PopUpManager sharedManager]showLoadingPopup:self.navigationController];
 }
 
 -(void)removeLoadingAnimation
 {
     [[PopUpManager sharedManager]removeAllPopups];
-
+    
 }
 
 #pragma mark - TableView Methods
@@ -162,15 +168,15 @@
 {
     UserLikeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userLikeCell" forIndexPath:indexPath];
     [cell setFields:[_arrayData objectAtIndex:indexPath.row]];
-
+    
     return cell;
-
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -200,7 +206,7 @@
         MediaViewController *mediaVC = segue.destinationViewController;
         UserLikeTableViewCell *cell = (UserLikeTableViewCell *)[[sender superview]superview];
         mediaVC.arrayLikedMedias =cell.arrayLikedMedias;
-
+        
     }
 }
 
@@ -222,9 +228,9 @@
         } completion:^(BOOL finished) {
             
         }];
-    
+        
     }
-
+    
 }
 
 - (IBAction)changeDateButtonPressed:(id)sender {
@@ -265,7 +271,7 @@
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return _arrayDates.count;
-
+    
 }
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     
@@ -275,13 +281,13 @@
     label.textColor = [UIColor whiteColor];
     label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
     label.text = [_arrayDates objectAtIndex:row];
-    return label;    
+    return label;
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-   
-
+    
+    
 }
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {

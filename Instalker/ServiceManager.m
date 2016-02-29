@@ -347,16 +347,16 @@
 
 -(void)addMediaId:(InstagramMedia *)media ForUser:(InstagramUser *)user
 {
-    if ([_dictUserMedia objectForKey:user]) {
-        NSMutableArray *arr = [_dictUserMedia objectForKey:user];
+    if ([_dictUserMedia objectForKey:user.username]) {
+        NSMutableArray *arr = [_dictUserMedia objectForKey:user.username];
         [arr addObject:media];
-        [_dictUserMedia setObject:arr forKey:user];
+        [_dictUserMedia setObject:arr forKey:user.username];
         
     }
     else
     {
         NSMutableArray *arr = [NSMutableArray arrayWithObjects:media, nil];
-        [_dictUserMedia setObject:arr forKey:user];
+        [_dictUserMedia setObject:arr forKey:user.username];
         
     
     }
@@ -506,7 +506,7 @@
         for (NSString *key in orderedKeys) {
             
             UserLikeCountModel *obj = [[UserLikeCountModel alloc]initWithUser:[users objectForKey:key] withLike:[_reducedLikeList objectForKey:key]];
-            obj.arrayMedias = [NSMutableArray arrayWithArray:[_dictUserMedia objectForKey:obj.user]];
+            obj.arrayMedias = [NSMutableArray arrayWithArray:[_dictUserMedia objectForKey:obj.user.username]];
             [orderedUserLike addObject:obj];
             
         }

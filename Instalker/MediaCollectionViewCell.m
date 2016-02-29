@@ -21,4 +21,9 @@
     _imageView.imageURL = url;    
 }
 
+-(void)configureImageViewSelfURL
+{
+    _imageView.imageURL = _media.thumbnailURL;
+    [_imageView setContentMode:UIViewContentModeScaleAspectFit];
+}
 @end

@@ -33,24 +33,24 @@
 
 #pragma mark - Popup Methods
 
--(void)showLoadingPopup
+-(void)showLoadingPopup:(UINavigationController *)navController;
 {
 //    LoadingView *loadingView = [[LoadingView alloc]initWithFrame: CGRectMake(0, 0, 320, 568)];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     
     LoadingViewController *loadingView = [storyboard instantiateViewControllerWithIdentifier:@"LoadingViewController"];
 //    loadingView = [[[NSBundle mainBundle] loadNibNamed:@"LoadingView" owner:self options:nil] objectAtIndex:0];
-
-    KLCPopup *popup = [KLCPopup popupWithContentView:loadingView.view showType:KLCPopupShowTypeGrowIn dismissType:KLCPopupDismissTypeGrowOut maskType:KLCPopupMaskTypeNone dismissOnBackgroundTouch:NO dismissOnContentTouch:NO];
-    popup.userInteractionEnabled=NO;
-    [popup show];
-
+    
+    _loadingVC = loadingView;
+    [navController presentViewController:loadingView animated:YES completion:nil];
+    
 }
 
 
 -(void)removeAllPopups
 {
-    [KLCPopup dismissAllPopups];
+//    [KLCPopup dismissAllPopups];
+    [_loadingVC dismissViewControllerAnimated:YES completion:nil];
 
 }
 
