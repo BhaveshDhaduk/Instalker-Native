@@ -19,6 +19,7 @@
 @property (nonatomic) NSInteger averageLikes;
 @property (nonatomic) NSInteger averageComments;
 @property (nonatomic) NSInteger totalPostCount;
+@property (nonatomic) NSInteger filteredPostCount;
 
 -(void)setImageURLString:(NSURL *)imageURLString
                 textName:(NSString *)textName
@@ -27,6 +28,7 @@
               totalLikes:(NSInteger )totalLikes
           totalPostCount:(NSInteger )totalPostCount
            totalComments:(NSInteger )totalComments
-                userName:(NSString *)userName;
+                userName:(NSString *)userName
+       filteredPostCount:(NSInteger)filteredPostCount;
 
 @end

@@ -114,7 +114,10 @@
             [self.tableView reloadData];
             _statsModel=stats;
             [_viewStatsProfile configureViews:stats];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1000.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            _labelNameForTitle.text = stats.textName;
+            _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
+
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self removeLoadingAnimation];
             });
             
@@ -127,6 +130,9 @@
     }dateinterval:date];
     
 }
+
+
+
 -(void)startServiceForUser:(InstagramUser *)user withDate:(kMediaDate)date
 {
     [self startLoadingAnimation];
@@ -138,7 +144,9 @@
             [self.viewStatsProfile setNeedsDisplay];
             _statsModel=stats;
             [self.tableView reloadData];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            _labelNameForTitle.text = stats.textName;
+            _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self removeLoadingAnimation];
             });
             

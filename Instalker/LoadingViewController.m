@@ -95,23 +95,45 @@
 {
     
     [self turnAroundOuterEye];
-    
+//    [self startFlipAnimation];
     
 }
+
+- (void)addCircleMaskToView:(UIView *)view {
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = view.bounds;
+    maskLayer.path = [UIBezierPath bezierPathWithOvalInRect:view.bounds].CGPath;
+    maskLayer.fillColor = [UIColor whiteColor].CGColor;
+    view.layer.mask = maskLayer;
+}
+
+- (void)startFlipAnimation{
+    [self addCircleMaskToView:_outerEye];
+    [self addCircleMaskToView:_outerEye];
+    
+    [UIView transitionFromView:self.outerEye toView:self.outerEye
+                      duration:1.0 options:UIViewAnimationOptionTransitionFlipFromTop
+     | UIViewAnimationOptionShowHideTransitionViews
+                    completion:nil];
+}
+
+
+
 
 -(void)turnAroundOuterEye
 {
  
     
-        [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionRepeat animations:^{
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionRepeat animations:^{
     
-        _innerEye.alpha = 0.5;
+//        _innerEye.alpha = 0.5;
 //            _outerEye.transform = CGAffineTransformConcat(                                                            _outerEye.transform,                                                               CGAffineTransformMakeRotation(M_PI*2));
-            [_outerEye setTransform:CGAffineTransformMakeRotation(M_PI*25)];
+            [_outerEye setTransform:CGAffineTransformMakeRotation(M_PI)];
+            [_innerEye setTransform:CGAffineTransformMakeRotation(M_PI)];
             [self.view layoutIfNeeded];
         
     } completion:^(BOOL finished) {
-        _innerEye.alpha=1;
+//        _innerEye.alpha=1;
         [self.view layoutIfNeeded];
 
         

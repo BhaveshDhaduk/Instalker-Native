@@ -40,9 +40,15 @@
     
     LoadingViewController *loadingView = [storyboard instantiateViewControllerWithIdentifier:@"LoadingViewController"];
 //    loadingView = [[[NSBundle mainBundle] loadNibNamed:@"LoadingView" owner:self options:nil] objectAtIndex:0];
-    _loadingVC = loadingView;
+//    KLCPopup *popup = [KLCPopup popupWithContentView:loadingView.view showType:KLCPopupShowTypeBounceIn dismissType:KLCPopupDismissTypeBounceOut maskType:KLCPopupMaskTypeClear dismissOnBackgroundTouch:NO dismissOnContentTouch:NO];
     
-    [[UIApplication sharedApplication].keyWindow addSubview:loadingView.view];
+//    popup.userInteractionEnabled=NO;
+//    [popup show];
+    
+    _loadingVC = loadingView;
+    [navController presentViewController:loadingView animated:YES completion:^{
+        
+    }];
 
     
 }

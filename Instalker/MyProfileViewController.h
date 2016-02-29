@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewMain;
 @property (weak, nonatomic) IBOutlet UIView *viewContentOfScroll;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *labelNameFırTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelNameForTitle;
 
 #pragma mark - Properties
 @property (strong,nonatomic) NSMutableArray *arrayData;

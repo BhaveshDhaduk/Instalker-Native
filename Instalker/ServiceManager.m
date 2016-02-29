@@ -623,7 +623,8 @@
                               totalLikes:_totalLikesCount
                           totalPostCount:_totalPostCount
                            totalComments:_totalComments
-                                userName:_userName];
+                                userName:_userName
+                       filteredPostCount:_allMedia.count];
                 
                 if (completion) {
                     completion(_followerList,model);
@@ -708,7 +709,8 @@ dispatch_queue_t backgroundQueue() {
                               totalLikes:_totalLikesCount
                           totalPostCount:_totalPostCount
                            totalComments:_totalComments
-                                userName:_userName];
+                                userName:_userName
+                 filteredPostCount:_allMedia.count];
                 
                 if (completion) {
                     completion(_followerList,model);

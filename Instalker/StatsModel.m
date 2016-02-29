@@ -24,7 +24,9 @@
           totalPostCount:(NSInteger )totalPostCount
            totalComments:(NSInteger )totalComments
                 userName:(NSString *)userName
+       filteredPostCount:(NSInteger)filteredPostCount
 {
+    _filteredPostCount = filteredPostCount;
     _imageURLString = imageURLString;
     _textName = textName;
     _followerCount = followerCount;

@@ -96,12 +96,17 @@
     ServiceManager *manager = [ServiceManager new];
     
     [manager getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
-        _arrayData = likeList;
-        [_viewStatsProfile configureViews:stats];
-        [self.viewStatsProfile setNeedsDisplay];
-        _statsModel=stats;
-        [self.tableView reloadData];
-        [self removeLoadingAnimation];
+       dispatch_async(dispatch_get_main_queue(), ^{
+           _arrayData = likeList;
+           [_viewStatsProfile configureViews:stats];
+           [self.viewStatsProfile setNeedsDisplay];
+           _statsModel=stats;
+           _labelNameForTitle.text = stats.textName;
+           _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
+           [self.tableView reloadData];
+           [self removeLoadingAnimation];
+       });
+        
     }failure:^(NSError *error, NSString *errorType) {
         [self removeLoadingAnimation];
     }dateinterval:date];
@@ -112,12 +117,17 @@
     [self startLoadingAnimation];
     ServiceManager *manager = [ServiceManager new];
     [manager getDataForUser:user.Id mediaInterval:date withCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
-        _arrayData = likeList;
-        [_viewStatsProfile configureViews:stats];
-        [self.viewStatsProfile setNeedsDisplay];
-        _statsModel=stats;
-        [self.tableView reloadData];
-        [self removeLoadingAnimation];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _arrayData = likeList;
+            [_viewStatsProfile configureViews:stats];
+            [self.viewStatsProfile setNeedsDisplay];
+            _statsModel=stats;
+            _labelNameForTitle.text = stats.textName;
+            _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
+            [self.tableView reloadData];
+            [self removeLoadingAnimation];
+        });
+        
         
     }withCounting:^(float percentage) {
         
@@ -189,10 +199,66 @@
 }
 
 
-- (IBAction)changeDateButtonPressed:(id)sender {
-    
+
+-(void)configurePickerViewHidden:(BOOL)hidden
+{
+    if(hidden)
+    {
+        [UIView animateWithDuration:0.4 animations:^{
+            _pickerView.transform = CGAffineTransformIdentity;
+            
+        } completion:^(BOOL finished) {
+            _pickerView.hidden=hidden;
+        }];
+    }else
+    {
+        _pickerView.hidden = hidden;
+        [UIView animateWithDuration:0.3 animations:^{
+            _pickerView.transform = CGAffineTransformMakeTranslation(0, -300);
+        } completion:^(BOOL finished) {
+            
+        }];
+        
+    }
     
 }
+
+- (IBAction)changeDateButtonPressed:(id)sender {
+    if (_pickerView.hidden) {
+        [self configurePickerViewHidden:NO];
+        [_buttonChangeDate setTitle:@"Select Date and Tap Here" forState:UIControlStateNormal];
+    }else
+    {
+        switch ([_pickerView selectedRowInComponent:0]) {
+            case 0:
+                [self startServiceForBothWithMedia:kWeek];
+                break;
+                
+            case 1:
+                [self startServiceForBothWithMedia:kMonth];
+                break;
+            case 2:
+                [self startServiceForBothWithMedia:kThreeMonth];
+                break;
+            case 3:
+                [self startServiceForBothWithMedia:kSixMonth];
+                break;
+            case 4:
+                [self startServiceForBothWithMedia:kAll];
+                break;
+            default:
+                [self startServiceForBothWithMedia:kAll];
+                break;
+        }
+        [self configurePickerViewHidden:YES];
+        [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:[_pickerView selectedRowInComponent:0]] forState:UIControlStateNormal];
+        
+    }
+    
+}
+
+
+
 
 #pragma mark - Date Picker
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component

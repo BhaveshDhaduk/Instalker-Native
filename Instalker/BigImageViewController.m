@@ -23,6 +23,8 @@
 {
     [super viewDidAppear:animated];
     _imageViewMain.imageURL = _media.standardResolutionImageURL;
+    _labelDate.text = _media.createdDate.description;
+    _labelLikeCount.text = [NSString stringWithFormat:@"%ld likes",_media.likesCount];
 }
 
 - (void)didReceiveMemoryWarning {
