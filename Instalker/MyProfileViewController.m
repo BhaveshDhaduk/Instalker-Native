@@ -66,16 +66,24 @@
 -(void)configureNavigationBarForMyProfile
 {
     self.navigationItem.title = @"MY PROFILE";
-    self.navigationItem.titleView.tintColor = [UIColor whiteColor];
+    [self configureNavigationProperties];
 }
 
 -(void)configureNavigationBarWithTitle:(NSString *)title
 {
     self.navigationItem.title = title;
-    self.navigationItem.titleView.tintColor = [UIColor whiteColor];
-    
+    [self configureNavigationProperties];
 }
 
+
+-(void)configureNavigationProperties
+{
+    self.navigationItem.titleView.tintColor = [UIColor whiteColor];
+ 
+    self.navigationController.navigationBar.backItem.titleView.tintColor= [UIColor whiteColor];
+    self.navigationController.navigationBar.backItem.title = @"Back";
+    
+}
 
 #pragma mark - Initilization
 -(void)configureScrollview{

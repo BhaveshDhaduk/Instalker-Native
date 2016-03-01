@@ -465,7 +465,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UCf-ty-YWF"/>
+                    <navigationItem key="navigationItem" id="UCf-ty-YWF">
+                        <barButtonItem key="backBarButtonItem" title="Back" width="20" id="3UD-93-HET"/>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="buttonChangeDate" destination="aw5-x4-Lsj" id="e3Z-fR-ZfI"/>
@@ -810,7 +812,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Kg1-vp-uyp"/>
+                    <navigationItem key="navigationItem" id="Kg1-vp-uyp">
+                        <barButtonItem key="backBarButtonItem" title="Back" width="10" style="plain" id="7Z4-sj-Bhg"/>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="buttonChangeDate" destination="vXP-pc-Brq" id="vCE-wD-IFi"/>
@@ -862,6 +866,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -942,7 +949,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8rJ-wc-Vvv"/>
+                    <navigationItem key="navigationItem" id="8rJ-wc-Vvv">
+                        <barButtonItem key="backBarButtonItem" title="Back" width="20" style="plain" id="Fwj-aR-gkt">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="fCu-Lj-Vrw" id="ze1-iC-Pbb"/>
@@ -966,6 +977,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -993,6 +1005,7 @@
                         <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
