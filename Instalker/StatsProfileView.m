@@ -12,10 +12,8 @@
 
 -(void)configureViews:(StatsModel *)model
 {
-   if([model.imageURLString isFileURL])
-    _imageViewProfile.imageURL=model.imageURLString;
-    
    
+        _imageViewProfile.imageURL=model.imageURLString;
         _labelName.text = model.textName;
         _labelMediaCount.text =[self shortenNumber: model.totalPostCount];
         _labelFollewsCount.text = [self shortenNumber:model.followerCount];

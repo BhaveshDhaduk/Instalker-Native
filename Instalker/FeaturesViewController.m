@@ -16,7 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.navigationItem.title = @"FEATURES";
     // Do any additional setup after loading the view.
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.navigationItem.title = @"FEATURES";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +40,17 @@
 }
 */
 
+- (IBAction)clearSearchHistory:(id)sender {
+    [Singleton sharedInstance].arraySearchHistory = [NSMutableArray array];
+    [[NSUserDefaults standardUserDefaults] setObject:[Singleton sharedInstance].arraySearchHistory forKey:k_Search_History_List];
+    
+}
+
+- (IBAction)showPrivacyPolicy:(id)sender {
+    
+}
+- (IBAction)logout:(id)sender {
+    [[InstagramEngine sharedEngine]logout];
+    
+}
 @end

@@ -71,7 +71,7 @@
     {
         [[Singleton sharedInstance].arraySearchHistory addObject:user];
     }
-
+    [[NSUserDefaults standardUserDefaults] setObject:[Singleton sharedInstance].arraySearchHistory forKey:k_Search_History_List];
 
 }
 

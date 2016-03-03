@@ -27,7 +27,9 @@
     if (self) {
         self.accessToken = nil;
         self.arraySearchHistory = [NSMutableArray array];
-        self.arraySearchHistory = [[NSUserDefaults standardUserDefaults] objectForKey:k_Search_History_List];
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:k_Search_History_List]) {
+            self.arraySearchHistory = [[NSUserDefaults standardUserDefaults] objectForKey:k_Search_History_List];
+        }
     }
     return self;
 }
@@ -35,7 +37,6 @@
 -(void)addArraySearchHistoryObject:(InstagramUser *)object
 {
     [self.arraySearchHistory addObject:object];
-    [[NSUserDefaults standardUserDefaults] setObject:self.arraySearchHistory forKey:k_Search_History_List];
 
 }
 

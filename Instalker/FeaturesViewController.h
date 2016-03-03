@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FeaturesViewController : UIViewController
+- (IBAction)clearSearchHistory:(id)sender;
+- (IBAction)showPrivacyPolicy:(id)sender;
+- (IBAction)logout:(id)sender;
 
 @end
