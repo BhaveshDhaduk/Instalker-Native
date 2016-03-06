@@ -15,10 +15,10 @@ typedef void (^completion)(NSMutableArray *result);
 typedef void (^completionFinal)(NSMutableArray *likeList, StatsModel *stats);
 typedef void (^completionRaw)(void);
 typedef void (^failed)(NSError *error);
-typedef void (^failure)(NSError *error, NSString *errorType);
+typedef void (^failure)(NSError *error, InstagramFailModel *errorModel);
 typedef void (^iterationBlock)(float percentage);
-
-
+typedef void (^completionErrorDetail)(InstagramFailModel *model);
+typedef void (^errorHandle)(InstagramFailModel *model);
 
 @interface ServiceManager : NSObject
 
@@ -61,6 +61,6 @@ typedef void (^iterationBlock)(float percentage);
 
 -(void)getSelfDataWithCompletion:(completionFinal)completion  failure:(failure)failure dateinterval:(kMediaDate)numberofDays;
 -(void)searchUsersWithKeyword:(NSString*)keyword completion:(completion)completion failed:(failed)failed;
--(void)getDataForUser:(NSString *)username mediaInterval:(kMediaDate)interval  withCompletion:(completionFinal)completion withCounting:(iterationBlock)iteration;
+-(void)getDataForUser:(NSString *)username mediaInterval:(kMediaDate)interval  withCompletion:(completionFinal)completion withCounting:(iterationBlock)iteration failure:(failure)failure;
 
 @end

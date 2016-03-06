@@ -131,7 +131,7 @@
             
         });
         
-    }failure:^(NSError *error, NSString *errorType) {
+    }failure:^(NSError *error, InstagramFailModel *errorModel) {
         
         [self removeLoadingAnimation];
     
@@ -161,6 +161,8 @@
         });
         
     }withCounting:^(float percentage) {
+        
+    } failure:^(NSError *error, InstagramFailModel *errorModel) {
         
     }];
     

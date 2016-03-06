@@ -47,6 +47,8 @@
 		4C1E925D1C54257000237AF0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E925C1C54257000237AF0 /* ViewController.m */; };
 		4C1E92601C54257000237AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E925E1C54257000237AF0 /* Main.storyboard */; };
 		4C1E92621C54257000237AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E92611C54257000237AF0 /* Assets.xcassets */; };
+		4C3324151C8CE985007250A8 /* InstagramFailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3324121C8CE985007250A8 /* InstagramFailModel.m */; };
+		4C3324161C8CE985007250A8 /* Meta.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3324141C8CE985007250A8 /* Meta.m */; };
 		4C3A2DAE1C7D133E005C00B3 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3A2DAD1C7D133E005C00B3 /* Default-568h.png */; };
 		4C51E42C1C7D09F100443F8E /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C51E42B1C7D09F100443F8E /* LoadingViewController.m */; };
 		4C53AADA1C5BA87100C76907 /* UserLikeCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53AAD91C5BA87100C76907 /* UserLikeCountModel.m */; };
@@ -137,6 +139,11 @@
 		4C1E925F1C54257000237AF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C1E92611C54257000237AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C1E92661C54257000237AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C3324101C8CE985007250A8 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		4C3324111C8CE985007250A8 /* InstagramFailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramFailModel.h; sourceTree = "<group>"; };
+		4C3324121C8CE985007250A8 /* InstagramFailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramFailModel.m; sourceTree = "<group>"; };
+		4C3324131C8CE985007250A8 /* Meta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meta.h; sourceTree = "<group>"; };
+		4C3324141C8CE985007250A8 /* Meta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meta.m; sourceTree = "<group>"; };
 		4C3A2DAD1C7D133E005C00B3 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		4C51E42A1C7D09F100443F8E /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		4C51E42B1C7D09F100443F8E /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
@@ -253,6 +260,11 @@
 		4C1A30121C56B8A600BF721A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4C3324101C8CE985007250A8 /* DataModels.h */,
+				4C3324111C8CE985007250A8 /* InstagramFailModel.h */,
+				4C3324121C8CE985007250A8 /* InstagramFailModel.m */,
+				4C3324131C8CE985007250A8 /* Meta.h */,
+				4C3324141C8CE985007250A8 /* Meta.m */,
 				4C53AAD81C5BA87100C76907 /* UserLikeCountModel.h */,
 				4C53AAD91C5BA87100C76907 /* UserLikeCountModel.m */,
 				4C67082E1C7A354C0077DC58 /* StatsModel.h */,
@@ -645,6 +657,7 @@
 				4C1E925D1C54257000237AF0 /* ViewController.m in Sources */,
 				4C7A3F861C7E626B00DC88B2 /* InstalkerTabBarViewController.m in Sources */,
 				4C1A30271C57E21400BF721A /* FeaturesViewController.m in Sources */,
+				4C3324161C8CE985007250A8 /* Meta.m in Sources */,
 				4C1A302D1C57E24100BF721A /* StalkProfileViewController.m in Sources */,
 				4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */,
 				4CC9153C1C7B3BAF00FCBFD8 /* SearchTableViewCell.m in Sources */,
@@ -652,6 +665,7 @@
 				4C0EBDE61C849663002CF577 /* MediaViewController.m in Sources */,
 				4C51E42C1C7D09F100443F8E /* LoadingViewController.m in Sources */,
 				4C1A30181C56B8E500BF721A /* Singleton.m in Sources */,
+				4C3324151C8CE985007250A8 /* InstagramFailModel.m in Sources */,
 				4C1E925A1C54257000237AF0 /* AppDelegate.m in Sources */,
 				4C1A301C1C56D0CE00BF721A /* MainViewController.m in Sources */,
 				4C1A30211C57E14B00BF721A /* MyProfileViewController.m in Sources */,

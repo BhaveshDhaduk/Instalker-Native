@@ -21,6 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([[InstagramEngine sharedEngine] accessToken] ) {
+        [self performSegueWithIdentifier:@"tabSegue" sender:self];
+
+        
+    }else if ([[NSUserDefaults standardUserDefaults] objectForKey:k_instagram_token])
+    {
+        [[InstagramEngine sharedEngine] setAccessToken:[[NSUserDefaults standardUserDefaults] objectForKey:k_instagram_token]];
+        [self performSegueWithIdentifier:@"tabSegue" sender:self];
+
+    }
     
     webview.delegate=self;
     
@@ -65,6 +75,7 @@
         
         [Singleton sharedInstance].accessToken = [[InstagramEngine sharedEngine] accessToken];
         [ServiceManager sharedManager].accessToken = [Singleton sharedInstance].accessToken;
+        [[NSUserDefaults standardUserDefaults] setObject:[[InstagramEngine sharedEngine] accessToken] forKey:k_instagram_token];
 
         [self performSegueWithIdentifier:@"tabSegue" sender:self];
     }

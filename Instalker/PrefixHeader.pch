@@ -17,9 +17,10 @@
 #import "Singleton.h"
 #import "ModelHeader.h"
 #import "PopUpManager.h"
+#import "DataModels.h"
 
 #define k_Search_History_List @"searchHistoryList"
-
+#define k_instagram_token @"instagramToken"
 
 #pragma mark - Enumeration
 

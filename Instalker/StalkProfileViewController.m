@@ -117,8 +117,11 @@
            [self removeLoadingAnimation];
        });
         
-    }failure:^(NSError *error, NSString *errorType) {
+    }failure:^(NSError *error,InstagramFailModel *errorModel) {
+        
+        
         [self removeLoadingAnimation];
+        
     }dateinterval:date];
     
 }
@@ -141,6 +144,8 @@
         
     }withCounting:^(float percentage) {
     
+    } failure:^(NSError *error, InstagramFailModel *errorModel) {
+        
     }];
     
     

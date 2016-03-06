@@ -160,7 +160,11 @@
                     if (completion) {
                         completion((NSMutableArray *)media);
                     }
-                } numberOfDays:numberOfdays];
+                } numberOfDays:numberOfdays failed:^(NSError *error) {
+                    if (failed) {
+                        failed(error);
+                    }
+                }];
             }
             else
             {
@@ -190,7 +194,52 @@
     
 }
 
--(void)getPaginatedData:(InstagramPaginationInfo *)pagination completion:(completionRaw)completion numberOfDays:(NSInteger)numberOfDays
+-(void)handleError:(NSError *)error completion:(errorHandle)completion
+{
+    NSInteger tokenCount =[[[error.userInfo objectForKey:@"com.alamofire.serialization.response.error.response"]allHeaderFields]objectForKey:@"x-ratelimit-remaining"];
+    NSHTTPURLResponse *response = error.userInfo;
+    NSURL *errorUrl = [error.userInfo objectForKey:@"NSErrorFailingURLKey"];
+  
+    [self getFailModel:errorUrl withCompletion:^(InstagramFailModel *model) {
+        if (completion) {
+            completion(model);
+        }
+    }];
+    
+
+}
+
+-(void)getFailModel:(NSURL *)url withCompletion:(completionErrorDetail)completion
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    // 2
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        InstagramFailModel *response = [[InstagramFailModel alloc]initWithDictionary:(NSDictionary *)responseObject];
+        if (completion) {
+            completion(response);
+        }
+
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil);
+        }
+        // 4
+       
+    }];
+    
+    // 5
+    [operation start];
+
+
+}
+
+-(void)getPaginatedData:(InstagramPaginationInfo *)pagination completion:(completionRaw)completion numberOfDays:(NSInteger)numberOfDays failed:(failed)failed
 {
     [[InstagramEngine sharedEngine]getPaginatedItemsForInfo:pagination withSuccess:^(NSArray<InstagramModel *> * _Nonnull paginatedObjects, InstagramPaginationInfo * _Nonnull paginationInfo) {
      
@@ -198,7 +247,7 @@
             
             if (paginationInfo.nextURL) {
                 
-                [self getPaginatedData:paginationInfo completion:completion numberOfDays:numberOfDays];
+                [self getPaginatedData:paginationInfo completion:completion numberOfDays:numberOfDays failed:failed];
                 
             }else
             {
@@ -236,7 +285,7 @@
                     if (completion) {
                         completion((NSMutableArray *)media);
                     }
-                } numberOfDays:numberOfdays];
+                } numberOfDays:numberOfdays failed:failed];
             }else
             {
                 if (completion) {
@@ -411,7 +460,7 @@
 
 
 
--(void)getLikesForMedias:(NSArray *)media withCompletion:(completion)completion iterationBlock:(iterationBlock)iteration
+-(void)getLikesForMedias:(NSArray *)media withCompletion:(completion)completion iterationBlock:(iterationBlock)iteration failed:(failed)failed
 {
     _arrayLikes = [NSMutableArray array];
  
@@ -445,7 +494,9 @@
                 
             } failure:^(NSError *error) {
                 ready++;
-                
+                if (failed) {
+                    failed(error);
+                }
                 if (ready+1 > media.count) {
                     dispatch_semaphore_signal(sema);
                 }
@@ -522,7 +573,7 @@
 
 #pragma mark - Comments
 
--(void)getCommentsForMedia:(NSArray *)media withCompletion:(completionRaw)completion
+-(void)getCommentsForMedia:(NSArray *)media withCompletion:(completionRaw)completion failure:(failed)failed
 {
     _arrayComments = [NSMutableArray array];
     _totalComments = 0;
@@ -547,6 +598,9 @@
                 
                 
             } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
+                if (failed) {
+                    failed(error);
+                }
                 ready++;
                 if (ready+1 > media.count) {
                     dispatch_semaphore_signal(sema);
@@ -592,14 +646,29 @@
                     dispatch_semaphore_signal(semant);
                    
                 }failed:^(NSError *error) {
+                    
+                    [self handleError:error completion:^(InstagramFailModel *model) {
+                        if (failure) {
+                            failure(error,model);
+                        }
+                    }];
+                    
+                    
                     dispatch_semaphore_signal(semant);
+                    
                 }];
                 
                 [self getCommentsForMedia:_allMedia withCompletion:^{
-                   
+                 
                     dispatch_semaphore_signal(semant);
                     
                     
+                }failure:^(NSError *error) {
+                    [self handleError:error completion:^(InstagramFailModel *model) {
+                        if (failure) {
+                            failure(error,model);
+                        }
+                    }];
                 }];
                 
                 [self getLikesForMedias:_allMedia withCompletion:^(NSMutableArray *result) {
@@ -608,7 +677,13 @@
                      dispatch_semaphore_signal(semant);
                     
                     
-                } iterationBlock:nil];
+                } iterationBlock:nil failed:^(NSError *error) {
+                    [self handleError:error completion:^(InstagramFailModel *model) {
+                        if (failure) {
+                            failure(error,model);
+                        }
+                    }];
+                }];
                 
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
@@ -638,9 +713,11 @@
            
         } failed:^(NSError *error) {
            //failed get profile info
-            if (failure) {
-                failure(error,@"no-profile");
-            }
+            [self handleError:error completion:^(InstagramFailModel *model) {
+                if (failure) {
+                    failure(error,model);
+                }
+            }];
             
         }numberOfDate:numberofDays];
     });
@@ -656,7 +733,7 @@ dispatch_queue_t backgroundQueue() {
     return queue;
 }
 
--(void)getDataForUser:(NSString *)username mediaInterval:(kMediaDate)interval  withCompletion:(completionFinal)completion withCounting:(iterationBlock)iteration
+-(void)getDataForUser:(NSString *)username mediaInterval:(kMediaDate)interval  withCompletion:(completionFinal)completion withCounting:(iterationBlock)iteration failure:(failure)failure
 {
     
     [self clean];
@@ -678,14 +755,23 @@ dispatch_queue_t backgroundQueue() {
                     dispatch_semaphore_signal(semant);
                     
                 }failed:^(NSError *error) {
-                    
-                }];
+                    [self handleError:error completion:^(InstagramFailModel *model) {
+                        if (failure) {
+                            failure(error,model);
+                        }
+                    }];                }];
                 
                 [self getCommentsForMedia:_allMedia withCompletion:^{
                     
                     dispatch_semaphore_signal(semant);
                     
                     
+                }failure:^(NSError *error) {
+                    [self handleError:error completion:^(InstagramFailModel *model) {
+                        if (failure) {
+                            failure(error,model);
+                        }
+                    }];
                 }];
                 
                 [self getLikesForMedias:_allMedia withCompletion:^(NSMutableArray *result) {
@@ -694,7 +780,13 @@ dispatch_queue_t backgroundQueue() {
                     dispatch_semaphore_signal(semant);
                     
                     
-                } iterationBlock:iteration];
+                } iterationBlock:iteration failed:^(NSError *error) {
+                    [self handleError:error completion:^(InstagramFailModel *model) {
+                        if (failure) {
+                            failure(error,model);
+                        }
+                    }];
+                }];
                 
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
                 dispatch_semaphore_wait(semant, DISPATCH_TIME_FOREVER);
@@ -724,6 +816,11 @@ dispatch_queue_t backgroundQueue() {
             
         } withFailure:^(NSError *error) {
             //failed to get profile
+            [self handleError:error completion:^(InstagramFailModel *model) {
+                if (failure) {
+                    failure(error,model);
+                }
+            }];
         }];
     });
 

@@ -71,7 +71,11 @@
     {
         [[Singleton sharedInstance].arraySearchHistory addObject:user];
     }
-    [[NSUserDefaults standardUserDefaults] setObject:[Singleton sharedInstance].arraySearchHistory forKey:k_Search_History_List];
+//    if ([Singleton sharedInstance].arraySearchHistory) {
+//        NSMutableArray *array = [NSMutableArray arrayWithArray:[Singleton sharedInstance].arraySearchHistory];
+//        [[NSUserDefaults standardUserDefaults] setObject:array forKey:k_Search_History_List];
+//    }
+
 
 }
 
