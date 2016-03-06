@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KLCPopup.h"
 #import "LoadingViewController.h"
+#import "PopupViewController.h"
 
 typedef void (^removalCompletion)(void);
 @interface PopUpManager : NSObject
@@ -23,5 +24,6 @@ typedef void (^removalCompletion)(void);
 
 -(void)removeAllPopups;
 
-
+-(void)hideLoading;
+-(void)hidePopups;
 @end

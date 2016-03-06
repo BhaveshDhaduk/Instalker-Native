@@ -138,7 +138,11 @@
     }dateinterval:date];
     
 }
+-(void)showError:(InstagramFailModel *)model
+{
+    
 
+}
 
 
 -(void)startServiceForUser:(InstagramUser *)user withDate:(kMediaDate)date

@@ -124,17 +124,17 @@
 {
  
     
-        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionRepeat animations:^{
-    
-//        _innerEye.alpha = 0.5;
-//            _outerEye.transform = CGAffineTransformConcat(                                                            _outerEye.transform,                                                               CGAffineTransformMakeRotation(M_PI*2));
+        [UIView animateWithDuration:0.8 delay:0.0 options:UIViewAnimationOptionRepeat animations:^{
+            
+            _innerEye.alpha = 0.5;
+            _outerEye.transform = CGAffineTransformConcat( _outerEye.transform, CGAffineTransformMakeRotation(M_PI*2));
             [_outerEye setTransform:CGAffineTransformMakeRotation(M_PI)];
             [_innerEye setTransform:CGAffineTransformMakeRotation(M_PI)];
             [self.view layoutIfNeeded];
-        
-    } completion:^(BOOL finished) {
-//        _innerEye.alpha=1;
-        [self.view layoutIfNeeded];
+            
+        } completion:^(BOOL finished) {
+            _innerEye.alpha=1;
+            [self.view layoutIfNeeded];
 
         
     }];

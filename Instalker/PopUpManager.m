@@ -7,7 +7,7 @@
 //
 
 #import "PopUpManager.h"
-
+typedef void (^completionPopup)(void);
 
 
 @implementation PopUpManager
@@ -50,15 +50,37 @@
         
     }];
 
+}
+
+-(void)showErrorPopupWithTitle:(NSString *)title completion:(completionPopup)completion
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     
+    LoadingViewController *loadingView = [storyboard instantiateViewControllerWithIdentifier:@"LoadingViewController"];
+    
+    KLCPopup *popup = [KLCPopup popupWithContentView:loadingView.view showType:KLCPopupShowTypeBounceIn dismissType:KLCPopupDismissTypeBounceOut maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:YES];
+    popup.didFinishDismissingCompletion=completion;
+    [popup show];
+
 }
 
 
 -(void)removeAllPopups
 {
-//    [KLCPopup dismissAllPopups];
+    [KLCPopup dismissAllPopups];
     [_loadingVC dismissViewControllerAnimated:YES completion:nil];
 
+}
+
+-(void)hideLoading
+{
+    [_loadingVC dismissViewControllerAnimated:YES completion:nil];
+
+    
+}
+-(void)hidePopups
+{
+    [KLCPopup dismissAllPopups];
 }
 
 @end
