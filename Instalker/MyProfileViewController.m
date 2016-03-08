@@ -134,13 +134,40 @@
     }failure:^(NSError *error, InstagramFailModel *errorModel) {
         
         [self removeLoadingAnimation];
-    
+        [self showError:errorModel];
     }dateinterval:date];
     
 }
 -(void)showError:(InstagramFailModel *)model
 {
+    if ([model.meta.errorType isEqualToString:k_error_null_token_count]) {
+        [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your daily Instagram token limit is accessed, Try to use tomorrow" completion:^{
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }];
+        
+        
+    }else
+     if ([model.meta.errorType isEqualToString:k_error_private_profile]) {
+         [[PopUpManager sharedManager]showErrorPopupWithTitle:@"This profile is private, try to stalk others" completion:^{
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+             
+         }];
+         
+     
+     }
+    else
+    {
+        [[PopUpManager sharedManager]showErrorPopupWithTitle:model.meta.errorMessage completion:^{
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+            
+        }];
     
+    
+    }
 
 }
 
@@ -167,7 +194,8 @@
     }withCounting:^(float percentage) {
         
     } failure:^(NSError *error, InstagramFailModel *errorModel) {
-        
+        [self removeLoadingAnimation];
+         [self showError:errorModel];
     }];
     
     

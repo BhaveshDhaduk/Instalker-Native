@@ -22,6 +22,8 @@ typedef void (^removalCompletion)(void);
 
 -(void)showLoadingPopup:(UINavigationController *)navController;
 
+-(void)showErrorPopupWithTitle:(NSString *)title completion:(removalCompletion)completion;
+
 -(void)removeAllPopups;
 
 -(void)hideLoading;

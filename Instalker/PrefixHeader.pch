@@ -22,6 +22,9 @@
 #define k_Search_History_List @"searchHistoryList"
 #define k_instagram_token @"instagramToken"
 
+#define k_error_null_token_count @""
+#define k_error_private_profile @""
+
 #pragma mark - Enumeration
 
 typedef enum kMediaDate:NSInteger {

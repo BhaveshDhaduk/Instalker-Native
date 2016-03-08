@@ -52,7 +52,7 @@ typedef void (^completionPopup)(void);
 
 }
 
--(void)showErrorPopupWithTitle:(NSString *)title completion:(completionPopup)completion
+-(void)showErrorPopupWithTitle:(NSString *)title completion:(removalCompletion)completion
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     
