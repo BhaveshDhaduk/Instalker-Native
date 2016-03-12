@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Singleton : NSObject
 
@@ -19,5 +20,7 @@
 
 @property (nonatomic,strong) NSMutableArray *arraySearchHistory;
 
+
+@property (nonatomic,strong) UINavigationController *baseNavigationController;
 
 @end

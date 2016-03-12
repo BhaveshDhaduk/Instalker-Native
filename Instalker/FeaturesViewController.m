@@ -16,13 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.navigationItem.title = @"FEATURES";
+     self.navigationItem.title = @"SETTINGS";
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.navigationItem.title = @"FEATURES";
+    self.navigationItem.title = @"SETTINGS";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,9 +48,11 @@
 
 - (IBAction)showPrivacyPolicy:(id)sender {
     
+    
 }
 - (IBAction)logout:(id)sender {
     [[InstagramEngine sharedEngine]logout];
+    [[Singleton sharedInstance].baseNavigationController popToRootViewControllerAnimated:YES];
     
 }
 @end

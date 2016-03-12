@@ -32,7 +32,7 @@
     [self setDelegates];
     [self configureScrollview];
     
-    [self startServiceForBothWithMedia:kAll];
+    [self startServiceForBothWithMedia:kWeek];
     _arrayDates = [NSMutableArray arrayWithObjects:@"1 Week",@"1 Month",@"3 Months",@"6 Months", @"All Time",nil];
     
 }

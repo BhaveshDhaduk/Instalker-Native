@@ -65,7 +65,7 @@
 {
     
     [self startLabelAnimation];
-    [self startEyeAnimation];
+
 }
 
 -(void)startLabelAnimation
@@ -144,17 +144,17 @@
 #pragma mark - DOT animation
 
 - (void)startLoadingAnimation {
-    [self.labelStalking setText:@"Stalking"];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.3f target:self selector:@selector(updateLoadingLabel) userInfo:nil repeats:YES];
+    [self.labelStalking setText:@"."];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.4f target:self selector:@selector(updateLoadingLabel) userInfo:nil repeats:YES];
 }
 
 - (void)updateLoadingLabel {
-    NSString *ellipses = @" . . .";
+    NSString *ellipses = @". . .";
     
     if ([self.labelStalking.text rangeOfString:ellipses].location == NSNotFound) {
         [self.labelStalking setText:[NSString stringWithFormat:@"%@ .",self.labelStalking.text]];
     } else {
-        [self.labelStalking setText:@"Stalking"];
+        [self.labelStalking setText:@"."];
     }
 }
 

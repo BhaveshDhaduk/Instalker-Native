@@ -22,8 +22,9 @@
 #define k_Search_History_List @"searchHistoryList"
 #define k_instagram_token @"instagramToken"
 
-#define k_error_null_token_count @""
-#define k_error_private_profile @""
+#define k_error_null_token_count @"OAuthRateLimitException"
+#define k_error_private_profile @"APINotAllowedError"
+#define k_error_token_invalid @"OAuthAccessTokenException"
 
 #pragma mark - Enumeration
 
@@ -37,3 +38,5 @@ typedef enum kMediaDate:NSInteger {
 
 
 #endif /* PrefixHeader_pch */
+
+

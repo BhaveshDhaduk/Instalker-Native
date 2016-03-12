@@ -12,7 +12,10 @@
 
 
 @interface ViewController ()
-
+- (IBAction)buttonUserAgreement:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *labelIagree;
+@property (weak, nonatomic) IBOutlet UIImageView *imageviewCheck;
+@property (nonatomic) BOOL isUserAgreementAgreed;
 @end
 
 
@@ -25,13 +28,17 @@
         [self performSegueWithIdentifier:@"tabSegue" sender:self];
 
         
-    }else if ([[NSUserDefaults standardUserDefaults] objectForKey:k_instagram_token])
+    }
+    _isUserAgreementAgreed = NO;
+    /*
+    else if ([[NSUserDefaults standardUserDefaults] objectForKey:k_instagram_token])
     {
         [[InstagramEngine sharedEngine] setAccessToken:[[NSUserDefaults standardUserDefaults] objectForKey:k_instagram_token]];
         [self performSegueWithIdentifier:@"tabSegue" sender:self];
 
     }
-    
+     */
+    [Singleton sharedInstance].baseNavigationController = self.navigationController;
     webview.delegate=self;
     
        // Do any additional setup after loading the view from its nib.
@@ -97,6 +104,18 @@
     
 
     
+    
+}
+- (IBAction)buttonUserAgreement:(id)sender {
+    if (_isUserAgreementAgreed) {
+        _isUserAgreementAgreed=NO;
+        _imageviewCheck.hidden=YES;
+        
+    }else
+    {
+        _isUserAgreementAgreed =YES;
+        _imageviewCheck.hidden=NO;
+    }
     
 }
 @end

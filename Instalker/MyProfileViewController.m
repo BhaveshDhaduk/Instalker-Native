@@ -41,7 +41,7 @@
 {
     [super viewDidAppear:animated];
     if (!_isDataObtained) {
-        [self startServiceForBothWithMedia:kAll];
+        [self startServiceForBothWithMedia:kWeek];
         _isDataObtained = YES;
     }
     
@@ -124,10 +124,8 @@
             [_viewStatsProfile configureViews:stats];
             _labelNameForTitle.text = stats.textName;
             _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
-
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self removeLoadingAnimation];
-            });
+            [self removeLoadingAnimation];
+          
             
         });
         
@@ -142,7 +140,7 @@
 {
     if ([model.meta.errorType isEqualToString:k_error_null_token_count]) {
         [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your daily Instagram token limit is accessed, Try to use tomorrow" completion:^{
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [[Singleton sharedInstance].baseNavigationController popToRootViewControllerAnimated:YES];
         }];
         
         
@@ -156,6 +154,13 @@
          }];
          
      
+     }else if ([model.meta.errorType isEqualToString:k_error_token_invalid]) {
+         [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your Instagram credentials invalidated by Instagram, try to login again" completion:^{
+             [[InstagramEngine sharedEngine]logout];
+             [[Singleton sharedInstance].baseNavigationController popToRootViewControllerAnimated:YES];
+         }];
+         
+         
      }
     else
     {
@@ -185,9 +190,7 @@
             [self.tableView reloadData];
             _labelNameForTitle.text = stats.textName;
             _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self removeLoadingAnimation];
-            });
+            [self removeLoadingAnimation];
             
         });
         
