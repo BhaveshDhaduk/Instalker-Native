@@ -119,31 +119,6 @@
                                     <action selector="clearSearchHistory:" destination="US5-LJ-If8" eventType="touchUpInside" id="bGs-wd-UU9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zMd-wL-3rR" customClass="Button" customModule="Instalker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="49" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Privacy Policy">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.68235294120000001" green="0.72156862749999995" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="showPrivacyPolicy:" destination="US5-LJ-If8" eventType="touchUpInside" id="kHD-Rq-HCE"/>
-                                    <segue destination="TuI-f0-2C2" kind="push" id="gTu-gk-yc2"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lac-f1-8No" customClass="Button" customModule="Instalker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="209" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,13 +143,34 @@
                                     <action selector="logout:" destination="US5-LJ-If8" eventType="touchUpInside" id="E59-3x-A0R"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fbU-hv-Vdp" customClass="Button" customModule="Instalker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="49" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Privacy Policy">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.68235294120000001" green="0.72156862749999995" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="TuI-f0-2C2" kind="push" id="9H8-c5-V0e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hwx-AW-NTB"/>
-                    <connections>
-                        <outlet property="showPrivacyPolicy" destination="zMd-wL-3rR" id="dvg-Bo-cmi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bri-GT-6t4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -508,7 +504,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <pickerView hidden="YES" alpha="0.84999999999999998" contentMode="scaleToFill" id="Gpa-w3-oRC">
-                                <rect key="frame" x="0.0" y="512" width="320" height="234"/>
+                                <rect key="frame" x="0.0" y="521" width="320" height="234"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -850,13 +846,13 @@
         <!--User Agreement-->
         <scene sceneID="Kbz-Yc-G9C">
             <objects>
-                <viewController id="TuI-f0-2C2" sceneMemberID="viewController">
+                <viewController id="TuI-f0-2C2" customClass="AgreementViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HdV-nB-fSm">
                         <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="AOL-Bs-GnD">
-                                <rect key="frame" x="20" y="20" width="280" height="484"/>
+                                <rect key="frame" x="20" y="20" width="280" height="431"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -867,12 +863,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="User Agreement" id="Fsj-Mc-817"/>
+                    <navigationItem key="navigationItem" title="User Agreement" id="Fsj-Mc-817">
+                        <barButtonItem key="backBarButtonItem" title="Back" width="50" id="qZl-IT-UHa"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phc-eA-IXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="1090"/>
+            <point key="canvasLocation" x="1042" y="1096"/>
         </scene>
         <!--Instalker Tab Bar View Controller-->
         <scene sceneID="rrs-pE-sRE">
@@ -1150,6 +1149,27 @@
                                         <rect key="frame" x="125" y="210" width="70" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ilN-Aa-2Tx" customClass="Button" customModule="Instalker" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="66" width="59" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonCancelTapped:" destination="F3n-aA-Xel" eventType="touchUpInside" id="hzy-MS-YZG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -1210,8 +1230,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nhV-3G-dTY"/>
-        <segue reference="tSB-Am-HF4"/>
+        <segue reference="9H8-c5-V0e"/>
         <segue reference="P14-8v-fV9"/>
-        <segue reference="JmE-Yz-QZj"/>
+        <segue reference="Aga-07-iWW"/>
     </inferredMetricsTieBreakers>
 </document>

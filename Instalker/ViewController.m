@@ -26,7 +26,6 @@
     [super viewDidLoad];
     if ([[InstagramEngine sharedEngine] accessToken] ) {
         [self performSegueWithIdentifier:@"tabSegue" sender:self];
-
         
     }
     _isUserAgreementAgreed = NO;
@@ -92,16 +91,23 @@
 
 
 - (IBAction)buttonPressed:(id)sender {
-
-    [self showWebViewForLogin];
-    [UIView animateWithDuration:0.5 animations:^{
-        [_viewWelcome setAlpha:0.0];
-        
-    } completion:^(BOOL finished) {
+    if(_isUserAgreementAgreed)
+    {
+        [self showWebViewForLogin];
+        [UIView animateWithDuration:0.5 animations:^{
+            [_viewWelcome setAlpha:0.0];
+            
+        } completion:^(BOOL finished) {
             [_viewWelcome setHidden:YES];
-
-    }];
-    
+            
+        }];
+    }else
+    {
+        [RZErrorMessenger displayErrorWithTitle:@"" detail:@"Firstly, you should agree to user agreement to continue"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [RZErrorMessenger hideAllErrors];
+        });
+    }
 
     
     

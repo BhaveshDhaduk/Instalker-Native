@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EAB2FF803296F479D9196CD /* libPods-Instalker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FA682704BEC5A4A84A8585 /* libPods-Instalker.a */; };
+		4C0951FF1C94E3470076EE49 /* AgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0951FE1C94E3470076EE49 /* AgreementViewController.m */; };
 		4C0981981C7C99C000CB1B6E /* eye-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0981841C7C99C000CB1B6E /* eye-icon.png */; };
 		4C0981991C7C99C000CB1B6E /* eye-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0981851C7C99C000CB1B6E /* eye-icon@2x.png */; };
 		4C09819A1C7C99C000CB1B6E /* features-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0981861C7C99C000CB1B6E /* features-icon-selected.png */; };
@@ -84,6 +85,8 @@
 
 /* Begin PBXFileReference section */
 		44FA682704BEC5A4A84A8585 /* libPods-Instalker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Instalker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C0951FD1C94E3450076EE49 /* AgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgreementViewController.h; sourceTree = "<group>"; };
+		4C0951FE1C94E3470076EE49 /* AgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgreementViewController.m; sourceTree = "<group>"; };
 		4C0981841C7C99C000CB1B6E /* eye-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-icon.png"; sourceTree = "<group>"; };
 		4C0981851C7C99C000CB1B6E /* eye-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-icon@2x.png"; sourceTree = "<group>"; };
 		4C0981861C7C99C000CB1B6E /* features-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "features-icon-selected.png"; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				4C0EBDE51C849663002CF577 /* MediaViewController.m */,
 				4C3324171C8CF7F6007250A8 /* PopupViewController.h */,
 				4C3324181C8CF7F6007250A8 /* PopupViewController.m */,
+				4C0951FD1C94E3450076EE49 /* AgreementViewController.h */,
+				4C0951FE1C94E3470076EE49 /* AgreementViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -667,6 +672,7 @@
 				4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */,
 				4CC9153C1C7B3BAF00FCBFD8 /* SearchTableViewCell.m in Sources */,
 				4C71C96C1C84D04C003F59A4 /* BigImageViewController.m in Sources */,
+				4C0951FF1C94E3470076EE49 /* AgreementViewController.m in Sources */,
 				4C0EBDE61C849663002CF577 /* MediaViewController.m in Sources */,
 				4C51E42C1C7D09F100443F8E /* LoadingViewController.m in Sources */,
 				4C1A30181C56B8E500BF721A /* Singleton.m in Sources */,

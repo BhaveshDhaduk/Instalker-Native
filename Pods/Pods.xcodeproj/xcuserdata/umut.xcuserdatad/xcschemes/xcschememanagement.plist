@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RaisinToast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UICKeyChainStore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,6 +37,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>36303B59EE7C34B113526A208E2EBDA0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3D08B409BA2BBE027DE802ADC4454541</key>
 		<dict>
 			<key>primary</key>
@@ -47,12 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C8C328417024B231BC438C89F07B70AE</key>
+		<key>5A10620C3B34DF14FD9E2AC096CAFCD2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED2CF428F2C83BF449EE5E23CF0C7A51</key>
+		<key>C8C328417024B231BC438C89F07B70AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

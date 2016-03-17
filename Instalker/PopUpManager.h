@@ -20,7 +20,7 @@ typedef void (^removalCompletion)(void);
 
 +(PopUpManager *)sharedManager;
 
--(void)showLoadingPopup:(UINavigationController *)navController;
+-(void)showLoadingPopup:(UINavigationController *)navController withCancel:(cancel)cancelBlock;
 
 -(void)showErrorPopupWithTitle:(NSString *)title completion:(removalCompletion)completion;
 

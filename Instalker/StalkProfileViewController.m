@@ -190,7 +190,10 @@
 
 -(void)startLoadingAnimation
 {
-    [[PopUpManager sharedManager]showLoadingPopup:self.navigationController];
+    [[PopUpManager sharedManager]showLoadingPopup:self.navigationController withCancel:^{
+        [self.navigationController popViewControllerAnimated:NO];
+        [[PopUpManager sharedManager]removeAllPopups];
+    }];
 }
 
 -(void)removeLoadingAnimation

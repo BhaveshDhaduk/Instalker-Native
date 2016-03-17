@@ -8,6 +8,6 @@ target 'Instalker' do
 pod 'InstagramKit', '~> 3.0'
 pod 'InstagramKit/UICKeyChainStore'
 pod 'KLCPopup'
-
+pod 'RaisinToast'
 end
 

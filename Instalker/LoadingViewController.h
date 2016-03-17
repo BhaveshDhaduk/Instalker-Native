@@ -10,10 +10,13 @@
 
 @interface LoadingViewController : UIViewController
 
+- (IBAction)buttonCancelTapped:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewOuterView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewInnerEye;
 @property (weak, nonatomic) IBOutlet UILabel *labelStalking;
 @property (weak, nonatomic) IBOutlet UILabel *labelPercentage;
+
+@property (nonatomic,strong) cancel cancelBlock;
 
 @end

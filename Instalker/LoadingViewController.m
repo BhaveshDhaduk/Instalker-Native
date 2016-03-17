@@ -177,4 +177,9 @@
     [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
 }
 
+- (IBAction)buttonCancelTapped:(id)sender {
+    if (self.cancelBlock) {
+        self.cancelBlock();
+    }
+}
 @end

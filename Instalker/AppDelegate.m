@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <RaisinToast/RZErrorMessenger.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +21,7 @@
     [self.window makeKeyAndVisible];
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage new]];
     
+    [RZErrorMessenger setDefaultMessagingWindow:[RZMessagingWindow defaultMessagingWindow]];
     // Override point for customization after application launch.
     return YES;
 }

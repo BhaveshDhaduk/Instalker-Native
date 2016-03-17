@@ -7,7 +7,7 @@
 //
 
 #import "FeaturesViewController.h"
-
+#import "AgreementViewController.h"
 @interface FeaturesViewController ()
 
 @end
@@ -30,26 +30,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"agreement"]) {
+        AgreementViewController *vc =(AgreementViewController *)segue.destinationViewController;
+        vc.hidesBottomBarWhenPushed=YES;
+    }
+    
 }
-*/
+
 
 - (IBAction)clearSearchHistory:(id)sender {
     [Singleton sharedInstance].arraySearchHistory = [NSMutableArray array];
     [[NSUserDefaults standardUserDefaults] setObject:[Singleton sharedInstance].arraySearchHistory forKey:k_Search_History_List];
+    [RZErrorMessenger displayErrorWithTitle:@"" detail:@"Search history is cleaned!" level:kRZErrorMessengerLevelPositive];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [RZErrorMessenger hideAllErrors];
+    });
     
 }
 
-- (IBAction)showPrivacyPolicy:(id)sender {
-    
-    
-}
+
 - (IBAction)logout:(id)sender {
     [[InstagramEngine sharedEngine]logout];
     [[Singleton sharedInstance].baseNavigationController popToRootViewControllerAnimated:YES];

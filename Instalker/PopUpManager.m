@@ -33,7 +33,7 @@ typedef void (^completionPopup)(void);
 
 #pragma mark - Popup Methods
 
--(void)showLoadingPopup:(UINavigationController *)navController;
+-(void)showLoadingPopup:(UINavigationController *)navController withCancel:(cancel)cancelBlock;
 {
 //    LoadingView *loadingView = [[LoadingView alloc]initWithFrame: CGRectMake(0, 0, 320, 568)];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
@@ -44,6 +44,7 @@ typedef void (^completionPopup)(void);
     
 //    popup.userInteractionEnabled=NO;
 //    [popup show];
+    loadingView.cancelBlock=cancelBlock;
     
     _loadingVC = loadingView;
     [navController presentViewController:loadingView animated:YES completion:^{

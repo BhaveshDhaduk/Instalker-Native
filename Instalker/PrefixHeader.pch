@@ -9,7 +9,7 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-
+typedef void (^cancel)(void);
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
@@ -18,6 +18,8 @@
 #import "ModelHeader.h"
 #import "PopUpManager.h"
 #import "DataModels.h"
+#import <RaisinToast/RZErrorMessenger.h>
+
 
 #define k_Search_History_List @"searchHistoryList"
 #define k_instagram_token @"instagramToken"
@@ -26,7 +28,14 @@
 #define k_error_private_profile @"APINotAllowedError"
 #define k_error_token_invalid @"OAuthAccessTokenException"
 
+
+#define k_color_navy [UIColor colorWithRed:61.0/255.0 green:82.0/255.0 blue:106.0/255.0 alpha:1.0]
+
+
 #pragma mark - Enumeration
+
+
+
 
 typedef enum kMediaDate:NSInteger {
     kWeek = 7,
