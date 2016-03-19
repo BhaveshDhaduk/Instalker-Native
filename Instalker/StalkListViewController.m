@@ -66,10 +66,10 @@
     
     if ([[Singleton sharedInstance].arraySearchHistory containsObject:user]) {
         [[Singleton sharedInstance].arraySearchHistory removeObject:user];
-        [[Singleton sharedInstance].arraySearchHistory addObject:user];
+        [[Singleton sharedInstance] addArraySearchHistoryObjectAndUpdate:user];
     }else
     {
-        [[Singleton sharedInstance].arraySearchHistory addObject:user];
+        [[Singleton sharedInstance] addArraySearchHistoryObjectAndUpdate:user];
     }
 //    if ([Singleton sharedInstance].arraySearchHistory) {
 //        NSMutableArray *array = [NSMutableArray arrayWithArray:[Singleton sharedInstance].arraySearchHistory];

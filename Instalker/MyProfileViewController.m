@@ -13,7 +13,9 @@
 
 
 @interface MyProfileViewController ()
-
+@property (weak,nonatomic) IBOutlet UIButton *buttonPickerButton;
+@property (weak,nonatomic) IBOutlet UIView *viewPickerContainer;
+@property (weak,nonatomic) IBOutlet UILabel *labelNoMediaWarning;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 - (IBAction)changeDateButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonChangeDate;
@@ -123,6 +125,13 @@
             _statsModel=stats;
             [_viewStatsProfile configureViews:stats];
             _labelNameForTitle.text = stats.textName;
+            if (stats.filteredPostCount <1) {
+                [_labelNoMediaWarning setHidden:NO];
+            }
+            else
+            {
+                [_labelNoMediaWarning setHidden:YES];
+            }
             _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
             [self removeLoadingAnimation];
           
@@ -273,16 +282,16 @@
     if(hidden)
     {
         [UIView animateWithDuration:0.4 animations:^{
-            _pickerView.transform = CGAffineTransformIdentity;
+            _viewPickerContainer.transform = CGAffineTransformIdentity;
             
         } completion:^(BOOL finished) {
-            _pickerView.hidden=hidden;
+            _viewPickerContainer.hidden=hidden;
         }];
     }else
     {
-        _pickerView.hidden = hidden;
+        _viewPickerContainer.hidden = hidden;
         [UIView animateWithDuration:0.3 animations:^{
-            _pickerView.transform = CGAffineTransformMakeTranslation(0, -300);
+            _viewPickerContainer.transform = CGAffineTransformMakeTranslation(0, -300);
         } completion:^(BOOL finished) {
             
         }];
@@ -292,7 +301,7 @@
 }
 
 - (IBAction)changeDateButtonPressed:(id)sender {
-    if (_pickerView.hidden) {
+    if (_viewPickerContainer.hidden) {
         [self configurePickerViewHidden:NO];
         [_buttonChangeDate setTitle:@"Select Date and Tap Here" forState:UIControlStateNormal];
     }else

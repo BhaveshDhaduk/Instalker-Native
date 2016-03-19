@@ -28,16 +28,20 @@
         self.accessToken = nil;
         self.arraySearchHistory = [NSMutableArray array];
         if ([[NSUserDefaults standardUserDefaults] objectForKey:k_Search_History_List]) {
-            self.arraySearchHistory = [[NSUserDefaults standardUserDefaults] objectForKey:k_Search_History_List];
+            
+            NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:k_Search_History_List];
+            self.arraySearchHistory = [NSMutableArray arrayWithArray:(NSArray *)[NSKeyedUnarchiver unarchiveObjectWithData:data ]];
         }
     }
     return self;
 }
 
--(void)addArraySearchHistoryObject:(InstagramUser *)object
+-(void)addArraySearchHistoryObjectAndUpdate:(InstagramUser *)object
 {
     [self.arraySearchHistory addObject:object];
-
+    NSData *data = [NSKeyedArchiver  archivedDataWithRootObject:[NSArray arrayWithArray:self.arraySearchHistory]];
+    [[NSUserDefaults standardUserDefaults]setObject:data  forKey:k_Search_History_List];
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 

@@ -16,15 +16,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    self.navigationItem.titleView.tintColor = k_color_navy;
+    
+    [self configureNavigationProperties];
+    self.navigationItem.title = @"User Agreement";
     // Do any additional setup after loading the view.
     
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)configureNavigationProperties
+{
+    self.navigationItem.titleView.tintColor = [UIColor whiteColor];
+    
+    self.navigationController.navigationBar.backItem.titleView.tintColor= [UIColor whiteColor];
+    self.navigationController.navigationBar.backItem.title = @"Back";
+    
 }
 
 /*

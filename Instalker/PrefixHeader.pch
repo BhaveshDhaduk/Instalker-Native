@@ -19,6 +19,8 @@ typedef void (^cancel)(void);
 #import "PopUpManager.h"
 #import "DataModels.h"
 #import <RaisinToast/RZErrorMessenger.h>
+#import <InstagramKit/InstagramKit.h>
+
 
 
 #define k_Search_History_List @"searchHistoryList"
