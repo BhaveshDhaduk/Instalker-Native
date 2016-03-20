@@ -28,6 +28,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Media List"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
 
 }

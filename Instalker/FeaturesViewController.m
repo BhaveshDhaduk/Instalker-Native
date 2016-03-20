@@ -21,8 +21,12 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Features"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     [super viewDidAppear:animated];
     self.navigationItem.title = @"SETTINGS";
+    self.navigationItem.titleView.tintColor =  [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +51,9 @@
 
 - (IBAction)clearSearchHistory:(id)sender {
     [Singleton sharedInstance].arraySearchHistory = [NSMutableArray array];
-    [[NSUserDefaults standardUserDefaults] setObject:[Singleton sharedInstance].arraySearchHistory forKey:k_Search_History_List];
+    NSData *data = [NSKeyedArchiver  archivedDataWithRootObject:[NSArray arrayWithArray:[Singleton sharedInstance].arraySearchHistory]];
+    [[NSUserDefaults standardUserDefaults]setObject:data  forKey:k_Search_History_List];
+    [[NSUserDefaults standardUserDefaults]synchronize];
     [RZErrorMessenger displayErrorWithTitle:@"" detail:@"Search history is cleaned!" level:kRZErrorMessengerLevelPositive];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [RZErrorMessenger hideAllErrors];

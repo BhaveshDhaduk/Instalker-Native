@@ -42,6 +42,10 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"My Profile"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     if (!_isDataObtained) {
         [self startServiceForBothWithMedia:kWeek];
         _isDataObtained = YES;
@@ -150,7 +154,7 @@
     if ([model.meta.errorType isEqualToString:k_error_null_token_count]) {
         [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your daily Instagram token limit is accessed, Try to use tomorrow" completion:^{
             [[Singleton sharedInstance].baseNavigationController popToRootViewControllerAnimated:YES];
-        }];
+        }from:self];
         
         
     }else
@@ -160,14 +164,14 @@
                 
             }];
              
-         }];
+         }from:self];
          
      
      }else if ([model.meta.errorType isEqualToString:k_error_token_invalid]) {
          [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your Instagram credentials invalidated by Instagram, try to login again" completion:^{
              [[InstagramEngine sharedEngine]logout];
              [[Singleton sharedInstance].baseNavigationController popToRootViewControllerAnimated:YES];
-         }];
+         }from:self];
          
          
      }
@@ -178,7 +182,7 @@
                 
             }];
             
-        }];
+        }from:self];
     
     
     }
@@ -220,13 +224,13 @@
 {
     [[PopUpManager sharedManager]showLoadingPopup:self.navigationController withCancel:^{
         [self.navigationController popViewControllerAnimated:NO];
-        [[PopUpManager sharedManager]removeAllPopups];
+        [[PopUpManager sharedManager]hideLoading];
     }];
 }
 
 -(void)removeLoadingAnimation
 {
-    [[PopUpManager sharedManager]removeAllPopups];
+    [[PopUpManager sharedManager]hideLoading];
     
 }
 

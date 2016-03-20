@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <RaisinToast/RZErrorMessenger.h>
+#import <Google/Analytics.h>
+
 
 @interface AppDelegate ()
 
@@ -22,6 +24,16 @@
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage new]];
     
     [RZErrorMessenger setDefaultMessagingWindow:[RZMessagingWindow defaultMessagingWindow]];
+    
+    // Configure tracker from GoogleService-Info.plist.
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+    
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    gai.logger.logLevel = kGAILogLevelNone;  // remove before app release
     // Override point for customization after application launch.
     return YES;
 }

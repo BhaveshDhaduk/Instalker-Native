@@ -7,6 +7,7 @@
 //
 
 #import "PopUpManager.h"
+#import "ErrorPopupViewController.h"
 typedef void (^completionPopup)(void);
 
 
@@ -45,24 +46,34 @@ typedef void (^completionPopup)(void);
 //    popup.userInteractionEnabled=NO;
 //    [popup show];
     loadingView.cancelBlock=cancelBlock;
+    if (_loadingVC) {
+        [self hideLoading];
+    }
     
     _loadingVC = loadingView;
+    
+    
     [navController presentViewController:loadingView animated:YES completion:^{
         
     }];
 
 }
 
--(void)showErrorPopupWithTitle:(NSString *)title completion:(removalCompletion)completion
+-(void)showErrorPopupWithTitle:(NSString *)title completion:(removalCompletion)completion from:(UIViewController *)host
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     
-    LoadingViewController *loadingView = [storyboard instantiateViewControllerWithIdentifier:@"LoadingViewController"];
-    
-    KLCPopup *popup = [KLCPopup popupWithContentView:loadingView.view showType:KLCPopupShowTypeBounceIn dismissType:KLCPopupDismissTypeBounceOut maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:YES];
-    popup.didFinishDismissingCompletion=completion;
-    [popup show];
+    PopupViewController *loadingView = [storyboard instantiateViewControllerWithIdentifier:@"PopupViewController"];
 
+    loadingView.labelPopupText.text = title;
+    
+    [host presentPopupViewController:loadingView animated:YES completion:^{
+        
+    }];
+    
+    
+    
+    
 }
 
 
@@ -75,7 +86,10 @@ typedef void (^completionPopup)(void);
 
 -(void)hideLoading
 {
-    [_loadingVC dismissViewControllerAnimated:YES completion:nil];
+    [_loadingVC dismissViewControllerAnimated:YES completion:^{
+        _loadingVC=nil;
+    }];
+
 
     
 }

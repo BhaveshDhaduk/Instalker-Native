@@ -39,6 +39,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Search Pearson"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     if (!_user ) {
         [self configureNavigationBarForMyProfile];
     }else
@@ -156,28 +159,24 @@
     if ([model.meta.errorType isEqualToString:k_error_null_token_count]) {
         [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your daily Instagram token limit is accessed, Try to use tomorrow" completion:^{
             [self.navigationController popToRootViewControllerAnimated:YES];
-        }];
+        } from:self];
         
         
     }else
         if ([model.meta.errorType isEqualToString:k_error_private_profile]) {
             [[PopUpManager sharedManager]showErrorPopupWithTitle:@"This profile is private, try to stalk others" completion:^{
-                [self dismissViewControllerAnimated:YES completion:^{
-                    
-                }];
+              
                 
-            }];
+            }from:self];
             
             
         }
         else
         {
             [[PopUpManager sharedManager]showErrorPopupWithTitle:model.meta.errorMessage completion:^{
-                [self dismissViewControllerAnimated:YES completion:^{
-                    
-                }];
                 
-            }];
+                
+            }from:self];
             
             
         }
@@ -192,13 +191,13 @@
 {
     [[PopUpManager sharedManager]showLoadingPopup:self.navigationController withCancel:^{
         //[self.navigationController popViewControllerAnimated:NO];
-        [[PopUpManager sharedManager]removeAllPopups];
+        [[PopUpManager sharedManager]hideLoading];
     }];
 }
 
 -(void)removeLoadingAnimation
 {
-    [[PopUpManager sharedManager]removeAllPopups];
+    [[PopUpManager sharedManager]hideLoading];
     
 }
 

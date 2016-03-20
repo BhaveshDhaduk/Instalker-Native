@@ -35,7 +35,6 @@
 		4C0EBDED1C84977C002CF577 /* MediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0EBDEB1C84977C002CF577 /* MediaCollectionViewCell.xib */; };
 		4C1A30181C56B8E500BF721A /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A30171C56B8E500BF721A /* Singleton.m */; };
 		4C1A301C1C56D0CE00BF721A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A301B1C56D0CE00BF721A /* MainViewController.m */; };
-		4C1A301E1C56D42500BF721A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A301D1C56D42500BF721A /* Launch Screen.storyboard */; };
 		4C1A30211C57E14B00BF721A /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A30201C57E14B00BF721A /* MyProfileViewController.m */; };
 		4C1A30241C57E1FA00BF721A /* StalkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A30231C57E1FA00BF721A /* StalkListViewController.m */; };
 		4C1A30271C57E21400BF721A /* FeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A30261C57E21400BF721A /* FeaturesViewController.m */; };
@@ -78,6 +77,9 @@
 		4C92F8CC1C7CEFDB006E8A37 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92F8C91C7CEFDB006E8A37 /* dot.png */; };
 		4C92F8CD1C7CEFDB006E8A37 /* dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92F8CA1C7CEFDB006E8A37 /* dot@2x.png */; };
 		4C92F8CE1C7CEFDB006E8A37 /* dot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92F8CB1C7CEFDB006E8A37 /* dot@3x.png */; };
+		4CB025531C9E21D10058A2BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CB025521C9E21D10058A2BC /* GoogleService-Info.plist */; };
+		4CB0255A1C9E44940058A2BC /* ErrorPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB025581C9E44940058A2BC /* ErrorPopupViewController.xib */; };
+		4CB025601C9E46820058A2BC /* ErrorPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB0255F1C9E46820058A2BC /* ErrorPopupViewController.m */; };
 		4CC785061C75487A0029C17C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC785051C75487A0029C17C /* UIView.swift */; };
 		4CC785081C754A650029C17C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC785071C754A650029C17C /* UILabel.swift */; };
 		4CC9153C1C7B3BAF00FCBFD8 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC9153B1C7B3BAF00FCBFD8 /* SearchTableViewCell.m */; };
@@ -119,7 +121,6 @@
 		4C1A30191C56BB2300BF721A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Instalker/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		4C1A301A1C56D0CE00BF721A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4C1A301B1C56D0CE00BF721A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		4C1A301D1C56D42500BF721A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4C1A301F1C57E14B00BF721A /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		4C1A30201C57E14B00BF721A /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		4C1A30221C57E1FA00BF721A /* StalkListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StalkListViewController.h; sourceTree = "<group>"; };
@@ -184,6 +185,10 @@
 		4C92F8C91C7CEFDB006E8A37 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		4C92F8CA1C7CEFDB006E8A37 /* dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot@2x.png"; sourceTree = "<group>"; };
 		4C92F8CB1C7CEFDB006E8A37 /* dot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot@3x.png"; sourceTree = "<group>"; };
+		4CB025521C9E21D10058A2BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4CB025581C9E44940058A2BC /* ErrorPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorPopupViewController.xib; sourceTree = "<group>"; };
+		4CB0255E1C9E46820058A2BC /* ErrorPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorPopupViewController.h; sourceTree = "<group>"; };
+		4CB0255F1C9E46820058A2BC /* ErrorPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorPopupViewController.m; sourceTree = "<group>"; };
 		4CC785041C75487A0029C17C /* Instalker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instalker-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CC785051C75487A0029C17C /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		4CC785071C754A650029C17C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -219,6 +224,9 @@
 			children = (
 				4C0981B01C7CE52500CB1B6E /* PopUpManager.h */,
 				4C0981B11C7CE52500CB1B6E /* PopUpManager.m */,
+				4CB0255E1C9E46820058A2BC /* ErrorPopupViewController.h */,
+				4CB0255F1C9E46820058A2BC /* ErrorPopupViewController.m */,
+				4CB025581C9E44940058A2BC /* ErrorPopupViewController.xib */,
 			);
 			name = PopupManager;
 			sourceTree = "<group>";
@@ -331,6 +339,7 @@
 		4C1E92491C54257000237AF0 = {
 			isa = PBXGroup;
 			children = (
+				4CB025521C9E21D10058A2BC /* GoogleService-Info.plist */,
 				4C1E92541C54257000237AF0 /* Instalker */,
 				4C1E92531C54257000237AF0 /* Products */,
 				6361150C760F43851D5637A6 /* Pods */,
@@ -362,7 +371,6 @@
 				4C1E92611C54257000237AF0 /* Assets.xcassets */,
 				4C1E92661C54257000237AF0 /* Info.plist */,
 				4C1E92551C54257000237AF0 /* Supporting Files */,
-				4C1A301D1C56D42500BF721A /* Launch Screen.storyboard */,
 			);
 			path = Instalker;
 			sourceTree = "<group>";
@@ -596,13 +604,14 @@
 				4C0981A71C7C99C000CB1B6E /* myprofile-icon-grey-selected@3x.png in Resources */,
 				4C09819D1C7C99C000CB1B6E /* features-icon.png in Resources */,
 				4C09819F1C7C99C000CB1B6E /* heart-icon@2.png in Resources */,
-				4C1A301E1C56D42500BF721A /* Launch Screen.storyboard in Resources */,
 				4C7A3F811C7E5F0F00DC88B2 /* stalk-icon-selected@3x.png in Resources */,
 				4C7A3F801C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png in Resources */,
 				4C92F8CE1C7CEFDB006E8A37 /* dot@3x.png in Resources */,
 				4C7A3F831C7E5F0F00DC88B2 /* stalk-icon@2x.png in Resources */,
+				4CB0255A1C9E44940058A2BC /* ErrorPopupViewController.xib in Resources */,
 				4C0981A31C7C99C000CB1B6E /* login-button.png in Resources */,
 				4C7A3F7F1C7E5F0F00DC88B2 /* stalk-icon-selected.png in Resources */,
+				4CB025531C9E21D10058A2BC /* GoogleService-Info.plist in Resources */,
 				4C09819A1C7C99C000CB1B6E /* features-icon-selected.png in Resources */,
 				4C92F8C41C7CEB30006E8A37 /* outer-eye.png in Resources */,
 			);
@@ -681,6 +690,7 @@
 				4C1A301C1C56D0CE00BF721A /* MainViewController.m in Sources */,
 				4C1A30211C57E14B00BF721A /* MyProfileViewController.m in Sources */,
 				4C1D3E221C5D738100979F16 /* AsyncImageView.m in Sources */,
+				4CB025601C9E46820058A2BC /* ErrorPopupViewController.m in Sources */,
 				4C1D3E2C1C5D7F5E00979F16 /* UserLikeTableViewCell.m in Sources */,
 				4C1A30311C58111F00BF721A /* ServiceManager.m in Sources */,
 				4CC785081C754A650029C17C /* UILabel.swift in Sources */,
@@ -802,7 +812,7 @@
 				INFOPLIST_FILE = Instalker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smartclick.Instalker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mhs.instalker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Instalker/Instalker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -822,7 +832,7 @@
 				INFOPLIST_FILE = Instalker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smartclick.Instalker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mhs.instalker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Instalker/Instalker-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;

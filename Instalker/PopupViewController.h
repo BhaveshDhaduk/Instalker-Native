@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PopupViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *labelPopupText;
 
 @end

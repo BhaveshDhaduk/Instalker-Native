@@ -9,5 +9,9 @@ pod 'InstagramKit', '~> 3.0'
 pod 'InstagramKit/UICKeyChainStore'
 pod 'KLCPopup'
 pod 'RaisinToast'
+pod 'Google/Analytics'
+pod 'CWPopup'
+
+
 end
 

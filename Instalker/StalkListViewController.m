@@ -22,8 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self getSearchHistory];
     [self setDelegates];
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self getSearchHistory];
+
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Search"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +66,7 @@
 #pragma mark - Service Actions
 -(void)getSearchHistory
 {
-    _arraySearchList = [Singleton sharedInstance].arraySearchHistory;
+    _arraySearchList = (NSMutableArray *)[[[Singleton sharedInstance].arraySearchHistory reverseObjectEnumerator] allObjects];;
     [_tableView reloadData];
     
 }

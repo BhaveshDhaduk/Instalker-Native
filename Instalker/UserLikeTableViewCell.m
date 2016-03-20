@@ -25,6 +25,7 @@
     _labelFullname.text=model.user.fullName;
     _labelLikeCount.text=[NSString stringWithFormat:@"%@ likes", model.likeCount];
     _labelUsername.text=model.user.username;
+    _imageViewProfile.image= [UIImage imageNamed:@"anonymousUser"];
     _imageViewProfile.imageURL=model.user.profilePictureURL;
     _user=model.user;
     _arrayLikedMedias = [NSArray arrayWithArray:model.arrayMedias];

@@ -17,15 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configureNavigationProperties];
-    self.navigationItem.title = @"User Agreement";
+    self.navigationController.navigationBarHidden=YES;
+    
     // Do any additional setup after loading the view.
     
 }
 
--(void)viewDidDisappear:(BOOL)animated
+-(void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Agreement"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden=NO;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -34,6 +38,7 @@
 
 -(void)configureNavigationProperties
 {
+    
     self.navigationItem.titleView.tintColor = [UIColor whiteColor];
     
     self.navigationController.navigationBar.backItem.titleView.tintColor= [UIColor whiteColor];
@@ -51,4 +56,7 @@
 }
 */
 
+- (IBAction)backButtonPressed:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

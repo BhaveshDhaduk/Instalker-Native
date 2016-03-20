@@ -25,6 +25,10 @@
     _imageViewMain.imageURL = _media.standardResolutionImageURL;
     _labelDate.text = [self relativeDateStringForDate:_media.createdDate];
     _labelLikeCount.text = [NSString stringWithFormat:@"%ld likes",(long)_media.likesCount];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Big Image Page"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

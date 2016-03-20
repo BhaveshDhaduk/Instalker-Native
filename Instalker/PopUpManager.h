@@ -10,6 +10,8 @@
 #import "KLCPopup.h"
 #import "LoadingViewController.h"
 #import "PopupViewController.h"
+#import "UIViewController+CWPopup.h"
+
 
 typedef void (^removalCompletion)(void);
 @interface PopUpManager : NSObject
@@ -22,7 +24,7 @@ typedef void (^removalCompletion)(void);
 
 -(void)showLoadingPopup:(UINavigationController *)navController withCancel:(cancel)cancelBlock;
 
--(void)showErrorPopupWithTitle:(NSString *)title completion:(removalCompletion)completion;
+-(void)showErrorPopupWithTitle:(NSString *)title completion:(removalCompletion)completion from:(UIViewController *)host;
 
 -(void)removeAllPopups;
 

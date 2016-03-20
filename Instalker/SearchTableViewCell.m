@@ -14,6 +14,7 @@
 -(void)configureViews:(InstagramUser *)user
 {
     _user = user;
+    _imageViewProfile.image = [UIImage imageNamed:@"anonymousUser"];
     if (user.profilePictureURL) {
         _imageViewProfile.imageURL = user.profilePictureURL;
     }

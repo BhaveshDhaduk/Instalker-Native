@@ -226,8 +226,9 @@
 
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        InstagramFailModel *response = [[InstagramFailModel alloc]initWithDictionary:(NSDictionary *)operation.responseObject];
         if (completion) {
-            completion(nil);
+            completion(response);
         }
         // 4
        

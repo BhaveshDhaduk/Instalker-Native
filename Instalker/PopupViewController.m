@@ -9,7 +9,6 @@
 #import "PopupViewController.h"
 
 @interface PopupViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *labelPopupText;
 
 @end
 
@@ -18,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"PopupViewController"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

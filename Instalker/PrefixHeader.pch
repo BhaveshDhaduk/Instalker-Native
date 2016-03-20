@@ -20,6 +20,7 @@ typedef void (^cancel)(void);
 #import "DataModels.h"
 #import <RaisinToast/RZErrorMessenger.h>
 #import <InstagramKit/InstagramKit.h>
+#import <Google/Analytics.h>
 
 
 

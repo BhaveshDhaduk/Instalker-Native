@@ -39,6 +39,7 @@
 -(void)addArraySearchHistoryObjectAndUpdate:(InstagramUser *)object
 {
     [self.arraySearchHistory addObject:object];
+    
     NSData *data = [NSKeyedArchiver  archivedDataWithRootObject:[NSArray arrayWithArray:self.arraySearchHistory]];
     [[NSUserDefaults standardUserDefaults]setObject:data  forKey:k_Search_History_List];
     [[NSUserDefaults standardUserDefaults]synchronize];
