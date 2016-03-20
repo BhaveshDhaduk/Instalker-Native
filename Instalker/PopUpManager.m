@@ -38,7 +38,7 @@ typedef void (^completionPopup)(void);
 {
 //    LoadingView *loadingView = [[LoadingView alloc]initWithFrame: CGRectMake(0, 0, 320, 568)];
     if (_loadingVC) {
-        [self hideLoading];
+        _loadingVC = nil;
     }
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
@@ -85,19 +85,33 @@ typedef void (^completionPopup)(void);
 
 -(void)removeAllPopups
 {
-    [_loadingVC dismissViewControllerAnimated:YES completion:nil];
+    if (_loadingVC) {
+        [_loadingVC dismissViewControllerAnimated:YES completion:^{
+            _loadingVC = nil;
+        }];
+    }
+    if (_hostVC && _hostVC.popupViewController ) {
+        [_hostVC dismissPopupViewControllerAnimated:YES
+                                         completion:^{
+                                             [_hostVC popupViewController];
+                                             
+                                             
+                                         }];
+    }
+
 
 }
 
 -(void)hideLoading
 {
-    [_loadingVC dismissViewControllerAnimated:YES completion:^{
-
-    }];
-
-
+    if (_loadingVC) {
+        [_loadingVC dismissViewControllerAnimated:YES completion:^{
+            _loadingVC = nil;
+        }];
+    }
     
 }
+
 -(void)hidePopups
 {
     if (_hostVC && _hostVC.popupViewController ) {

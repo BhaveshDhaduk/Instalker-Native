@@ -71,7 +71,7 @@
 #pragma mark - Navigation Bar
 -(void)configureNavigationBarForMyProfile
 {
-    self.navigationItem.title = @"MY PROFILE";
+    self.navigationItem.title = @"My Profile";
     [self configureNavigationProperties];
 }
 
@@ -130,16 +130,15 @@
             [_viewStatsProfile configureViews:stats];
             _labelNameForTitle.text = stats.textName;
             if (stats.filteredPostCount <1) {
-                [_labelNoMediaWarning setHidden:NO];
+                [self setErrorLabelAsNoMedia:YES hidden:NO];
             }
             else
             {
-                [_labelNoMediaWarning setHidden:YES];
+                [self setErrorLabelAsNoMedia:YES hidden:YES];
             }
             _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
             [self removeLoadingAnimation];
           
-            
         });
         
     }failure:^(NSError *error, InstagramFailModel *errorModel) {
@@ -160,12 +159,9 @@
     }else
      if ([model.meta.errorType isEqualToString:k_error_private_profile]) {
          [[PopUpManager sharedManager]showErrorPopupWithTitle:@"This profile is private, try to stalk others" completion:^{
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-            }];
-             
          }from:self];
-         
+         [self setErrorLabelAsNoMedia:NO hidden:NO];
+
      
      }else if ([model.meta.errorType isEqualToString:k_error_token_invalid]) {
          [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your Instagram credentials invalidated by Instagram, try to login again" completion:^{
@@ -204,7 +200,14 @@
             _labelNameForTitle.text = stats.textName;
             _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
             [self removeLoadingAnimation];
-            
+            if (stats.filteredPostCount <1) {
+                [self setErrorLabelAsNoMedia:YES hidden:NO];
+            }
+            else
+            {
+                [self setErrorLabelAsNoMedia:YES hidden:YES];
+            }
+
         });
         
     }withCounting:^(float percentage) {
@@ -363,6 +366,21 @@
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
+}
+
+#pragma mark - Error Label 
+
+-(void)setErrorLabelAsNoMedia:(BOOL)type hidden:(BOOL)hidden
+{
+    if (type) {
+        _labelNoMediaWarning.text=@"No media at selected interval, change date interval from above";
+    }else
+    {
+        _labelNoMediaWarning.text=@"This profile is private!";
+    }
+    
+    _labelNoMediaWarning.hidden=hidden;
+    
 }
 
 @end

@@ -21,6 +21,7 @@
 @property (nonatomic,strong) StatsModel *statsModel;
 @property (nonatomic,strong) NSMutableArray *arrayDates;
 @property (nonatomic,strong) ServiceManager *serviceManager;
+@property (weak, nonatomic) IBOutlet UILabel *labelNoMedia;
 
 @end
 
@@ -120,6 +121,14 @@
            _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
            [self.tableView reloadData];
            [self removeLoadingAnimation];
+           if (stats.filteredPostCount<1) {
+               [self setErrorLabelAsNoMedia:YES
+                                     hidden:NO];
+           }else
+           {
+               [self setErrorLabelAsNoMedia:YES hidden:YES];
+           
+           }
        });
         
     }failure:^(NSError *error,InstagramFailModel *errorModel) {
@@ -145,6 +154,14 @@
             _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
             [self.tableView reloadData];
             [self removeLoadingAnimation];
+            if (stats.filteredPostCount<1) {
+                [self setErrorLabelAsNoMedia:YES
+                                      hidden:NO];
+            }else
+            {
+                [self setErrorLabelAsNoMedia:YES hidden:YES];
+                
+            }
         });
         
         
@@ -170,9 +187,9 @@
         if ([model.meta.errorType isEqualToString:k_error_private_profile]) {
             [[PopUpManager sharedManager]showErrorPopupWithTitle:@"This profile is private, try to stalk others" completion:^{
               
-                
             }from:self];
-            
+            [self setErrorLabelAsNoMedia:NO hidden:NO];
+
             
         }
         else
@@ -340,6 +357,17 @@
 {
     return 1;
 }
-
+-(void)setErrorLabelAsNoMedia:(BOOL)type hidden:(BOOL)hidden
+{
+    if (type) {
+        _labelNoMedia.text=@"No media at selected interval, change date interval from above";
+    }else
+    {
+        _labelNoMedia.text=@"This profile is private!";
+    }
+    
+    _labelNoMedia.hidden=hidden;
+    
+}
 
 @end

@@ -16,16 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.navigationItem.title = @"SETTINGS";
+     self.navigationItem.title = @"Settings";
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated
 {
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Features"];
+    [tracker set:kGAIScreenName value:@"Settings"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     [super viewDidAppear:animated];
-    self.navigationItem.title = @"SETTINGS";
+    self.navigationItem.title = @"Settings";
     self.navigationItem.titleView.tintColor =  [UIColor whiteColor];
 }
 

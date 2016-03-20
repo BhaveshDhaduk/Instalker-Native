@@ -48,7 +48,13 @@
 {
     [super viewDidAppear:animated];
     
-    
+
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden=YES;
+
 
 }
 - (void)didReceiveMemoryWarning {
@@ -91,7 +97,6 @@
 
 
 - (IBAction)buttonPressed:(id)sender {
-    if(_isUserAgreementAgreed)
     {
         [self showWebViewForLogin];
         [UIView animateWithDuration:0.5 animations:^{
@@ -101,27 +106,9 @@
             [_viewWelcome setHidden:YES];
             
         }];
-    }else
-    {
-        [RZErrorMessenger displayErrorWithTitle:@"" detail:@"Firstly, you should agree to user agreement to continue"];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [RZErrorMessenger hideAllErrors];
-        });
+   
     }
+    
+}
 
-    
-    
-}
-- (IBAction)buttonUserAgreement:(id)sender {
-    if (_isUserAgreementAgreed) {
-        _isUserAgreementAgreed=NO;
-        _imageviewCheck.hidden=YES;
-        
-    }else
-    {
-        _isUserAgreementAgreed =YES;
-        _imageviewCheck.hidden=NO;
-    }
-    
-}
 @end

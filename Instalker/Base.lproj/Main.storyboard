@@ -38,52 +38,26 @@
                                             <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWS-gU-fnj"/>
                                         </connections>
                                     </button>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shapes" id="vyE-sx-jel">
-                                        <rect key="frame" x="244" y="368" width="38" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" We will not use or store your password and access token" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lc-lC-gKU">
+                                        <rect key="frame" x="17" y="468" width="292" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5fC-K7-VKq" customClass="Button" customModule="Instalker" customModuleProvider="target">
-                                        <rect key="frame" x="184" y="372" width="63" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="I agree ">
-                                            <attributedString key="attributedTitle"/>
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="buttonUserAgreement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GY0-cw-gpA"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We do not share anything to Instagram." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lc-lC-gKU">
-                                        <rect key="frame" x="22" y="489" width="279" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vdw-NI-4MJ" customClass="Button" customModule="Instalker" customModuleProvider="target">
-                                        <rect key="frame" x="57" y="372" width="119" height="25"/>
+                                        <rect key="frame" x="190" y="512" width="119" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="User Agreement">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <state key="normal" title="our privacy policy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="4"/>
@@ -93,6 +67,13 @@
                                             <segue destination="TuI-f0-2C2" kind="push" id="tSB-Am-HF4"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more detail, please read" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F7r-cH-ljy">
+                                        <rect key="frame" x="17" y="515" width="174" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -105,8 +86,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buttonSignin" destination="GhE-e4-Qfp" id="o9q-N7-uI9"/>
-                        <outlet property="imageviewCheck" destination="vyE-sx-jel" id="wlk-31-UAY"/>
-                        <outlet property="labelIagree" destination="5fC-K7-VKq" id="fK3-hK-05b"/>
                         <outlet property="viewWelcome" destination="2Ki-gy-Vfk" id="bCx-NB-n0E"/>
                         <outlet property="webview" destination="EPn-GO-343" id="Nn0-lT-zUZ"/>
                         <segue destination="IdW-ya-0Ha" kind="push" identifier="tabSegue" id="WbM-q9-sjK"/>
@@ -529,6 +508,13 @@
                                                             <outlet property="delegate" destination="X0g-o5-jiz" id="dan-6f-3gf"/>
                                                         </connections>
                                                     </tableView>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Media at selected interval, change date interval from above" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ua8-hM-lfm">
+                                                        <rect key="frame" x="30" y="195" width="260" height="200"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.098039215690000001" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
@@ -539,7 +525,7 @@
                             </view>
                             <pickerView hidden="YES" alpha="0.84999999999999998" contentMode="scaleToFill" id="Gpa-w3-oRC">
                                 <rect key="frame" x="0.0" y="521" width="320" height="234"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="X0g-o5-jiz" id="6TB-T9-vTY"/>
@@ -557,6 +543,7 @@
                         <outlet property="buttonChangeDate" destination="aw5-x4-Lsj" id="e3Z-fR-ZfI"/>
                         <outlet property="labelMediaCountInInterval" destination="d9f-ZA-ypu" id="trY-bF-aVY"/>
                         <outlet property="labelNameForTitle" destination="mx7-5d-1Ju" id="prt-sw-iAv"/>
+                        <outlet property="labelNoMedia" destination="Ua8-hM-lfm" id="lVf-qF-lda"/>
                         <outlet property="pickerView" destination="Gpa-w3-oRC" id="yJ3-rv-yzf"/>
                         <outlet property="scrollViewMain" destination="jwy-QJ-VkN" id="fUu-uO-yQe"/>
                         <outlet property="tableView" destination="l19-oC-3v0" id="bIC-FL-stb"/>
@@ -861,7 +848,7 @@
                                 <subviews>
                                     <pickerView alpha="0.84999999999999998" contentMode="scaleToFill" id="0VM-pm-hHD">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -923,16 +910,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" id="AOL-Bs-GnD">
-                                <rect key="frame" x="20" y="56" width="280" height="487"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">-This application do not use or see Instagram credentials. You login via Instagram Web window.                                                  - Your profile info and other informations is not stored.                                                            -Due to Instagrams restriction you have a daily usage limit, when you reached limit you will be informed. To use again, you need to wait until limit is refreshed.               -The information you see is not absolute values, they obtained by Instagram servers. Therefore, we would not take responsibility about information mistakes.          -The accounts with tremendous number of follewer,media etc may be shown later due to processing information.                       -Via this application, you will communicate directly Instagram. The information will come to only your device.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3XP-io-cys">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3XP-io-cys">
                                 <rect key="frame" x="63" y="27" width="167" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -965,6 +943,11 @@
                                     <action selector="backButtonPressed:" destination="TuI-f0-2C2" eventType="touchUpInside" id="H4x-5u-OdI"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" id="Shx-kY-4Je">
+                                <rect key="frame" x="13" y="62" width="295" height="486"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -974,6 +957,9 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="webview" destination="Shx-kY-4Je" id="ibv-EE-29d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phc-eA-IXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1033,7 +1019,7 @@
             </objects>
             <point key="canvasLocation" x="8" y="288"/>
         </scene>
-        <!--Stalk List View Controller-->
+        <!--Search-->
         <scene sceneID="83c-x3-lQM">
             <objects>
                 <viewController id="1u4-MV-oXh" customClass="StalkListViewController" sceneMemberID="viewController">
@@ -1103,7 +1089,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8rJ-wc-Vvv">
+                    <navigationItem key="navigationItem" title="Search" id="8rJ-wc-Vvv">
                         <barButtonItem key="backBarButtonItem" title="Back" width="20" style="plain" id="Fwj-aR-gkt">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -1306,6 +1292,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1331,14 +1321,13 @@
         <image name="myprofile-icon-grey-selected.png" width="22" height="24"/>
         <image name="myprofile-icon-grey.png" width="22" height="24"/>
         <image name="outer-eye.png" width="63" height="39"/>
-        <image name="shapes" width="24" height="24"/>
         <image name="signs" width="64" height="64"/>
         <image name="stalk-loading-img.png" width="80" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="P14-8v-fV9"/>
         <segue reference="tSB-Am-HF4"/>
+        <segue reference="P14-8v-fV9"/>
+        <segue reference="Aga-07-iWW"/>
         <segue reference="nhV-3G-dTY"/>
-        <segue reference="JmE-Yz-QZj"/>
     </inferredMetricsTieBreakers>
 </document>

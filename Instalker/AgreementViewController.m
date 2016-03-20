@@ -8,7 +8,8 @@
 
 #import "AgreementViewController.h"
 
-@interface AgreementViewController ()
+@interface AgreementViewController ()<UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *webview;
 
 @end
 
@@ -19,6 +20,10 @@
     
     self.navigationController.navigationBarHidden=YES;
     
+    self.webview.delegate = self;
+    
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL: [NSURL URLWithString: @"https://www.iubenda.com/privacy-policy/7817174"] cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 30.0];
+    [self.webview loadRequest: request];
     // Do any additional setup after loading the view.
     
 }
