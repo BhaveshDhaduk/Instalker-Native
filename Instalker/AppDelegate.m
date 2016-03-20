@@ -22,7 +22,7 @@
 
     [self.window makeKeyAndVisible];
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage new]];
-    
+
     [RZErrorMessenger setDefaultMessagingWindow:[RZMessagingWindow defaultMessagingWindow]];
     
     // Configure tracker from GoogleService-Info.plist.

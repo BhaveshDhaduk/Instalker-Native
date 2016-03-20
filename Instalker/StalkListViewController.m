@@ -28,7 +28,7 @@
 {
     [super viewDidAppear:animated];
     [self getSearchHistory];
-
+    self.navigationController.title = @"Search";
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Search"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];

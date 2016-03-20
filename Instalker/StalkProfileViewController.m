@@ -20,6 +20,8 @@
 @property (weak,nonatomic) IBOutlet StatsProfileView *viewStatsProfile;
 @property (nonatomic,strong) StatsModel *statsModel;
 @property (nonatomic,strong) NSMutableArray *arrayDates;
+@property (nonatomic,strong) ServiceManager *serviceManager;
+
 @end
 
 @implementation StalkProfileViewController
@@ -106,9 +108,9 @@
     
     [self startLoadingAnimation];
     
-    ServiceManager *manager = [ServiceManager new];
+     _serviceManager = [ServiceManager new];
     
-    [manager getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
+    [_serviceManager getSelfDataWithCompletion:^(NSMutableArray *likeList, StatsModel *stats) {
        dispatch_async(dispatch_get_main_queue(), ^{
            _arrayData = likeList;
            [_viewStatsProfile configureViews:stats];
@@ -125,6 +127,7 @@
         
         [self removeLoadingAnimation];
          [self showError:errorModel];
+        _serviceManager = nil;
     }dateinterval:date];
     
 }
@@ -150,6 +153,7 @@
     } failure:^(NSError *error, InstagramFailModel *errorModel) {
         [self removeLoadingAnimation];
         [self showError:errorModel];
+        
     }];
     
     

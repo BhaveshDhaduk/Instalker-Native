@@ -37,6 +37,10 @@ typedef void (^completionPopup)(void);
 -(void)showLoadingPopup:(UINavigationController *)navController withCancel:(cancel)cancelBlock;
 {
 //    LoadingView *loadingView = [[LoadingView alloc]initWithFrame: CGRectMake(0, 0, 320, 568)];
+    if (_loadingVC) {
+        [self hideLoading];
+    }
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     
     LoadingViewController *loadingView = [storyboard instantiateViewControllerWithIdentifier:@"LoadingViewController"];
@@ -46,9 +50,7 @@ typedef void (^completionPopup)(void);
 //    popup.userInteractionEnabled=NO;
 //    [popup show];
     loadingView.cancelBlock=cancelBlock;
-    if (_loadingVC) {
-        [self hideLoading];
-    }
+   
     
     _loadingVC = loadingView;
     
@@ -64,14 +66,18 @@ typedef void (^completionPopup)(void);
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     
     PopupViewController *loadingView = [storyboard instantiateViewControllerWithIdentifier:@"PopupViewController"];
-
+    loadingView.view.frame = CGRectMake(0, 0, 300, 300);
     loadingView.labelPopupText.text = title;
-    
+    _popupVC = loadingView;
+    _hostVC = host;
+    host.useBlurForPopup = YES;
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidePopups)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    tapRecognizer.delegate = self;
+    [host.view addGestureRecognizer:tapRecognizer];
     [host presentPopupViewController:loadingView animated:YES completion:^{
         
     }];
-    
-    
     
     
 }
@@ -79,7 +85,6 @@ typedef void (^completionPopup)(void);
 
 -(void)removeAllPopups
 {
-    [KLCPopup dismissAllPopups];
     [_loadingVC dismissViewControllerAnimated:YES completion:nil];
 
 }
@@ -87,7 +92,7 @@ typedef void (^completionPopup)(void);
 -(void)hideLoading
 {
     [_loadingVC dismissViewControllerAnimated:YES completion:^{
-        _loadingVC=nil;
+
     }];
 
 
@@ -95,7 +100,19 @@ typedef void (^completionPopup)(void);
 }
 -(void)hidePopups
 {
-    [KLCPopup dismissAllPopups];
+    if (_hostVC && _hostVC.popupViewController ) {
+        [_hostVC dismissPopupViewControllerAnimated:YES
+                                         completion:^{
+                                             [_hostVC popupViewController];
+                                             
+                                            
+                                         }];
+    }
+
 }
+#pragma mark - gesture recognizer delegate functions
+
+// so that tapping popup view doesnt dismiss it
+
 
 @end

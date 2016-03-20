@@ -11,13 +11,15 @@
 #import "LoadingViewController.h"
 #import "PopupViewController.h"
 #import "UIViewController+CWPopup.h"
-
+#import "ErrorPopupViewController.h"
 
 typedef void (^removalCompletion)(void);
-@interface PopUpManager : NSObject
+@interface PopUpManager : NSObject <UIGestureRecognizerDelegate>
 
 
 @property (nonatomic,strong) LoadingViewController *loadingVC;
+@property (nonatomic,strong) PopupViewController *popupVC;
+@property (nonatomic,strong) UIViewController *hostVC;
 
 
 +(PopUpManager *)sharedManager;
