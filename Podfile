@@ -11,6 +11,7 @@ pod 'KLCPopup'
 pod 'RaisinToast'
 pod 'Google/Analytics'
 pod 'CWPopup'
+pod 'TPKeyboardAvoiding'
 
 
 end

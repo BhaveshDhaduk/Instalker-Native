@@ -47,6 +47,7 @@ PODS:
     - UICKeyChainStore (~> 2.0)
   - KLCPopup (1.0)
   - RaisinToast (1.0.5)
+  - TPKeyboardAvoiding (1.2.11)
   - UICKeyChainStore (2.1.0)
 
 DEPENDENCIES:
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - InstagramKit/UICKeyChainStore
   - KLCPopup
   - RaisinToast
+  - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -69,6 +71,7 @@ SPEC CHECKSUMS:
   InstagramKit: bbbd15baeac2d32b2915d2d89319ad90bacd5912
   KLCPopup: 76c5a19227977f1e53d85236f9ef42257c168d98
   RaisinToast: abdebeb999a55232f5e56f916946092da8c34f50
+  TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
   UICKeyChainStore: f1cbd42216a113f0165de1e733e62905b8823432
 
 COCOAPODS: 0.39.0

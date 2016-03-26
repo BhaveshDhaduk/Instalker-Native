@@ -233,8 +233,9 @@
 
 -(void)removeLoadingAnimation
 {
-    [[PopUpManager sharedManager]hideLoading];
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[PopUpManager sharedManager]hideLoading];
+    });
 }
 
 #pragma mark - TableView Methods
@@ -308,6 +309,7 @@
 }
 
 - (IBAction)changeDateButtonPressed:(id)sender {
+    
     if (_viewPickerContainer.hidden) {
         [self configurePickerViewHidden:NO];
         [_buttonChangeDate setTitle:@"Select Date and Tap Here" forState:UIControlStateNormal];

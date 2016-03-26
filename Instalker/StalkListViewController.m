@@ -11,8 +11,10 @@
 #import "StalkProfileViewController.h"
 
 
+
 @interface StalkListViewController ()
 
+@property (nonatomic,strong) UIGestureRecognizer *gest;
 @end
 
 @implementation StalkListViewController
@@ -23,6 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setDelegates];
+    [self addProtector];
 }
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -98,8 +101,44 @@
         
     }];
 
+}
+
+#pragma mark - Search Bar Delegates
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    
 
 }
+
+
+
+#pragma mark - Keyboard
+
+-(void)addProtector
+{
+
+    _gest = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(closeKeyboard)];
+    _gest.delegate=self;
+    _gest.cancelsTouchesInView=NO;
+
+    [self.tableView addGestureRecognizer:_gest];
+    
+
+}
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    [self closeKeyboard];
+    return YES;
+}
+-(void)closeKeyboard
+{
+    [_searchBar resignFirstResponder];
+    [self.view endEditing:YES];
+}
+
+
+
 
 
 #pragma mark - TableView Methods

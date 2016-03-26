@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UICKeyChainStore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>876FB93DB03269E23F2A7186297D1E58</key>
+		<key>7CE326CCE8F213A9DA5CCB796BEA08EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA721D047F55786A6329D3BDA7A271F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E69BA1C5CA35F83176B5F7ADAFCBA18B</key>
+		<key>E3F0B9DA9FD02B1FCB96519595E46B76</key>
 		<dict>
 			<key>primary</key>
 			<true/>

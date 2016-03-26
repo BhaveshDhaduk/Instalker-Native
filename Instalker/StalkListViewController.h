@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SearchTableViewCell.h"
-@interface StalkListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
+#import <TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h>
+@interface StalkListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UIGestureRecognizerDelegate>
 
 #pragma mark - IBOutlets
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

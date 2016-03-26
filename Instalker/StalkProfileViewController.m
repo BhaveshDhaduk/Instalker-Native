@@ -9,7 +9,7 @@
 #import "StalkProfileViewController.h"
 #import "ServiceManager.h"
 #import "StatsProfileView.h"
-
+#import "MediaViewController.h"
 
 @interface StalkProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
@@ -218,7 +218,10 @@
 
 -(void)removeLoadingAnimation
 {
-    [[PopUpManager sharedManager]hideLoading];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[PopUpManager sharedManager]hideLoading];
+    });
+
     
 }
 
@@ -266,6 +269,13 @@
         UserLikeTableViewCell *cell = (UserLikeTableViewCell *)sender;
         destinationViewController.user = cell.user;
     }
+    if ([segue.identifier isEqualToString:@"media2"]) {
+        MediaViewController *mediaVC = segue.destinationViewController;
+        UserLikeTableViewCell *cell = (UserLikeTableViewCell *)[[sender superview]superview];
+        mediaVC.arrayLikedMedias =cell.arrayLikedMedias;
+        
+    }
+
     
 }
 
