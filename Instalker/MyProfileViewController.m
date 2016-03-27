@@ -10,13 +10,12 @@
 #import "ServiceManager.h"
 #import "StatsProfileView.h"
 #import "MediaViewController.h"
+#import "DateSelectPopupViewController.h"
+#import <STPopup/STPopup.h>
 
 
-@interface MyProfileViewController ()
-@property (weak,nonatomic) IBOutlet UIButton *buttonPickerButton;
-@property (weak,nonatomic) IBOutlet UIView *viewPickerContainer;
+@interface MyProfileViewController () <DateSelectPopupDelegate>
 @property (weak,nonatomic) IBOutlet UILabel *labelNoMediaWarning;
-@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 - (IBAction)changeDateButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonChangeDate;
 @property (weak, nonatomic) IBOutlet UILabel *labelMediaCountInInterval;
@@ -24,6 +23,9 @@
 @property (nonatomic,strong) StatsModel *statsModel;
 @property (nonatomic,strong) NSMutableArray *arrayDates;
 @property (nonatomic) BOOL isDataObtained;
+
+@property (nonatomic,strong) DateSelectPopupViewController *dateSelectPopup;
+
 @end
 
 @implementation MyProfileViewController
@@ -228,6 +230,7 @@
     [[PopUpManager sharedManager]showLoadingPopup:self.navigationController withCancel:^{
         [self.navigationController popViewControllerAnimated:NO];
         [[PopUpManager sharedManager]hideLoading];
+        [_buttonChangeDate setTitle:@"Loading Cancelled" forState:UIControlStateNormal];
     }];
 }
 
@@ -285,90 +288,7 @@
     }
 }
 
--(void)configurePickerViewHidden:(BOOL)hidden
-{
-    if(hidden)
-    {
-        [UIView animateWithDuration:0.4 animations:^{
-            _viewPickerContainer.transform = CGAffineTransformIdentity;
-            
-        } completion:^(BOOL finished) {
-            _viewPickerContainer.hidden=hidden;
-        }];
-    }else
-    {
-        _viewPickerContainer.hidden = hidden;
-        [UIView animateWithDuration:0.3 animations:^{
-            _viewPickerContainer.transform = CGAffineTransformMakeTranslation(0, -300);
-        } completion:^(BOOL finished) {
-            
-        }];
-        
-    }
-    
-}
 
-- (IBAction)changeDateButtonPressed:(id)sender {
-    
-    if (_viewPickerContainer.hidden) {
-        [self configurePickerViewHidden:NO];
-        [_buttonChangeDate setTitle:@"Select Date and Tap Here" forState:UIControlStateNormal];
-    }else
-    {
-        switch ([_pickerView selectedRowInComponent:0]) {
-            case 0:
-                [self startServiceForBothWithMedia:kWeek];
-                break;
-                
-            case 1:
-                [self startServiceForBothWithMedia:kMonth];
-                break;
-            case 2:
-                [self startServiceForBothWithMedia:kThreeMonth];
-                break;
-            case 3:
-                [self startServiceForBothWithMedia:kSixMonth];
-                break;
-            case 4:
-                [self startServiceForBothWithMedia:kAll];
-                break;
-            default:
-                [self startServiceForBothWithMedia:kAll];
-                break;
-        }
-        [self configurePickerViewHidden:YES];
-        [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:[_pickerView selectedRowInComponent:0]] forState:UIControlStateNormal];
-        
-    }
-    
-}
-
-#pragma mark - Date Picker
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return _arrayDates.count;
-    
-}
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
-    label.backgroundColor = [UIColor clearColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor whiteColor];
-    label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
-    label.text = [_arrayDates objectAtIndex:row];
-    return label;
-}
-
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    
-    
-}
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
 
 #pragma mark - Error Label 
 
@@ -384,5 +304,62 @@
     _labelNoMediaWarning.hidden=hidden;
     
 }
+
+
+#pragma mark - Date Selection
+
+- (IBAction)changeDateButtonPressed:(id)sender {
+    [self showDateSelector];
+}
+
+
+-(void)showDateSelector
+{
+
+    self.useBlurForPopup=YES;
+    _dateSelectPopup = [[DateSelectPopupViewController alloc]initWithNibName:@"DateSelectPopupViewController" bundle:nil];
+    _dateSelectPopup.delegate=self;
+    
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:_dateSelectPopup];
+    
+    [popupController presentInViewController:self];
+}
+
+#pragma mark - Date Selection Delegates
+
+-(void)dateSelectedWith:(kMediaDate)date
+{
+    [self startServiceForBothWithMedia:date];
+    switch (date) {
+        case kWeek:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:0] forState:UIControlStateNormal];
+            break;
+        case kMonth:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:1] forState:UIControlStateNormal];
+            break;
+        case kThreeMonth:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:2] forState:UIControlStateNormal];
+            break;
+        case kSixMonth:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:3] forState:UIControlStateNormal];
+            break;
+        case kAll:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:4] forState:UIControlStateNormal];
+            break;
+        default:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:4] forState:UIControlStateNormal];
+            break;
+    }
+        [self.popupViewController dismissPopupViewControllerAnimated:YES completion:nil];
+
+    
+}
+-(void)selectionCancelled
+{
+    [self.popupController dismiss];
+    
+}
+
+
 
 @end

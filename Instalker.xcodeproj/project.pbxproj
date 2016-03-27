@@ -77,6 +77,8 @@
 		4C92F8CC1C7CEFDB006E8A37 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92F8C91C7CEFDB006E8A37 /* dot.png */; };
 		4C92F8CD1C7CEFDB006E8A37 /* dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92F8CA1C7CEFDB006E8A37 /* dot@2x.png */; };
 		4C92F8CE1C7CEFDB006E8A37 /* dot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92F8CB1C7CEFDB006E8A37 /* dot@3x.png */; };
+		4C9E7FAD1CA6B910004B016B /* DateSelectPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E7FAB1CA6B910004B016B /* DateSelectPopupViewController.m */; };
+		4C9E7FAE1CA6B910004B016B /* DateSelectPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E7FAC1CA6B910004B016B /* DateSelectPopupViewController.xib */; };
 		4CB025531C9E21D10058A2BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CB025521C9E21D10058A2BC /* GoogleService-Info.plist */; };
 		4CB0255A1C9E44940058A2BC /* ErrorPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB025581C9E44940058A2BC /* ErrorPopupViewController.xib */; };
 		4CB025601C9E46820058A2BC /* ErrorPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB0255F1C9E46820058A2BC /* ErrorPopupViewController.m */; };
@@ -185,6 +187,9 @@
 		4C92F8C91C7CEFDB006E8A37 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		4C92F8CA1C7CEFDB006E8A37 /* dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot@2x.png"; sourceTree = "<group>"; };
 		4C92F8CB1C7CEFDB006E8A37 /* dot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot@3x.png"; sourceTree = "<group>"; };
+		4C9E7FAA1CA6B910004B016B /* DateSelectPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateSelectPopupViewController.h; sourceTree = "<group>"; };
+		4C9E7FAB1CA6B910004B016B /* DateSelectPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSelectPopupViewController.m; sourceTree = "<group>"; };
+		4C9E7FAC1CA6B910004B016B /* DateSelectPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateSelectPopupViewController.xib; sourceTree = "<group>"; };
 		4CB025521C9E21D10058A2BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4CB025581C9E44940058A2BC /* ErrorPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorPopupViewController.xib; sourceTree = "<group>"; };
 		4CB0255E1C9E46820058A2BC /* ErrorPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorPopupViewController.h; sourceTree = "<group>"; };
@@ -227,6 +232,9 @@
 				4CB0255E1C9E46820058A2BC /* ErrorPopupViewController.h */,
 				4CB0255F1C9E46820058A2BC /* ErrorPopupViewController.m */,
 				4CB025581C9E44940058A2BC /* ErrorPopupViewController.xib */,
+				4C9E7FAA1CA6B910004B016B /* DateSelectPopupViewController.h */,
+				4C9E7FAB1CA6B910004B016B /* DateSelectPopupViewController.m */,
+				4C9E7FAC1CA6B910004B016B /* DateSelectPopupViewController.xib */,
 			);
 			name = PopupManager;
 			sourceTree = "<group>";
@@ -573,6 +581,7 @@
 				4C0981A91C7C99C000CB1B6E /* myprofile-icon-grey@2x.png in Resources */,
 				4C0EBDED1C84977C002CF577 /* MediaCollectionViewCell.xib in Resources */,
 				4C0981A11C7C99C000CB1B6E /* instalker-logo-login@2x.png in Resources */,
+				4C9E7FAE1CA6B910004B016B /* DateSelectPopupViewController.xib in Resources */,
 				4C1E92621C54257000237AF0 /* Assets.xcassets in Resources */,
 				4C0981A41C7C99C000CB1B6E /* login-button@2x.png in Resources */,
 				4C0981A01C7C99C000CB1B6E /* instalker-logo-login.png in Resources */,
@@ -683,6 +692,7 @@
 				4C71C96C1C84D04C003F59A4 /* BigImageViewController.m in Sources */,
 				4C0951FF1C94E3470076EE49 /* AgreementViewController.m in Sources */,
 				4C0EBDE61C849663002CF577 /* MediaViewController.m in Sources */,
+				4C9E7FAD1CA6B910004B016B /* DateSelectPopupViewController.m in Sources */,
 				4C51E42C1C7D09F100443F8E /* LoadingViewController.m in Sources */,
 				4C1A30181C56B8E500BF721A /* Singleton.m in Sources */,
 				4C3324151C8CE985007250A8 /* InstagramFailModel.m in Sources */,

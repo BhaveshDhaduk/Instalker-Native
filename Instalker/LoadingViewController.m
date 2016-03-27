@@ -149,7 +149,7 @@
 }
 
 - (void)updateLoadingLabel {
-    NSString *ellipses = @". . .";
+    NSString *ellipses = @". . . . .";
     
     if ([self.labelStalking.text rangeOfString:ellipses].location == NSNotFound) {
         [self.labelStalking setText:[NSString stringWithFormat:@"%@ .",self.labelStalking.text]];
@@ -161,7 +161,7 @@
 - (void)endLoadingAnimation {
     [self.timer invalidate];
     self.timer = nil;
-    [self.labelStalking setText:@"Stalking"];
+    [self.labelStalking setText:@"Loading"];
 }
 
 

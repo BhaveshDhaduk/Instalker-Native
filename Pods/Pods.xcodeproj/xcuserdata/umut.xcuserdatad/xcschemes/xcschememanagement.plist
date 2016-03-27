@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>STPopup.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TPKeyboardAvoiding.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7CE326CCE8F213A9DA5CCB796BEA08EE</key>
+		<key>68EF7EAC653C1F34A74E715BC41EB2FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA721D047F55786A6329D3BDA7A271F4</key>
+		<key>9B30205E9F7CCDDCB6EB030A9E2C6E7B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3D2036ACD4A38A9459C018AB8D4C533</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3F0B9DA9FD02B1FCB96519595E46B76</key>
+		<key>D4DC8DF0B2C6A5B30031DC42A3000547</key>
 		<dict>
 			<key>primary</key>
 			<true/>

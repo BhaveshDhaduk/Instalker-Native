@@ -512,7 +512,7 @@
                                                         <rect key="frame" x="30" y="195" width="260" height="200"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -701,7 +701,7 @@
                                                 <rect key="frame" x="30" y="200" width="260" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" id="kGj-lg-inU" customClass="StatsProfileView">
@@ -842,41 +842,6 @@
                                     </view>
                                 </subviews>
                             </scrollView>
-                            <view hidden="YES" contentMode="scaleToFill" id="K3p-1s-FgI">
-                                <rect key="frame" x="0.0" y="521" width="320" height="234"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <pickerView alpha="0.84999999999999998" contentMode="scaleToFill" id="0VM-pm-hHD">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="BR4-Jq-7iE" id="uox-Pg-zBv"/>
-                                            <outlet property="delegate" destination="BR4-Jq-7iE" id="tMc-lA-AqY"/>
-                                        </connections>
-                                    </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5if-38-NDh">
-                                        <rect key="frame" x="220" y="0.0" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="OK">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="changeDateButtonPressed:" destination="BR4-Jq-7iE" eventType="touchUpInside" id="jtx-KP-TDx"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -886,15 +851,12 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="buttonChangeDate" destination="vXP-pc-Brq" id="vCE-wD-IFi"/>
-                        <outlet property="buttonPickerButton" destination="5if-38-NDh" id="MXu-lv-qvB"/>
                         <outlet property="labelMediaCountInInterval" destination="c6Q-jn-ssj" id="6tt-c2-waH"/>
                         <outlet property="labelNameForTitle" destination="VZ5-pg-vAw" id="O4x-jY-pOx"/>
                         <outlet property="labelNoMediaWarning" destination="Liq-UQ-cJV" id="Bkm-8p-Muy"/>
-                        <outlet property="pickerView" destination="0VM-pm-hHD" id="ekP-MQ-1bf"/>
                         <outlet property="scrollViewMain" destination="Jdy-hP-dPN" id="wQs-bh-Vq1"/>
                         <outlet property="tableView" destination="OtM-Y1-kRt" id="3VM-kp-9qf"/>
                         <outlet property="viewContentOfScroll" destination="00i-TA-YPX" id="Fx8-Ax-Kan"/>
-                        <outlet property="viewPickerContainer" destination="K3p-1s-FgI" id="fcj-I7-efS"/>
                         <outlet property="viewStatsProfile" destination="kGj-lg-inU" id="JnW-nC-cda"/>
                     </connections>
                 </viewController>
@@ -1230,7 +1192,7 @@
                                         <rect key="frame" x="150" y="219" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stalking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jcd-PE-0md">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jcd-PE-0md">
                                         <rect key="frame" x="125" y="328" width="71" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1325,9 +1287,9 @@
         <image name="stalk-loading-img.png" width="80" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nhV-3G-dTY"/>
-        <segue reference="9H8-c5-V0e"/>
         <segue reference="P14-8v-fV9"/>
+        <segue reference="tSB-Am-HF4"/>
+        <segue reference="nhV-3G-dTY"/>
         <segue reference="JmE-Yz-QZj"/>
     </inferredMetricsTieBreakers>
 </document>

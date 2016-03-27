@@ -22,7 +22,7 @@ typedef void (^cancel)(void);
 #import <InstagramKit/InstagramKit.h>
 #import <Google/Analytics.h>
 
-
+#import <STPopup/STPopup.h>
 
 #define k_Search_History_List @"searchHistoryList"
 #define k_instagram_token @"instagramToken"

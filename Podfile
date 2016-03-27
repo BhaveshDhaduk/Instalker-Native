@@ -10,9 +10,9 @@ pod 'InstagramKit/UICKeyChainStore'
 pod 'KLCPopup'
 pod 'RaisinToast'
 pod 'Google/Analytics'
-pod 'CWPopup'
+pod 'CWPopup', '~> 1.2.4'
 pod 'TPKeyboardAvoiding'
-
+pod 'STPopup'
 
 end
 
