@@ -9,6 +9,7 @@
 #import "FeaturesViewController.h"
 #import "AgreementViewController.h"
 @interface FeaturesViewController ()
+- (IBAction)buyWeekly:(id)sender;
 
 @end
 
@@ -66,5 +67,8 @@
     [[InstagramEngine sharedEngine]logout];
     [[Singleton sharedInstance].baseNavigationController popToRootViewControllerAnimated:YES];
     
+}
+- (IBAction)buyWeekly:(id)sender {
+  
 }
 @end

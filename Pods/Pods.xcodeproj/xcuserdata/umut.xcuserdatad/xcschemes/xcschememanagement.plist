@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RMStore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RaisinToast.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +57,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>122BBDE8A87658E2A326A00E178BEC2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3D08B409BA2BBE027DE802ADC4454541</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4116FE888037A507D77AB076748C8ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>422675690A36DA5C4CA4CEE48E8ED428</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,27 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68EF7EAC653C1F34A74E715BC41EB2FA</key>
+		<key>978323418ABE6F7B8287754AA6E9918D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B30205E9F7CCDDCB6EB030A9E2C6E7B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B3D2036ACD4A38A9459C018AB8D4C533</key>
+		<key>C67100DCF16110B580D2C2C2AF9AFD15</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C8C328417024B231BC438C89F07B70AE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D4DC8DF0B2C6A5B30031DC42A3000547</key>
 		<dict>
 			<key>primary</key>
 			<true/>

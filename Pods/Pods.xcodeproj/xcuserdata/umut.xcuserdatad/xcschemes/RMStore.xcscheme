@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '296B9A04DCC009152CFA013E'
-               BlueprintName = 'Pods-Instalker'
+               BlueprintIdentifier = '912E4122EC518C5AC2631BD7'
+               BlueprintName = 'RMStore'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-Instalker.a'>
+               BuildableName = 'libRMStore.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

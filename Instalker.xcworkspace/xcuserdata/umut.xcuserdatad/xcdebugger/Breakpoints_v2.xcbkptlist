@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/StalkProfileViewController.m"
-            timestampString = "480771029.440617"
+            timestampString = "480201970.256846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-startSelfServicewithDate:"
             landmarkType = "5">
          </BreakpointContent>
@@ -35,13 +35,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Instalker/MyProfileViewController.m"
-            timestampString = "480768458.662302"
+            filePath = "Instalker/StalkProfileViewController.m"
+            timestampString = "480202695.695454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "376"
-            endingLineNumber = "376"
-            landmarkName = "-selectionCancelled"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-startServiceForUser:withDate:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__59-[StalkProfileViewController startServiceForUser:withDate:]_block_invoke_2"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/KasabaGit/Instalker-Native/Instalker/StalkProfileViewController.m"
+                  timestampString = "480800590.643439"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "794">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_131"
+                  moduleName = "Instalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/umut/KasabaGit/Instalker-Native/Instalker/StalkProfileViewController.m"
+                  timestampString = "480800590.643671"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/StalkListViewController.m"
+            timestampString = "480532928.813758"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-gestureRecognizer:shouldReceiveTouch:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/MyProfileViewController.m"
+            timestampString = "480692126.526172"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "359"
+            endingLineNumber = "359"
+            landmarkName = "-dateSelectedWith:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

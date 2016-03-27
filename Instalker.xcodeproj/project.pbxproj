@@ -51,6 +51,8 @@
 		4C1E925D1C54257000237AF0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E925C1C54257000237AF0 /* ViewController.m */; };
 		4C1E92601C54257000237AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E925E1C54257000237AF0 /* Main.storyboard */; };
 		4C1E92621C54257000237AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E92611C54257000237AF0 /* Assets.xcassets */; };
+		4C317DC61CA87A660011E2CA /* InAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C317DC41CA87A660011E2CA /* InAppViewController.m */; };
+		4C317DC71CA87A660011E2CA /* InAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C317DC51CA87A660011E2CA /* InAppViewController.xib */; };
 		4C3324151C8CE985007250A8 /* InstagramFailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3324121C8CE985007250A8 /* InstagramFailModel.m */; };
 		4C3324161C8CE985007250A8 /* Meta.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3324141C8CE985007250A8 /* Meta.m */; };
 		4C3324191C8CF7F6007250A8 /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3324181C8CF7F6007250A8 /* PopupViewController.m */; };
@@ -165,6 +167,9 @@
 		4C1E925F1C54257000237AF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C1E92611C54257000237AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C1E92661C54257000237AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C317DC31CA87A660011E2CA /* InAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppViewController.h; sourceTree = "<group>"; };
+		4C317DC41CA87A660011E2CA /* InAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppViewController.m; sourceTree = "<group>"; };
+		4C317DC51CA87A660011E2CA /* InAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InAppViewController.xib; sourceTree = "<group>"; };
 		4C3324101C8CE985007250A8 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
 		4C3324111C8CE985007250A8 /* InstagramFailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramFailModel.h; sourceTree = "<group>"; };
 		4C3324121C8CE985007250A8 /* InstagramFailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramFailModel.m; sourceTree = "<group>"; };
@@ -243,14 +248,11 @@
 		4C0981AF1C7CE51000CB1B6E /* PopupManager */ = {
 			isa = PBXGroup;
 			children = (
+				4C317DC21CA87A160011E2CA /* INAPP */,
+				4C317DC01CA879F30011E2CA /* ErrorPopup */,
 				4C0981B01C7CE52500CB1B6E /* PopUpManager.h */,
 				4C0981B11C7CE52500CB1B6E /* PopUpManager.m */,
-				4CB0255E1C9E46820058A2BC /* ErrorPopupViewController.h */,
-				4CB0255F1C9E46820058A2BC /* ErrorPopupViewController.m */,
-				4C14292E1CA80A6400D3F493 /* ErrorPopupViewController.xib */,
-				4C9E7FAA1CA6B910004B016B /* DateSelectPopupViewController.h */,
-				4C9E7FAB1CA6B910004B016B /* DateSelectPopupViewController.m */,
-				4C1429351CA80A9500D3F493 /* DateSelectPopupViewController.xib */,
+				4C317DC11CA87A0E0011E2CA /* DatePopup */,
 			);
 			name = PopupManager;
 			sourceTree = "<group>";
@@ -453,6 +455,36 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		4C317DC01CA879F30011E2CA /* ErrorPopup */ = {
+			isa = PBXGroup;
+			children = (
+				4CB0255E1C9E46820058A2BC /* ErrorPopupViewController.h */,
+				4CB0255F1C9E46820058A2BC /* ErrorPopupViewController.m */,
+				4C14292E1CA80A6400D3F493 /* ErrorPopupViewController.xib */,
+			);
+			name = ErrorPopup;
+			sourceTree = "<group>";
+		};
+		4C317DC11CA87A0E0011E2CA /* DatePopup */ = {
+			isa = PBXGroup;
+			children = (
+				4C9E7FAA1CA6B910004B016B /* DateSelectPopupViewController.h */,
+				4C9E7FAB1CA6B910004B016B /* DateSelectPopupViewController.m */,
+				4C1429351CA80A9500D3F493 /* DateSelectPopupViewController.xib */,
+			);
+			name = DatePopup;
+			sourceTree = "<group>";
+		};
+		4C317DC21CA87A160011E2CA /* INAPP */ = {
+			isa = PBXGroup;
+			children = (
+				4C317DC31CA87A660011E2CA /* InAppViewController.h */,
+				4C317DC41CA87A660011E2CA /* InAppViewController.m */,
+				4C317DC51CA87A660011E2CA /* InAppViewController.xib */,
+			);
+			name = INAPP;
+			sourceTree = "<group>";
+		};
 		4C6708291C7A1AE70077DC58 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +649,7 @@
 				4C7A3F821C7E5F0F00DC88B2 /* stalk-icon.png in Resources */,
 				4C0981A21C7C99C000CB1B6E /* likesRectangle.png in Resources */,
 				4C1E92601C54257000237AF0 /* Main.storyboard in Resources */,
+				4C317DC71CA87A660011E2CA /* InAppViewController.xib in Resources */,
 				4C3A2DAE1C7D133E005C00B3 /* Default-568h.png in Resources */,
 				4C09819B1C7C99C000CB1B6E /* features-icon-selected@2x.png in Resources */,
 				4C92F8BE1C7CEB30006E8A37 /* eye-icon-white.png in Resources */,
@@ -720,6 +753,7 @@
 				4C1A301C1C56D0CE00BF721A /* MainViewController.m in Sources */,
 				4C1A30211C57E14B00BF721A /* MyProfileViewController.m in Sources */,
 				4C1D3E221C5D738100979F16 /* AsyncImageView.m in Sources */,
+				4C317DC61CA87A660011E2CA /* InAppViewController.m in Sources */,
 				4CB025601C9E46820058A2BC /* ErrorPopupViewController.m in Sources */,
 				4C1D3E2C1C5D7F5E00979F16 /* UserLikeTableViewCell.m in Sources */,
 				4C1A30311C58111F00BF721A /* ServiceManager.m in Sources */,

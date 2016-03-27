@@ -47,6 +47,9 @@ PODS:
     - UICKeyChainStore (~> 2.0)
   - KLCPopup (1.0)
   - RaisinToast (1.0.5)
+  - RMStore (0.7.1):
+    - RMStore/Core (= 0.7.1)
+  - RMStore/Core (0.7.1)
   - STPopup (1.6.1)
   - TPKeyboardAvoiding (1.2.11)
   - UICKeyChainStore (2.1.0)
@@ -58,6 +61,7 @@ DEPENDENCIES:
   - InstagramKit/UICKeyChainStore
   - KLCPopup
   - RaisinToast
+  - RMStore
   - STPopup
   - TPKeyboardAvoiding
 
@@ -73,6 +77,7 @@ SPEC CHECKSUMS:
   InstagramKit: bbbd15baeac2d32b2915d2d89319ad90bacd5912
   KLCPopup: 76c5a19227977f1e53d85236f9ef42257c168d98
   RaisinToast: abdebeb999a55232f5e56f916946092da8c34f50
+  RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
   STPopup: f32dc6a944b57311b6d2d6e3afd789f83a0c4cbc
   TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
   UICKeyChainStore: f1cbd42216a113f0165de1e733e62905b8823432

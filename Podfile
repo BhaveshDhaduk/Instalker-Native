@@ -13,6 +13,7 @@ pod 'Google/Analytics'
 pod 'CWPopup', '~> 1.2.4'
 pod 'TPKeyboardAvoiding'
 pod 'STPopup'
+pod 'RMStore'
 
 end
 

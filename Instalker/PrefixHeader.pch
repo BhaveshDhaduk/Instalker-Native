@@ -38,6 +38,9 @@ typedef void (^cancel)(void);
 #pragma mark - Enumeration
 
 
+#define kSubscriptionWeekly @"com.mhs.instalker.weekly"
+
+
 
 
 typedef enum kMediaDate:NSInteger {
