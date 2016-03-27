@@ -25,7 +25,7 @@
     [tracker set:kGAIScreenName value:@"Settings"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     [super viewDidAppear:animated];
-    self.navigationItem.title = @"Settings";
+    self.navigationItem.title =NSLocalizedString( @"Settings",nil);
     self.navigationItem.titleView.tintColor =  [UIColor whiteColor];
 }
 
@@ -54,7 +54,7 @@
     NSData *data = [NSKeyedArchiver  archivedDataWithRootObject:[NSArray arrayWithArray:[Singleton sharedInstance].arraySearchHistory]];
     [[NSUserDefaults standardUserDefaults]setObject:data  forKey:k_Search_History_List];
     [[NSUserDefaults standardUserDefaults]synchronize];
-    [RZErrorMessenger displayErrorWithTitle:@"" detail:@"Search history is cleaned!" level:kRZErrorMessengerLevelPositive];
+    [RZErrorMessenger displayErrorWithTitle:@"" detail:NSLocalizedString(@"Search history is cleaned!",nil) level:kRZErrorMessengerLevelPositive];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [RZErrorMessenger hideAllErrors];
     });

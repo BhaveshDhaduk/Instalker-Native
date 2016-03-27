@@ -47,7 +47,7 @@
     self.navigationItem.titleView.tintColor = [UIColor whiteColor];
     
     self.navigationController.navigationBar.backItem.titleView.tintColor= [UIColor whiteColor];
-    self.navigationController.navigationBar.backItem.title = @"Back";
+    self.navigationController.navigationBar.backItem.title =NSLocalizedString( @"Back",nil);
     
 }
 

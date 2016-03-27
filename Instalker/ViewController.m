@@ -73,8 +73,26 @@
     
     NSURL *authURL = [engine authorizationURL];
     [self.webview loadRequest:[NSURLRequest requestWithURL:authURL]];
-    
-    
+    [UIView animateWithDuration:0.5 animations:^{
+        [_viewWelcome setAlpha:0.0];
+        
+    } completion:^(BOOL finished) {
+        [_viewWelcome setHidden:YES];
+        [self.webview setHidden:NO];
+        
+    }];
+
+}
+-(void)hideWebView
+{
+    [self.webview setHidden:YES];
+    [UIView animateWithDuration:0.5 animations:^{
+        [_viewWelcome setAlpha:1.0];
+        
+    } completion:^(BOOL finished) {
+        [_viewWelcome setHidden:NO];
+        
+    }];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -88,7 +106,7 @@
         [Singleton sharedInstance].accessToken = [[InstagramEngine sharedEngine] accessToken];
         [ServiceManager sharedManager].accessToken = [Singleton sharedInstance].accessToken;
         [[NSUserDefaults standardUserDefaults] setObject:[[InstagramEngine sharedEngine] accessToken] forKey:k_instagram_token];
-
+        [self hideWebView];
         [self performSegueWithIdentifier:@"tabSegue" sender:self];
     }
     return YES;
@@ -99,14 +117,7 @@
 - (IBAction)buttonPressed:(id)sender {
     {
         [self showWebViewForLogin];
-        [UIView animateWithDuration:0.5 animations:^{
-            [_viewWelcome setAlpha:0.0];
-            
-        } completion:^(BOOL finished) {
-            [_viewWelcome setHidden:YES];
-            
-        }];
-   
+        
     }
     
 }

@@ -1,0 +1,150 @@
+
+/* Class = "UILabel"; text = "Total Likes"; ObjectID = "08X-JY-gtG"; */
+"08X-JY-gtG.text" = "Total Likes";
+
+/* Class = "UILabel"; text = "umut_afacan"; ObjectID = "19Q-Fb-MhY"; */
+"19Q-Fb-MhY.text" = "umut_afacan";
+
+/* Class = "UILabel"; text = " We will not use or store your password and access token"; ObjectID = "1lc-lC-gKU"; */
+"1lc-lC-gKU.text" = " We will not use or store your password and access token";
+
+/* Class = "UIButton"; normalTitle = "Clear Search History"; ObjectID = "3RR-Ab-esn"; */
+"3RR-Ab-esn.normalTitle" = "Clear Search History";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "3UD-93-HET"; */
+"3UD-93-HET.title" = "Back";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "3XP-io-cys"; */
+"3XP-io-cys.text" = "Privacy Policy";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6PM-Qx-AxD"; */
+"6PM-Qx-AxD.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "7Z4-sj-Bhg"; */
+"7Z4-sj-Bhg.title" = "Back";
+
+/* Class = "UILabel"; text = "This profile is private."; ObjectID = "8LG-99-dOK"; */
+"8LG-99-dOK.text" = "This profile is private.";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "8rJ-wc-Vvv"; */
+"8rJ-wc-Vvv.title" = "Search";
+
+/* Class = "UILabel"; text = "Avg.Likes"; ObjectID = "ErT-eL-6HD"; */
+"ErT-eL-6HD.text" = "Avg.Likes";
+
+/* Class = "UILabel"; text = "For more detail, please read"; ObjectID = "F7r-cH-ljy"; */
+"F7r-cH-ljy.text" = "For more detail, please read";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Fwj-aR-gkt"; */
+"Fwj-aR-gkt.title" = "Back";
+
+/* Class = "UILabel"; text = "No Media at selected interval, change date interval from above"; ObjectID = "Liq-UQ-cJV"; */
+"Liq-UQ-cJV.text" = "No Media at selected interval, change date interval from above";
+
+/* Class = "UILabel"; text = "Avg.Likes"; ObjectID = "MSw-VN-w8g"; */
+"MSw-VN-w8g.text" = "Avg.Likes";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "Nc7-bT-Shk"; */
+"Nc7-bT-Shk.title" = "Search";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "P4j-zp-Ox1"; */
+"P4j-zp-Ox1.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "PGD-hK-dm5"; */
+"PGD-hK-dm5.text" = "0";
+
+/* Class = "UILabel"; text = "No Media at selected interval, change date interval from above"; ObjectID = "Ua8-hM-lfm"; */
+"Ua8-hM-lfm.text" = "No Media at selected interval, change date interval from above";
+
+/* Class = "UILabel"; text = "People who most likes"; ObjectID = "UjO-LZ-ABY"; */
+"UjO-LZ-ABY.text" = "People who most likes";
+
+/* Class = "UIButton"; normalTitle = "our privacy policy"; ObjectID = "Vdw-NI-4MJ"; */
+"Vdw-NI-4MJ.normalTitle" = "our privacy policy";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "YYD-CR-YVt"; */
+"YYD-CR-YVt.text" = "0";
+
+/* Class = "UILabel"; text = "Avg.Comments"; ObjectID = "alZ-8y-hd4"; */
+"alZ-8y-hd4.text" = "Avg.Comments";
+
+/* Class = "UILabel"; text = ".  .  .  .  ."; ObjectID = "ar3-Rb-8K9"; */
+"ar3-Rb-8K9.text" = ".  .  .  .  .";
+
+/* Class = "UIButton"; normalTitle = "One Week"; ObjectID = "aw5-x4-Lsj"; */
+"aw5-x4-Lsj.normalTitle" = "One Week";
+
+/* Class = "UILabel"; text = "0 Media"; ObjectID = "c6Q-jn-ssj"; */
+"c6Q-jn-ssj.text" = "0 Media";
+
+/* Class = "UILabel"; text = "OK"; ObjectID = "cSh-L7-GJH"; */
+"cSh-L7-GJH.text" = "OK";
+
+/* Class = "UILabel"; text = "0 Media"; ObjectID = "d9f-ZA-ypu"; */
+"d9f-ZA-ypu.text" = "0 Media";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "eWo-ah-KqX"; */
+"eWo-ah-KqX.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Privacy Policy"; ObjectID = "fbU-hv-Vdp"; */
+"fbU-hv-Vdp.normalTitle" = "Privacy Policy";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fn3-XL-n9M"; */
+"fn3-XL-n9M.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "My Profile"; ObjectID = "hYu-GS-A7b"; */
+"hYu-GS-A7b.title" = "My Profile";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "ilN-Aa-2Tx"; */
+"ilN-Aa-2Tx.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Total Likes"; ObjectID = "jLc-kt-Qlc"; */
+"jLc-kt-Qlc.text" = "Total Likes";
+
+/* Class = "UILabel"; text = "Loading"; ObjectID = "jcd-PE-0md"; */
+"jcd-PE-0md.text" = "Loading";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "lN0-sS-VyP"; */
+"lN0-sS-VyP.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "lac-f1-8No"; */
+"lac-f1-8No.normalTitle" = "Logout";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "luM-Jc-PeN"; */
+"luM-Jc-PeN.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mJr-bN-urz"; */
+"mJr-bN-urz.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "ndK-fH-mdw"; */
+"ndK-fH-mdw.title" = "Settings";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nux-43-ST8"; */
+"nux-43-ST8.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ot8-7f-Cxq"; */
+"ot8-7f-Cxq.text" = "0";
+
+/* Class = "UILabel"; text = "1452 follower"; ObjectID = "sVU-w7-Lgf"; */
+"sVU-w7-Lgf.text" = "1452 follower";
+
+/* Class = "UILabel"; text = "People who most likes"; ObjectID = "tDn-QY-Sjx"; */
+"tDn-QY-Sjx.text" = "People who most likes";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "uG7-S8-9Ga"; */
+"uG7-S8-9Ga.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uGk-WV-3tZ"; */
+"uGk-WV-3tZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uks-3h-WBK"; */
+"uks-3h-WBK.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "One Week"; ObjectID = "vXP-pc-Brq"; */
+"vXP-pc-Brq.normalTitle" = "One Week";
+
+/* Class = "UILabel"; text = "Avg.Comments"; ObjectID = "vdC-X8-9RA"; */
+"vdC-X8-9RA.text" = "Avg.Comments";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "xgE-aX-uEH"; */
+"xgE-aX-uEH.title" = "Back";

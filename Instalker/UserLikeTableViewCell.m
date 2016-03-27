@@ -23,7 +23,7 @@
 -(void)setFields:(UserLikeCountModel *)model
 {
     _labelFullname.text=model.user.fullName;
-    _labelLikeCount.text=[NSString stringWithFormat:@"%@ likes", model.likeCount];
+    _labelLikeCount.text=[NSString stringWithFormat:NSLocalizedString(@"%@ likes", nil), model.likeCount];
     _labelUsername.text=model.user.username;
     _imageViewProfile.image= [UIImage imageNamed:@"anonymousUser"];
     _imageViewProfile.imageURL=model.user.profilePictureURL;

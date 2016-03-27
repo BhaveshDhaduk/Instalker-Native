@@ -23,7 +23,7 @@
 @property (nonatomic,strong) StatsModel *statsModel;
 @property (nonatomic,strong) NSMutableArray *arrayDates;
 @property (nonatomic) BOOL isDataObtained;
-
+@property (nonatomic,strong) STPopupController *popupController;
 @property (nonatomic,strong) DateSelectPopupViewController *dateSelectPopup;
 
 @end
@@ -38,7 +38,7 @@
     [self setDelegates];
     [self configureScrollview];
     
-    _arrayDates = [NSMutableArray arrayWithObjects:@"1 Week",@"1 Month",@"3 Months",@"6 Months", @"All Time",nil];
+    _arrayDates = [NSMutableArray arrayWithObjects:NSLocalizedString(@"1 Week",nil),NSLocalizedString(@"1 Month",nil),NSLocalizedString(@"3 Months",nil),NSLocalizedString(@"6 Months",nil), NSLocalizedString(@"All Time",nil),nil];
     
 }
 -(void)viewDidAppear:(BOOL)animated
@@ -73,7 +73,7 @@
 #pragma mark - Navigation Bar
 -(void)configureNavigationBarForMyProfile
 {
-    self.navigationItem.title = @"My Profile";
+    self.navigationItem.title = NSLocalizedString(@"My Profile",nil);
     [self configureNavigationProperties];
 }
 
@@ -89,7 +89,7 @@
     self.navigationItem.titleView.tintColor = [UIColor whiteColor];
  
     self.navigationController.navigationBar.backItem.titleView.tintColor= [UIColor whiteColor];
-    self.navigationController.navigationBar.backItem.title = @"Back";
+    self.navigationController.navigationBar.backItem.title = NSLocalizedString(@"Back",nil);
     
 }
 
@@ -138,7 +138,7 @@
             {
                 [self setErrorLabelAsNoMedia:YES hidden:YES];
             }
-            _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
+            _labelMediaCountInInterval.text= [NSString stringWithFormat:NSLocalizedString(@"%ld Media",nil),(long)stats.filteredPostCount];
             [self removeLoadingAnimation];
           
         });
@@ -153,20 +153,20 @@
 -(void)showError:(InstagramFailModel *)model
 {
     if ([model.meta.errorType isEqualToString:k_error_null_token_count]) {
-        [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your daily Instagram token limit is accessed, Try to use tomorrow" completion:^{
+        [[PopUpManager sharedManager] showErrorPopupWithTitle:NSLocalizedString(@"Your daily Instagram token limit is accessed, Try to use tomorrow",nil) completion:^{
             [[Singleton sharedInstance].baseNavigationController popToRootViewControllerAnimated:YES];
         }from:self];
         
         
     }else
      if ([model.meta.errorType isEqualToString:k_error_private_profile]) {
-         [[PopUpManager sharedManager]showErrorPopupWithTitle:@"This profile is private, try to stalk others" completion:^{
+         [[PopUpManager sharedManager]showErrorPopupWithTitle:NSLocalizedString(@"This profile is private, try to stalk others",nil) completion:^{
          }from:self];
          [self setErrorLabelAsNoMedia:NO hidden:NO];
 
      
      }else if ([model.meta.errorType isEqualToString:k_error_token_invalid]) {
-         [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your Instagram credentials invalidated by Instagram, try to login again" completion:^{
+         [[PopUpManager sharedManager] showErrorPopupWithTitle:NSLocalizedString(@"Your Instagram credentials invalidated by Instagram, try to login again",nil) completion:^{
              [[InstagramEngine sharedEngine]logout];
              [[Singleton sharedInstance].baseNavigationController popToRootViewControllerAnimated:YES];
          }from:self];
@@ -200,7 +200,7 @@
             _statsModel=stats;
             [self.tableView reloadData];
             _labelNameForTitle.text = stats.textName;
-            _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
+            _labelMediaCountInInterval.text= [NSString stringWithFormat:NSLocalizedString(@"%ld Media",nil),(long)stats.filteredPostCount];
             [self removeLoadingAnimation];
             if (stats.filteredPostCount <1) {
                 [self setErrorLabelAsNoMedia:YES hidden:NO];
@@ -230,7 +230,7 @@
     [[PopUpManager sharedManager]showLoadingPopup:self.navigationController withCancel:^{
         [self.navigationController popViewControllerAnimated:NO];
         [[PopUpManager sharedManager]hideLoading];
-        [_buttonChangeDate setTitle:@"Loading Cancelled" forState:UIControlStateNormal];
+        [_buttonChangeDate setTitle:NSLocalizedString(@"Loading Cancelled",nil) forState:UIControlStateNormal];
     }];
 }
 
@@ -295,10 +295,10 @@
 -(void)setErrorLabelAsNoMedia:(BOOL)type hidden:(BOOL)hidden
 {
     if (type) {
-        _labelNoMediaWarning.text=@"No media at selected interval, change date interval from above";
+        _labelNoMediaWarning.text=NSLocalizedString(@"No media at selected interval, change date interval from above",nil);
     }else
     {
-        _labelNoMediaWarning.text=@"This profile is private!";
+        _labelNoMediaWarning.text=NSLocalizedString(@"This profile is private!",nil);
     }
     
     _labelNoMediaWarning.hidden=hidden;
@@ -321,8 +321,22 @@
     _dateSelectPopup.delegate=self;
     
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:_dateSelectPopup];
+    if (NSClassFromString(@"UIBlurEffect")) {
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        popupController.backgroundView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    }
+    [STPopupNavigationBar appearance].barTintColor = k_color_navy;
+    [STPopupNavigationBar appearance].tintColor = [UIColor whiteColor];
+    [STPopupNavigationBar appearance].barStyle = UIBarStyleDefault;
+    [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:18], NSForegroundColorAttributeName: [UIColor whiteColor] };
+    [STPopupNavigationBar appearance].layer.cornerRadius = 5.0;
+    popupController.backgroundView.backgroundColor=[UIColor clearColor];
+    popupController.containerView.backgroundColor=[UIColor clearColor];
+    [[UIBarButtonItem appearanceWhenContainedIn:[STPopupNavigationBar class], nil] setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"Cochin" size:17] } forState:UIControlStateNormal];
+    popupController.style = STPopupStyleBottomSheet;
     
     [popupController presentInViewController:self];
+//    self.popupController=popupController;
 }
 
 #pragma mark - Date Selection Delegates
@@ -354,9 +368,15 @@
 
     
 }
+
 -(void)selectionCancelled
 {
-    [self.popupController dismiss];
+    /*
+    if (self.popupController) {
+        [self.popupController dismiss];
+        self.popupController = nil;
+    }
+     */
     
 }
 

@@ -24,7 +24,7 @@
     [super viewDidAppear:animated];
     _imageViewMain.imageURL = _media.standardResolutionImageURL;
     _labelDate.text = [self relativeDateStringForDate:_media.createdDate];
-    _labelLikeCount.text = [NSString stringWithFormat:@"%ld likes",(long)_media.likesCount];
+    _labelLikeCount.text = [NSString stringWithFormat:NSLocalizedString(@"%ld likes",nil),(long)_media.likesCount];
     
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Big Image Page"];
@@ -59,19 +59,19 @@
                                                                     options:0];
     
     if (components.year > 0) {
-        return [NSString stringWithFormat:@"%ld years ago", (long)components.year];
+        return [NSString stringWithFormat:NSLocalizedString(@"%ld years ago",nil), (long)components.year];
     } else if (components.month > 0) {
-        return [NSString stringWithFormat:@"%ld months ago", (long)components.month];
+        return [NSString stringWithFormat:NSLocalizedString(@"%ld months ago",nil), (long)components.month];
     } else if (components.weekOfYear > 0) {
-        return [NSString stringWithFormat:@"%ld weeks ago", (long)components.weekOfYear];
+        return [NSString stringWithFormat:NSLocalizedString( @"%ld weeks ago", nil),(long)components.weekOfYear];
     } else if (components.day > 0) {
         if (components.day > 1) {
-            return [NSString stringWithFormat:@"%ld days ago", (long)components.day];
+            return [NSString stringWithFormat:NSLocalizedString(@"%ld days ago", nil) , (long)components.day];
         } else {
-            return @"Yesterday";
+            return NSLocalizedString(@"Yesterday", nil) ;
         }
     } else {
-        return @"Today";
+        return NSLocalizedString(@"Today", nil) ;
     }
 }
 

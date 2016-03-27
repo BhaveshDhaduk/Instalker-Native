@@ -18,8 +18,8 @@
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.title = @"View Controller";
-        self.contentSizeInPopup = CGSizeMake(320, 568);
+        self.title =NSLocalizedString(@"Select a date interval", nil);
+        self.contentSizeInPopup = CGSizeMake(300, 300);
     }
     return self;
     
@@ -27,9 +27,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIToolbar *toolbarBackground = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 44, 200, 106)];
-    [self.view addSubview:toolbarBackground];
-    [self.view sendSubviewToBack:toolbarBackground];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -50,32 +47,43 @@
 
 
 - (IBAction)pressedOneWeek:(id)sender {
+    [self.popupController dismiss];
+
     [self.delegate dateSelectedWith:kWeek];
     [self.popupViewController dismissPopupViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)pressedOneMonth:(id)sender {
-        [self.delegate dateSelectedWith:kMonth];
+    [self.popupController dismiss];
+
+    [self.delegate dateSelectedWith:kMonth];
         [self.popupViewController dismissPopupViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)pressedThreeMonths:(id)sender {
+    [self.popupController dismiss];
+
     [self.delegate dateSelectedWith:kThreeMonth];
         [self.popupViewController dismissPopupViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)pressedSixMonths:(id)sender {
-        [self.delegate dateSelectedWith:kSixMonth];
+    [self.popupController dismiss];
+
+    [self.delegate dateSelectedWith:kSixMonth];
         [self.popupViewController dismissPopupViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)pressedAllTime:(id)sender {
-        [self.delegate dateSelectedWith:kAll];
+    [self.popupController dismiss];
+
+    [self.delegate dateSelectedWith:kAll];
         [self.popupViewController dismissPopupViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)pressedCancel:(id)sender {
     [self.delegate selectionCancelled];
         [self.popupViewController dismissPopupViewControllerAnimated:YES completion:nil];
+    [self.popupController dismiss];
 }
 @end

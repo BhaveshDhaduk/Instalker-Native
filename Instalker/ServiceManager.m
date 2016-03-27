@@ -137,7 +137,8 @@
         InstagramMedia *currentMedia = (InstagramMedia *)medium;
         if ([self isMediaLaterThanInterval:currentMedia.createdDate forDays:numberOfDays]) {
             [_allMedia addObject:currentMedia];
-            
+            _totalLikesCount += currentMedia.likesCount;
+            _totalComments += currentMedia.commentCount;
         }else
         {
             return NO;
@@ -277,7 +278,8 @@
 -(void )getMediasWithCompletion:(completion)completion failed:(failed)failed numberOfDate:(kMediaDate)numberOfdays
 {
     
-    
+    _totalLikesCount = 0;
+
     [[InstagramEngine sharedEngine] getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
         if ([self cropMediaByDate:media days:numberOfdays]) {
             
@@ -466,7 +468,6 @@
     _arrayLikes = [NSMutableArray array];
  
     _reducedLikeList = [NSMutableDictionary dictionary];
-    _totalLikesCount = 0;
     
                                  
     for (NSInteger i = 0; i < media.count; ++i)
@@ -527,7 +528,7 @@
             [arrayLinearLikes addObjectsFromArray:[_arrayLikes objectAtIndex:k]];
         
         }
-        _totalLikesCount = arrayLinearLikes.count;
+        
         
         for (InstagramUser *usr  in arrayLinearLikes) {
             

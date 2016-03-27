@@ -31,13 +31,20 @@
 {
     [super viewDidAppear:animated];
     [self getSearchHistory];
-    self.navigationController.title = @"Search";
+    self.navigationController.title = NSLocalizedString(@"Search",nil);
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Search"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
-
+    [self configureNavigationProperties];
 }
-
+-(void)configureNavigationProperties
+{
+    self.navigationItem.titleView.tintColor = [UIColor whiteColor];
+    
+    self.navigationController.navigationBar.backItem.titleView.tintColor= [UIColor whiteColor];
+    self.navigationController.navigationBar.backItem.title = NSLocalizedString(@"Back",nil);
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

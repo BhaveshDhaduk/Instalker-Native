@@ -10,6 +10,7 @@
 #import "ServiceManager.h"
 #import "StatsProfileView.h"
 #import "MediaViewController.h"
+#import "DateSelectPopupViewController.h"
 
 @interface StalkProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
@@ -22,6 +23,7 @@
 @property (nonatomic,strong) NSMutableArray *arrayDates;
 @property (nonatomic,strong) ServiceManager *serviceManager;
 @property (weak, nonatomic) IBOutlet UILabel *labelNoMedia;
+@property (nonatomic,strong) DateSelectPopupViewController *dateSelectPopup;
 
 @end
 
@@ -36,7 +38,7 @@
     [self configureScrollview];
     
     [self startServiceForBothWithMedia:kWeek];
-    _arrayDates = [NSMutableArray arrayWithObjects:@"1 Week",@"1 Month",@"3 Months",@"6 Months", @"All Time",nil];
+    _arrayDates = [NSMutableArray arrayWithObjects:NSLocalizedString(@"1 Week",nil),NSLocalizedString(@"1 Month",nil),NSLocalizedString(@"3 Months",nil),NSLocalizedString(@"6 Months",nil), NSLocalizedString(@"All Time",nil),nil];
     
 }
 -(void)viewDidAppear:(BOOL)animated
@@ -73,7 +75,7 @@
 #pragma mark - Navigation Bar
 -(void)configureNavigationBarForMyProfile
 {
-    self.navigationItem.title = @"MY PROFILE";
+    self.navigationItem.title = NSLocalizedString(@"MY PROFILE",nil);
     [self configureNavigationProperties];
     
 }
@@ -89,8 +91,13 @@
 -(void)configureNavigationProperties
 {
     self.navigationItem.titleView.tintColor = [UIColor whiteColor];
-       self.navigationController.navigationBar.backItem.titleView.tintColor= [UIColor whiteColor];
-    self.navigationController.navigationBar.backItem.title = @"Back";
+    self.navigationController.navigationBar.backItem.titleView.tintColor= [UIColor whiteColor];
+    self.navigationController.navigationBar.backItem.title =NSLocalizedString( @"Back",nil);
+    
+    self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.backItem.backBarButtonItem.tintColor= [UIColor whiteColor];
 
 }
 
@@ -118,7 +125,7 @@
            [self.viewStatsProfile setNeedsDisplay];
            _statsModel=stats;
            _labelNameForTitle.text = stats.textName;
-           _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
+           _labelMediaCountInInterval.text= [NSString stringWithFormat:NSLocalizedString(@"%ld Media",nil),(long)stats.filteredPostCount];
            [self.tableView reloadData];
            [self removeLoadingAnimation];
            if (stats.filteredPostCount<1) {
@@ -151,7 +158,7 @@
             [self.viewStatsProfile setNeedsDisplay];
             _statsModel=stats;
             _labelNameForTitle.text = stats.textName;
-            _labelMediaCountInInterval.text= [NSString stringWithFormat:@"%ld Media",(long)stats.filteredPostCount];
+            _labelMediaCountInInterval.text= [NSString stringWithFormat:NSLocalizedString(@"%ld Media",nil),(long)stats.filteredPostCount];
             [self.tableView reloadData];
             [self removeLoadingAnimation];
             if (stats.filteredPostCount<1) {
@@ -178,14 +185,14 @@
 -(void)showError:(InstagramFailModel *)model
 {
     if ([model.meta.errorType isEqualToString:k_error_null_token_count]) {
-        [[PopUpManager sharedManager] showErrorPopupWithTitle:@"Your daily Instagram token limit is accessed, Try to use tomorrow" completion:^{
+        [[PopUpManager sharedManager] showErrorPopupWithTitle:NSLocalizedString(@"Your daily Instagram token limit is accessed, Try to use tomorrow",nil) completion:^{
             [self.navigationController popToRootViewControllerAnimated:YES];
         } from:self];
         
         
     }else
         if ([model.meta.errorType isEqualToString:k_error_private_profile]) {
-            [[PopUpManager sharedManager]showErrorPopupWithTitle:@"This profile is private, try to stalk others" completion:^{
+            [[PopUpManager sharedManager]showErrorPopupWithTitle:NSLocalizedString(@"This profile is private, try to stalk others",nil) completion:^{
               
             }from:self];
             [self setErrorLabelAsNoMedia:NO hidden:NO];
@@ -279,101 +286,88 @@
     
 }
 
-
-
--(void)configurePickerViewHidden:(BOOL)hidden
-{
-    if(hidden)
-    {
-        [UIView animateWithDuration:0.4 animations:^{
-            _pickerView.transform = CGAffineTransformIdentity;
-            
-        } completion:^(BOOL finished) {
-            _pickerView.hidden=hidden;
-        }];
-    }else
-    {
-        _pickerView.hidden = hidden;
-        [UIView animateWithDuration:0.3 animations:^{
-            _pickerView.transform = CGAffineTransformMakeTranslation(0, -300);
-        } completion:^(BOOL finished) {
-            
-        }];
-        
-    }
-    
-}
+#pragma mark - Date Selection
 
 - (IBAction)changeDateButtonPressed:(id)sender {
-    if (_pickerView.hidden) {
-        [self configurePickerViewHidden:NO];
-        [_buttonChangeDate setTitle:@"Select Date and Tap Here" forState:UIControlStateNormal];
-    }else
-    {
-        switch ([_pickerView selectedRowInComponent:0]) {
-            case 0:
-                [self startServiceForBothWithMedia:kWeek];
-                break;
-                
-            case 1:
-                [self startServiceForBothWithMedia:kMonth];
-                break;
-            case 2:
-                [self startServiceForBothWithMedia:kThreeMonth];
-                break;
-            case 3:
-                [self startServiceForBothWithMedia:kSixMonth];
-                break;
-            case 4:
-                [self startServiceForBothWithMedia:kAll];
-                break;
-            default:
-                [self startServiceForBothWithMedia:kAll];
-                break;
-        }
-        [self configurePickerViewHidden:YES];
-        [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:[_pickerView selectedRowInComponent:0]] forState:UIControlStateNormal];
-        
+    [self showDateSelector];
+}
+
+
+-(void)showDateSelector
+{
+    
+    self.useBlurForPopup=YES;
+    _dateSelectPopup = [[DateSelectPopupViewController alloc]initWithNibName:@"DateSelectPopupViewController" bundle:nil];
+    _dateSelectPopup.delegate=self;
+    
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:_dateSelectPopup];
+    if (NSClassFromString(@"UIBlurEffect")) {
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        popupController.backgroundView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     }
+    [STPopupNavigationBar appearance].barTintColor = k_color_navy;
+    [STPopupNavigationBar appearance].tintColor = [UIColor whiteColor];
+    [STPopupNavigationBar appearance].barStyle = UIBarStyleDefault;
+    [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:18], NSForegroundColorAttributeName: [UIColor whiteColor] };
+    [STPopupNavigationBar appearance].layer.cornerRadius = 5.0;
+    popupController.backgroundView.backgroundColor=[UIColor clearColor];
+    popupController.containerView.backgroundColor=[UIColor clearColor];
+    [[UIBarButtonItem appearanceWhenContainedIn:[STPopupNavigationBar class], nil] setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"Cochin" size:17] } forState:UIControlStateNormal];
+    popupController.style = STPopupStyleBottomSheet;
     
+    [popupController presentInViewController:self];
+    //    self.popupController=popupController;
 }
 
+#pragma mark - Date Selection Delegates
 
-
-
-#pragma mark - Date Picker
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+-(void)dateSelectedWith:(kMediaDate)date
 {
-    return _arrayDates.count;
+    [self startServiceForBothWithMedia:date];
+    switch (date) {
+        case kWeek:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:0] forState:UIControlStateNormal];
+            break;
+        case kMonth:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:1] forState:UIControlStateNormal];
+            break;
+        case kThreeMonth:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:2] forState:UIControlStateNormal];
+            break;
+        case kSixMonth:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:3] forState:UIControlStateNormal];
+            break;
+        case kAll:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:4] forState:UIControlStateNormal];
+            break;
+        default:
+            [_buttonChangeDate setTitle:[_arrayDates objectAtIndex:4] forState:UIControlStateNormal];
+            break;
+    }
+    [self.popupViewController dismissPopupViewControllerAnimated:YES completion:nil];
     
-}
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
-    label.backgroundColor = [UIColor clearColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor whiteColor];
-    label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
-    label.text = [_arrayDates objectAtIndex:row];
-    return label;
 }
 
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+-(void)selectionCancelled
 {
-    
+    /*
+     if (self.popupController) {
+     [self.popupController dismiss];
+     self.popupController = nil;
+     }
+     */
     
 }
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
+
+#pragma  mark - Error Label
 -(void)setErrorLabelAsNoMedia:(BOOL)type hidden:(BOOL)hidden
 {
     if (type) {
-        _labelNoMedia.text=@"No media at selected interval, change date interval from above";
+        _labelNoMedia.text=NSLocalizedString(@"No media at selected interval, change date interval from above",nil);
     }else
     {
-        _labelNoMedia.text=@"This profile is private!";
+        _labelNoMedia.text=NSLocalizedString(@"This profile is private!",nil);
     }
     
     _labelNoMedia.hidden=hidden;

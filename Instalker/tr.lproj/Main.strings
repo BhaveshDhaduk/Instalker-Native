@@ -1,0 +1,150 @@
+
+/* Class = "UILabel"; text = "Total Likes"; ObjectID = "08X-JY-gtG"; */
+"08X-JY-gtG.text" = "Toplam Likelar";
+
+/* Class = "UILabel"; text = "umut_afacan"; ObjectID = "19Q-Fb-MhY"; */
+"19Q-Fb-MhY.text" = "umut_afacan";
+
+/* Class = "UILabel"; text = " We will not use or store your password and access token"; ObjectID = "1lc-lC-gKU"; */
+"1lc-lC-gKU.text" = " Şifrenizi ve access tokenınızı kullanmıyoruz ve saklamıyoruz.";
+
+/* Class = "UIButton"; normalTitle = "Clear Search History"; ObjectID = "3RR-Ab-esn"; */
+"3RR-Ab-esn.normalTitle" = "Arama Geçmişini Temizle";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "3UD-93-HET"; */
+"3UD-93-HET.title" = "Geri";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "3XP-io-cys"; */
+"3XP-io-cys.text" = "Gizlilik Sözleşmesi";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6PM-Qx-AxD"; */
+"6PM-Qx-AxD.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "7Z4-sj-Bhg"; */
+"7Z4-sj-Bhg.title" = "Geri";
+
+/* Class = "UILabel"; text = "This profile is private."; ObjectID = "8LG-99-dOK"; */
+"8LG-99-dOK.text" = "Bu profil gizlidir.";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "8rJ-wc-Vvv"; */
+"8rJ-wc-Vvv.title" = "Arama";
+
+/* Class = "UILabel"; text = "Avg.Likes"; ObjectID = "ErT-eL-6HD"; */
+"ErT-eL-6HD.text" = "Ort.Likelar";
+
+/* Class = "UILabel"; text = "For more detail, please read"; ObjectID = "F7r-cH-ljy"; */
+"F7r-cH-ljy.text" = "Daha fazla detay için okuyun";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Fwj-aR-gkt"; */
+"Fwj-aR-gkt.title" = "Geri";
+
+/* Class = "UILabel"; text = "No Media at selected interval, change date interval from above"; ObjectID = "Liq-UQ-cJV"; */
+"Liq-UQ-cJV.text" = "Seçtiğiniz aralıkda resim bulunmamaktadır, tarih aralığını değiştirin.";
+
+/* Class = "UILabel"; text = "Avg.Likes"; ObjectID = "MSw-VN-w8g"; */
+"MSw-VN-w8g.text" = "Ort.Likelar";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "Nc7-bT-Shk"; */
+"Nc7-bT-Shk.title" = "Arama";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "P4j-zp-Ox1"; */
+"P4j-zp-Ox1.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "PGD-hK-dm5"; */
+"PGD-hK-dm5.text" = "0";
+
+/* Class = "UILabel"; text = "No Media at selected interval, change date interval from above"; ObjectID = "Ua8-hM-lfm"; */
+"Ua8-hM-lfm.text" = "Seçtiğiniz aralıkda resim bulunmamaktadır, tarih aralığını değiştirin.";
+
+/* Class = "UILabel"; text = "People who most likes"; ObjectID = "UjO-LZ-ABY"; */
+"UjO-LZ-ABY.text" = "En çok likelayanlar";
+
+/* Class = "UIButton"; normalTitle = "our privacy policy"; ObjectID = "Vdw-NI-4MJ"; */
+"Vdw-NI-4MJ.normalTitle" = "gizlilik sözleşmemiz";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "YYD-CR-YVt"; */
+"YYD-CR-YVt.text" = "0";
+
+/* Class = "UILabel"; text = "Avg.Comments"; ObjectID = "alZ-8y-hd4"; */
+"alZ-8y-hd4.text" = "Ort.Yorumlar";
+
+/* Class = "UILabel"; text = ".  .  .  .  ."; ObjectID = "ar3-Rb-8K9"; */
+"ar3-Rb-8K9.text" = ".  .  .  .  .";
+
+/* Class = "UIButton"; normalTitle = "One Week"; ObjectID = "aw5-x4-Lsj"; */
+"aw5-x4-Lsj.normalTitle" = "Bir hafta";
+
+/* Class = "UILabel"; text = "0 Media"; ObjectID = "c6Q-jn-ssj"; */
+"c6Q-jn-ssj.text" = "0 Medya";
+
+/* Class = "UILabel"; text = "OK"; ObjectID = "cSh-L7-GJH"; */
+"cSh-L7-GJH.text" = "OK";
+
+/* Class = "UILabel"; text = "0 Media"; ObjectID = "d9f-ZA-ypu"; */
+"d9f-ZA-ypu.text" = "0 Medya";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "eWo-ah-KqX"; */
+"eWo-ah-KqX.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Privacy Policy"; ObjectID = "fbU-hv-Vdp"; */
+"fbU-hv-Vdp.normalTitle" = "Gizlilik Sözleşmesi";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fn3-XL-n9M"; */
+"fn3-XL-n9M.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "My Profile"; ObjectID = "hYu-GS-A7b"; */
+"hYu-GS-A7b.title" = "Profilim";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "ilN-Aa-2Tx"; */
+"ilN-Aa-2Tx.normalTitle" = "İptal";
+
+/* Class = "UILabel"; text = "Total Likes"; ObjectID = "jLc-kt-Qlc"; */
+"jLc-kt-Qlc.text" = "Toplam Likelar";
+
+/* Class = "UILabel"; text = "Loading"; ObjectID = "jcd-PE-0md"; */
+"jcd-PE-0md.text" = "Yükleniyor";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "lN0-sS-VyP"; */
+"lN0-sS-VyP.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "lac-f1-8No"; */
+"lac-f1-8No.normalTitle" = "Çıkış";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "luM-Jc-PeN"; */
+"luM-Jc-PeN.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mJr-bN-urz"; */
+"mJr-bN-urz.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "ndK-fH-mdw"; */
+"ndK-fH-mdw.title" = "Ayarlar";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nux-43-ST8"; */
+"nux-43-ST8.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ot8-7f-Cxq"; */
+"ot8-7f-Cxq.text" = "0";
+
+/* Class = "UILabel"; text = "1452 follower"; ObjectID = "sVU-w7-Lgf"; */
+"sVU-w7-Lgf.text" = "1452 takipçi";
+
+/* Class = "UILabel"; text = "People who most likes"; ObjectID = "tDn-QY-Sjx"; */
+"tDn-QY-Sjx.text" = "En çok likelayanlar";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "uG7-S8-9Ga"; */
+"uG7-S8-9Ga.normalTitle" = "Geri";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uGk-WV-3tZ"; */
+"uGk-WV-3tZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uks-3h-WBK"; */
+"uks-3h-WBK.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "One Week"; ObjectID = "vXP-pc-Brq"; */
+"vXP-pc-Brq.normalTitle" = "Bir Hafta";
+
+/* Class = "UILabel"; text = "Avg.Comments"; ObjectID = "vdC-X8-9RA"; */
+"vdC-X8-9RA.text" = "Ort.Yorumlar";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "xgE-aX-uEH"; */
+"xgE-aX-uEH.title" = "Geri";

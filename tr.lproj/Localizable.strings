@@ -1,0 +1,48 @@
+/* 
+  Localizable.string.strings
+  Instalker
+
+  Created by umut on 27/03/16.
+  Copyright © 2016 SmartClick. All rights reserved.
+*/
+
+
+"Select a date interval" = "Tarih aralığı seçin";
+
+"%@ likes" = "%@ like" ;
+
+"%ld likes" = "%ld like";
+
+"%ld years ago" = "%ld yıl önce";
+"%ld months ago" = "%ld ay önce";
+"%ld weeks ago" = "%ld hafta önce";
+"%ld days ago" = "%ld gün önce";
+"Yesterday"="Yesterday";
+"Today"="Today";
+
+"1 Week" = "1 Hafta";
+"1 Month" = "1 Ay";
+"3 Months" = "3 Ay";
+"6 Months" = "6 Ay";
+"All Time" = "Tüm zamanlar";
+
+"My Profile" = "Profilim";
+
+"Back"="Geri";
+"%ld Media"="%ld Medya";
+"Loading Cancelled"="Yükleme iptal edildi";
+
+"Your daily Instagram token limit is accessed, Try to use tomorrow" = "Günlük Instagram token limitiniz doldu, Yarın kullanmayı deneyin";
+"This profile is private, try to stalk others"= "Bu profil gizlidir, başkalarına bakınız";
+"Your Instagram credentials invalidated by Instagram, try to login again"= "Instagram bilgileriniz hatalı, tekrar giriş yapın";
+
+"No media at selected interval, change date interval from above" = "Bu aralıkta hiç medya bulunmamaktadır, tarih aralığını değiştirin";
+
+"This profile is private!"="Bu profil gizlidir!";
+
+"Search"="Arama";
+"Back"="Geri";
+
+"Settings"="Ayarlar";
+
+"Search history is cleaned!" = "Arama geçmişi temizlendi!";
