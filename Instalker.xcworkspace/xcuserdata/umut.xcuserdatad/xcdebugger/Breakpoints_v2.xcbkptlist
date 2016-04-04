@@ -52,7 +52,7 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/KasabaGit/Instalker-Native/Instalker/StalkProfileViewController.m"
-                  timestampString = "481499359.469945"
+                  timestampString = "481501171.614564"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "172"
@@ -67,7 +67,7 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/KasabaGit/Instalker-Native/Instalker/StalkProfileViewController.m"
-                  timestampString = "481499359.47024"
+                  timestampString = "481501171.614817"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -82,7 +82,7 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/KasabaGit/Instalker-Native/Instalker/StalkProfileViewController.m"
-                  timestampString = "481499359.470508"
+                  timestampString = "481501171.615064"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -90,22 +90,6 @@
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/StalkListViewController.m"
-            timestampString = "480532928.813758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "-gestureRecognizer:shouldReceiveTouch:"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -163,44 +147,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/InAppViewController.m"
-            timestampString = "481499358.396464"
+            timestampString = "481501170.553494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "-buyForAWeek:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/InAppViewController.m"
-            timestampString = "481499344.670474"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-restorePurchase"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/InAppViewController.m"
-            timestampString = "481499345.674693"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "-restorePurchase"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -105,27 +105,17 @@
     // Your code
     [self configureAsLoading:YES];
     [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions){
-        NSLog(@"Transactions restored");
         [[RMStore defaultStore] refreshReceiptOnSuccess:^{
-            NSLog(@"Receipt refreshed");
-            if ([_receiptVerificator verifyAppReceipt]) {
-                
-            }else
-            {
-                
-            }
             if ([InAppHelper isSubscriptionAvailable]) {
                 [self configureAsSubscribed];
             }
             [self configureAsLoading:NO];
             
         } failure:^(NSError *error) {
-            NSLog(@"Something went wrong");
             [self configureAsLoading:NO];
             
         }];
     } failure:^(NSError *error) {
-        NSLog(@"Something went wrong");
         [self configureAsLoading:NO];
     }];
 }
