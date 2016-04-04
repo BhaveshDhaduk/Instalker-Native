@@ -11,6 +11,8 @@
 #import "RMStoreKeychainPersistence.h"
 #import "RMAppReceipt.h"
 #import <BALoadingView/BALoadingView.h>
+#import <RMStore/RMStoreAppReceiptVerificator.h>
+
 
 
 @interface InAppViewController ()
@@ -23,6 +25,7 @@
 - (IBAction)buyForAMonth:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *viewLoading;
 @property (nonatomic,strong) BALoadingView *loadingView;
+@property (nonatomic,strong) RMStoreAppReceiptVerificator *receiptVerificator;
 
 @end
 #define k_subscription_Weekly @"com.mhs.instalker.premium.week"
@@ -44,6 +47,11 @@
     {
         [self getPrices];
     }
+
+    _receiptVerificator = [[RMStoreAppReceiptVerificator alloc]init];
+    _receiptVerificator.bundleIdentifier = @"net.sparkson.instalker";
+    _receiptVerificator.bundleVersion = @"1.0";
+  
     
 }
 
@@ -51,6 +59,7 @@
 {
     _viewLoading.hidden=!loading;
     if (loading) {
+        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
         self.loadingView = [[BALoadingView alloc] initWithFrame:self.viewLoading.frame];
         [self.loadingView initialize];
         self.loadingView.clockwise = YES;
@@ -59,6 +68,7 @@
         [self.view addSubview:self.loadingView];
     }else
     {
+        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
         [self.loadingView stopAnimation];
         [self.loadingView removeFromSuperview];
     }
@@ -98,7 +108,12 @@
         NSLog(@"Transactions restored");
         [[RMStore defaultStore] refreshReceiptOnSuccess:^{
             NSLog(@"Receipt refreshed");
-            
+            if ([_receiptVerificator verifyAppReceipt]) {
+                
+            }else
+            {
+                
+            }
             if ([InAppHelper isSubscriptionAvailable]) {
                 [self configureAsSubscribed];
             }
@@ -203,13 +218,21 @@
     
     [self configureAsLoading:YES];
     [[RMStore defaultStore] addPayment:k_subscription_Weekly success:^(SKPaymentTransaction *transaction) {
-        NSLog(@"Product purchased");
-        [self configureAsSubscribed];
-        [self configureAsLoading:NO];
-        
+       
+            [self configureAsSubscribed];
+            [self configureAsLoading:NO];
+            [RZErrorMessenger displayErrorWithTitle:@"" detail:NSLocalizedString(@"Payment successfull!",nil) level:kRZErrorMessengerLevelPositive];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [RZErrorMessenger hideAllErrors];
+            });
+                
     } failure:^(SKPaymentTransaction *transaction, NSError *error) {
-        NSLog(@"Something went wrong");
         [self configureAsLoading:NO];
+        [RZErrorMessenger displayErrorWithTitle:@"" detail:NSLocalizedString(@"Payment could not completed!",nil) level:kRZErrorMessengerLevelError];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [RZErrorMessenger hideAllErrors];
+        });
+
         
     }];
 }
@@ -221,13 +244,22 @@
 - (IBAction)buyForThreeMonth:(id)sender {
         [self configureAsLoading:YES];
     [[RMStore defaultStore] addPayment:k_subscription_Weekly success:^(SKPaymentTransaction *transaction) {
-        NSLog(@"Product purchased");
-        [self configureAsSubscribed];
-        [self configureAsLoading:NO];
         
+            
+            [self configureAsSubscribed];
+            [self configureAsLoading:NO];
+            [RZErrorMessenger displayErrorWithTitle:@"" detail:NSLocalizedString(@"Payment successfull!",nil) level:kRZErrorMessengerLevelPositive];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [RZErrorMessenger hideAllErrors];
+            });
+
     } failure:^(SKPaymentTransaction *transaction, NSError *error) {
-        NSLog(@"Something went wrong");
         [self configureAsLoading:NO];
+        [RZErrorMessenger displayErrorWithTitle:@"" detail:NSLocalizedString(@"Payment could not completed!",nil) level:kRZErrorMessengerLevelError];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [RZErrorMessenger hideAllErrors];
+        });
+
         
     }];
 }
@@ -235,13 +267,21 @@
 - (IBAction)buyForAMonth:(id)sender {
         [self configureAsLoading:YES];
     [[RMStore defaultStore] addPayment:k_subscription_Weekly success:^(SKPaymentTransaction *transaction) {
-        NSLog(@"Product purchased");
-        [self configureAsSubscribed];
-        [self configureAsLoading:NO];
-        
+      
+            
+            [self configureAsSubscribed];
+            [self configureAsLoading:NO];
+            [RZErrorMessenger displayErrorWithTitle:@"" detail:NSLocalizedString(@"Payment successfull!",nil) level:kRZErrorMessengerLevelPositive];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [RZErrorMessenger hideAllErrors];
+            });
     } failure:^(SKPaymentTransaction *transaction, NSError *error) {
-        NSLog(@"Something went wrong");
         [self configureAsLoading:NO];
+        [RZErrorMessenger displayErrorWithTitle:@"" detail:NSLocalizedString(@"Payment could not completed!",nil) level:kRZErrorMessengerLevelError];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [RZErrorMessenger hideAllErrors];
+        });
+
         
     }];
 }

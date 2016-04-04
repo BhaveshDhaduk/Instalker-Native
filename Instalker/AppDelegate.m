@@ -11,6 +11,7 @@
 #import <Google/Analytics.h>
 
 
+
 @interface AppDelegate ()
 
 @end
@@ -35,6 +36,10 @@
     gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
     gai.logger.logLevel = kGAILogLevelNone;  // remove before app release
     // Override point for customization after application launch.
+    
+   
+  
+    
     return YES;
 }
 

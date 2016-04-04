@@ -52,7 +52,7 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/KasabaGit/Instalker-Native/Instalker/StalkProfileViewController.m"
-                  timestampString = "481495943.321411"
+                  timestampString = "481499359.469945"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "172"
@@ -67,7 +67,7 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/KasabaGit/Instalker-Native/Instalker/StalkProfileViewController.m"
-                  timestampString = "481495943.321657"
+                  timestampString = "481499359.47024"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -82,7 +82,7 @@
                   moduleName = "Instalker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/umut/KasabaGit/Instalker-Native/Instalker/StalkProfileViewController.m"
-                  timestampString = "481495943.321893"
+                  timestampString = "481499359.470508"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -131,27 +131,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/InAppViewController.m"
-            timestampString = "481496112.973493"
+            timestampString = "481498877.773034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "-configureLocalizedPriceLabels:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instalker/InAppViewController.m"
-            timestampString = "481495941.481329"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -163,12 +147,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instalker/InAppViewController.m"
-            timestampString = "481496112.973493"
+            timestampString = "481499358.396464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "-getPrices"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/InAppViewController.m"
+            timestampString = "481499358.396464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "-buyForAWeek:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/InAppViewController.m"
+            timestampString = "481499344.670474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-restorePurchase"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instalker/InAppViewController.m"
+            timestampString = "481499345.674693"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-restorePurchase"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
