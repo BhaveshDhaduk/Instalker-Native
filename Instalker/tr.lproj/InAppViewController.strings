@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Time Left"; ObjectID = "2hX-5o-QEa"; */
+"2hX-5o-QEa.text" = "Kalan Süre";
+
+/* Class = "UILabel"; text = "Purchase 3 Months subscription"; ObjectID = "8Qs-3Q-XQZ"; */
+"8Qs-3Q-XQZ.text" = "3 Aylık abonelik al";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bkr-zZ-k2i"; */
+"Bkr-zZ-k2i.text" = "Label";
+
+/* Class = "UILabel"; text = "???"; ObjectID = "DLg-gV-nE1"; */
+"DLg-gV-nE1.text" = "???";
+
+/* Class = "UILabel"; text = "Purchase 1 Month subscription"; ObjectID = "EWu-HA-5h0"; */
+"EWu-HA-5h0.text" = "1 Aylık abonelik al";
+
+/* Class = "UILabel"; text = "???"; ObjectID = "Ph8-1p-Pwr"; */
+"Ph8-1p-Pwr.text" = "???";
+
+/* Class = "UILabel"; text = "Restore Purchases"; ObjectID = "Rjh-s5-h2p"; */
+"Rjh-s5-h2p.text" = "Satın alınanları yenile";
+
+/* Class = "UILabel"; text = "Weekly"; ObjectID = "WWF-nU-vlf"; */
+"WWF-nU-vlf.text" = "Weekly";
+
+/* Class = "UILabel"; text = "Purchase 1 Week subscriotion"; ObjectID = "XnV-U0-igf"; */
+"XnV-U0-igf.text" = "1 Haftalık abonelik al";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "huT-Uu-nbU"; */
+"huT-Uu-nbU.text" = "Label";
+
+/* Class = "UILabel"; text = "???"; ObjectID = "uDL-5P-omi"; */
+"uDL-5P-omi.text" = "???";

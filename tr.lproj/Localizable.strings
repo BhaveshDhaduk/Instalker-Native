@@ -46,3 +46,15 @@
 "Settings"="Ayarlar";
 
 "Search history is cleaned!" = "Arama geçmişi temizlendi!";
+
+"%d Months, %d Days, %d Hours Left" ="%d Ay, %d Gün, %d Saat Kaldı";
+
+"%d Days, %d Hours Left" = "%d Gün, %d Saat Kaldı";
+
+"%d Hours Left" = "%d Saat Kaldı";
+
+"%d Minutes Left" = "%d Dakika Kaldı";
+
+"Enjoy your premium subscription!" = "Premium üyeliğin keyfini çıkarın!";
+
+"To use all premium features, do not hesitate to subscribe" = "Tüm premium özelliklerini kullanmak için abone olmaktan çekinmeyin";

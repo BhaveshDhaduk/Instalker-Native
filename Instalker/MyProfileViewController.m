@@ -288,6 +288,19 @@
     }
 }
 
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:@"stalkMyFollower"]|| [identifier isEqualToString:@"showMedia"]) {
+        if ([InAppHelper isSubscriptionAvailable]) {
+            return YES;
+        }else
+        {
+            [PopUpManager showSubscriptionPopupWith:self];
+        }
+    }
+    return NO;
+}
+
 
 
 #pragma mark - Error Label 

@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BALoadingView-BALoadingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BALoadingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CWPopup.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +67,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>122BBDE8A87658E2A326A00E178BEC2E</key>
+		<key>1CE2DA6093DF14E2C75F3249235ED296</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>263D815C760915A275D694C43DB64726</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,12 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4116FE888037A507D77AB076748C8ADE</key>
+		<key>4268ADD2A9C5BD651C189484F57B386E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>422675690A36DA5C4CA4CEE48E8ED428</key>
+		<key>496953AC690E7E95A3AE0C8180924FC6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CC307A2CD409735C9A777D9AD0C3EFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +112,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>978323418ABE6F7B8287754AA6E9918D</key>
+		<key>57EF6F327C5DA431DA1F0B3EDBCE60E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C67100DCF16110B580D2C2C2AF9AFD15</key>
+		<key>8BAB10E1352E459B00B286F03C740580</key>
 		<dict>
 			<key>primary</key>
 			<true/>

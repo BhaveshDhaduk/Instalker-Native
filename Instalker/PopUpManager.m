@@ -8,6 +8,7 @@
 
 #import "PopUpManager.h"
 #import "ErrorPopupViewController.h"
+#import "InAppViewController.h"
 typedef void (^completionPopup)(void);
 
 
@@ -128,5 +129,31 @@ typedef void (^completionPopup)(void);
 
 // so that tapping popup view doesnt dismiss it
 
+
+#pragma mark - SubsriptionPopup
+
++(void)showSubscriptionPopupWith:(UIViewController *)host
+{
+    InAppViewController *vc = [[InAppViewController alloc]initWithNibName:@"InAppViewController" bundle:nil];
+    vc.view.frame = CGRectMake(0, 0, 300, 350);
+    vc.contentSizeInPopup=CGSizeMake(300, 350);
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
+    if (NSClassFromString(@"UIBlurEffect")) {
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        popupController.backgroundView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    }
+    
+    [STPopupNavigationBar appearance].barTintColor = k_color_navy;
+    [STPopupNavigationBar appearance].tintColor = [UIColor whiteColor];
+    [STPopupNavigationBar appearance].barStyle = UIBarStyleDefault;
+    [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:18], NSForegroundColorAttributeName: [UIColor whiteColor] };
+    [STPopupNavigationBar appearance].layer.cornerRadius = 5.0;
+    popupController.backgroundView.backgroundColor=[UIColor clearColor];
+    popupController.containerView.backgroundColor=[UIColor clearColor];
+    [[UIBarButtonItem appearanceWhenContainedIn:[STPopupNavigationBar class], nil] setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"Cochin" size:17] } forState:UIControlStateNormal];
+    popupController.style = STPopupStyleFormSheet;
+    [popupController presentInViewController:host];
+
+}
 
 @end

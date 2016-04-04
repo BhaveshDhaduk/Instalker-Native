@@ -28,6 +28,8 @@ typedef void (^removalCompletion)(void);
 
 -(void)showErrorPopupWithTitle:(NSString *)title completion:(removalCompletion)completion from:(UIViewController *)host;
 
++(void)showSubscriptionPopupWith:(UIViewController *)host;
+
 -(void)removeAllPopups;
 
 -(void)hideLoading;

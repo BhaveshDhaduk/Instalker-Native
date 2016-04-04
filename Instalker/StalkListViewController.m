@@ -11,7 +11,6 @@
 #import "StalkProfileViewController.h"
 
 
-
 @interface StalkListViewController ()
 
 @property (nonatomic,strong) UIGestureRecognizer *gest;
@@ -207,6 +206,19 @@
 
     }
 
+}
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:@"stalk"]) {
+        if ([InAppHelper isSubscriptionAvailable]) {
+            return YES;
+        }else
+        {
+            
+            [PopUpManager showSubscriptionPopupWith:self];
+        }
+    }
+    return NO;
 }
 
 

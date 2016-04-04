@@ -21,8 +21,9 @@ typedef void (^cancel)(void);
 #import <RaisinToast/RZErrorMessenger.h>
 #import <InstagramKit/InstagramKit.h>
 #import <Google/Analytics.h>
-
 #import <STPopup/STPopup.h>
+#import "InAppHelper.h"
+
 
 #define k_Search_History_List @"searchHistoryList"
 #define k_instagram_token @"instagramToken"

@@ -14,6 +14,10 @@ pod 'CWPopup', '~> 1.2.4'
 pod 'TPKeyboardAvoiding'
 pod 'STPopup'
 pod 'RMStore'
-
+pod 'RMStore/KeychainPersistence'
+pod 'RMStore/AppReceiptVerificator'
+pod 'RMStore/TransactionReceiptVerificator'
+pod 'RMStore/NSUserDefaultsPersistence'
+pod 'BALoadingView'
 end
 

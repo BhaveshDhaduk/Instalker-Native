@@ -52,16 +52,18 @@
 		4C1E92601C54257000237AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E925E1C54257000237AF0 /* Main.storyboard */; };
 		4C1E92621C54257000237AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E92611C54257000237AF0 /* Assets.xcassets */; };
 		4C317DC61CA87A660011E2CA /* InAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C317DC41CA87A660011E2CA /* InAppViewController.m */; };
-		4C317DC71CA87A660011E2CA /* InAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C317DC51CA87A660011E2CA /* InAppViewController.xib */; };
+		4C317DC91CAA89520011E2CA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C317DC81CAA89520011E2CA /* StoreKit.framework */; };
 		4C3324151C8CE985007250A8 /* InstagramFailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3324121C8CE985007250A8 /* InstagramFailModel.m */; };
 		4C3324161C8CE985007250A8 /* Meta.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3324141C8CE985007250A8 /* Meta.m */; };
 		4C3324191C8CF7F6007250A8 /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3324181C8CF7F6007250A8 /* PopupViewController.m */; };
+		4C3504E51CB2A37400EC0B26 /* InAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3504E41CB2A37400EC0B26 /* InAppHelper.m */; };
 		4C3A2DAE1C7D133E005C00B3 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3A2DAD1C7D133E005C00B3 /* Default-568h.png */; };
 		4C51E42C1C7D09F100443F8E /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C51E42B1C7D09F100443F8E /* LoadingViewController.m */; };
 		4C53AADA1C5BA87100C76907 /* UserLikeCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53AAD91C5BA87100C76907 /* UserLikeCountModel.m */; };
 		4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6708271C7A0CD80077DC58 /* UIButton.swift */; };
 		4C67082C1C7A1B0B0077DC58 /* StatsProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082B1C7A1B0B0077DC58 /* StatsProfileView.m */; };
 		4C6708301C7A354C0077DC58 /* StatsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67082F1C7A354C0077DC58 /* StatsModel.m */; };
+		4C6BA1E61CB305A200752D16 /* InAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BA1E81CB305A200752D16 /* InAppViewController.xib */; };
 		4C71C96C1C84D04C003F59A4 /* BigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C71C96A1C84D04C003F59A4 /* BigImageViewController.m */; };
 		4C7A3F7F1C7E5F0F00DC88B2 /* stalk-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7A1C7E5F0F00DC88B2 /* stalk-icon-selected.png */; };
 		4C7A3F801C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A3F7B1C7E5F0F00DC88B2 /* stalk-icon-selected@2x.png */; };
@@ -169,7 +171,7 @@
 		4C1E92661C54257000237AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C317DC31CA87A660011E2CA /* InAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppViewController.h; sourceTree = "<group>"; };
 		4C317DC41CA87A660011E2CA /* InAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppViewController.m; sourceTree = "<group>"; };
-		4C317DC51CA87A660011E2CA /* InAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InAppViewController.xib; sourceTree = "<group>"; };
+		4C317DC81CAA89520011E2CA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4C3324101C8CE985007250A8 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
 		4C3324111C8CE985007250A8 /* InstagramFailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramFailModel.h; sourceTree = "<group>"; };
 		4C3324121C8CE985007250A8 /* InstagramFailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramFailModel.m; sourceTree = "<group>"; };
@@ -177,6 +179,8 @@
 		4C3324141C8CE985007250A8 /* Meta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meta.m; sourceTree = "<group>"; };
 		4C3324171C8CF7F6007250A8 /* PopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
 		4C3324181C8CF7F6007250A8 /* PopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
+		4C3504E31CB2A37400EC0B26 /* InAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppHelper.h; sourceTree = "<group>"; };
+		4C3504E41CB2A37400EC0B26 /* InAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppHelper.m; sourceTree = "<group>"; };
 		4C3A2DAD1C7D133E005C00B3 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		4C51E42A1C7D09F100443F8E /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		4C51E42B1C7D09F100443F8E /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
@@ -188,6 +192,9 @@
 		4C67082E1C7A354C0077DC58 /* StatsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsModel.h; sourceTree = "<group>"; };
 		4C67082F1C7A354C0077DC58 /* StatsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsModel.m; sourceTree = "<group>"; };
 		4C6708311C7A36330077DC58 /* ModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeader.h; sourceTree = "<group>"; };
+		4C6BA1E71CB305A200752D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InAppViewController.xib; sourceTree = "<group>"; };
+		4C6BA1EA1CB305A500752D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InAppViewController.strings; sourceTree = "<group>"; };
+		4C6BA1EC1CB305A700752D16 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InAppViewController.strings; sourceTree = "<group>"; };
 		4C71C9691C84D04C003F59A4 /* BigImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigImageViewController.h; sourceTree = "<group>"; };
 		4C71C96A1C84D04C003F59A4 /* BigImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigImageViewController.m; sourceTree = "<group>"; };
 		4C7A3F7A1C7E5F0F00DC88B2 /* stalk-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stalk-icon-selected.png"; sourceTree = "<group>"; };
@@ -230,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EAB2FF803296F479D9196CD /* libPods-Instalker.a in Frameworks */,
+				4C317DC91CAA89520011E2CA /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +357,8 @@
 			children = (
 				4C0981AF1C7CE51000CB1B6E /* PopupManager */,
 				4C0981AE1C7CE50900CB1B6E /* Singleton */,
+				4C3504E31CB2A37400EC0B26 /* InAppHelper.h */,
+				4C3504E41CB2A37400EC0B26 /* InAppHelper.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -480,7 +490,7 @@
 			children = (
 				4C317DC31CA87A660011E2CA /* InAppViewController.h */,
 				4C317DC41CA87A660011E2CA /* InAppViewController.m */,
-				4C317DC51CA87A660011E2CA /* InAppViewController.xib */,
+				4C6BA1E81CB305A200752D16 /* InAppViewController.xib */,
 			);
 			name = INAPP;
 			sourceTree = "<group>";
@@ -562,6 +572,7 @@
 		9AE607828A4FE517FC4B3913 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C317DC81CAA89520011E2CA /* StoreKit.framework */,
 				44FA682704BEC5A4A84A8585 /* libPods-Instalker.a */,
 			);
 			name = Frameworks;
@@ -601,6 +612,12 @@
 				TargetAttributes = {
 					4C1E92511C54257000237AF0 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 33HBL428XU;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -649,7 +666,7 @@
 				4C7A3F821C7E5F0F00DC88B2 /* stalk-icon.png in Resources */,
 				4C0981A21C7C99C000CB1B6E /* likesRectangle.png in Resources */,
 				4C1E92601C54257000237AF0 /* Main.storyboard in Resources */,
-				4C317DC71CA87A660011E2CA /* InAppViewController.xib in Resources */,
+				4C6BA1E61CB305A200752D16 /* InAppViewController.xib in Resources */,
 				4C3A2DAE1C7D133E005C00B3 /* Default-568h.png in Resources */,
 				4C09819B1C7C99C000CB1B6E /* features-icon-selected@2x.png in Resources */,
 				4C92F8BE1C7CEB30006E8A37 /* eye-icon-white.png in Resources */,
@@ -738,6 +755,7 @@
 				4C1E925D1C54257000237AF0 /* ViewController.m in Sources */,
 				4C7A3F861C7E626B00DC88B2 /* InstalkerTabBarViewController.m in Sources */,
 				4C1A30271C57E21400BF721A /* FeaturesViewController.m in Sources */,
+				4C3504E51CB2A37400EC0B26 /* InAppHelper.m in Sources */,
 				4C3324161C8CE985007250A8 /* Meta.m in Sources */,
 				4C1A302D1C57E24100BF721A /* StalkProfileViewController.m in Sources */,
 				4C6708281C7A0CD80077DC58 /* UIButton.swift in Sources */,
@@ -825,6 +843,16 @@
 				4C1429431CA8192000D3F493 /* fr */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C6BA1E81CB305A200752D16 /* InAppViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C6BA1E71CB305A200752D16 /* Base */,
+				4C6BA1EA1CB305A500752D16 /* en */,
+				4C6BA1EC1CB305A700752D16 /* tr */,
+			);
+			name = InAppViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -918,11 +946,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Instalker/PrefixHeader.pch";
 				INFOPLIST_FILE = Instalker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mhs.instalker;
+				PRODUCT_BUNDLE_IDENTIFIER = net.sparkson.instalker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Instalker/Instalker-Bridging-Header.h";
@@ -939,11 +969,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Instalker/PrefixHeader.pch";
 				INFOPLIST_FILE = Instalker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mhs.instalker;
+				PRODUCT_BUNDLE_IDENTIFIER = net.sparkson.instalker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Instalker/Instalker-Bridging-Header.h";

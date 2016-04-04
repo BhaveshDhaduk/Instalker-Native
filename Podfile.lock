@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - BALoadingView (0.1.0)
   - CWPopup (1.2.6)
   - Google/Analytics (1.3.2):
     - Google/Core
@@ -46,15 +47,26 @@ PODS:
     - AFNetworking (~> 2.0)
     - UICKeyChainStore (~> 2.0)
   - KLCPopup (1.0)
+  - OpenSSL (1.0.207)
   - RaisinToast (1.0.5)
   - RMStore (0.7.1):
     - RMStore/Core (= 0.7.1)
+  - RMStore/AppReceiptVerificator (0.7.1):
+    - OpenSSL (~> 1.0.1)
+    - RMStore/Core
   - RMStore/Core (0.7.1)
+  - RMStore/KeychainPersistence (0.7.1):
+    - RMStore/Core
+  - RMStore/NSUserDefaultsPersistence (0.7.1):
+    - RMStore/Core
+  - RMStore/TransactionReceiptVerificator (0.7.1):
+    - RMStore/Core
   - STPopup (1.6.1)
   - TPKeyboardAvoiding (1.2.11)
   - UICKeyChainStore (2.1.0)
 
 DEPENDENCIES:
+  - BALoadingView
   - CWPopup (~> 1.2.4)
   - Google/Analytics
   - InstagramKit (~> 3.0)
@@ -62,11 +74,16 @@ DEPENDENCIES:
   - KLCPopup
   - RaisinToast
   - RMStore
+  - RMStore/AppReceiptVerificator
+  - RMStore/KeychainPersistence
+  - RMStore/NSUserDefaultsPersistence
+  - RMStore/TransactionReceiptVerificator
   - STPopup
   - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  BALoadingView: 3117f79ee2307f35d3d097ae11fb092a4e185487
   CWPopup: 3f8b0704a9914813d90372d66525d31f24b27d49
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
@@ -76,6 +93,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
   InstagramKit: bbbd15baeac2d32b2915d2d89319ad90bacd5912
   KLCPopup: 76c5a19227977f1e53d85236f9ef42257c168d98
+  OpenSSL: 26eb46b2836c0dade24fa53276b552f14c6eece1
   RaisinToast: abdebeb999a55232f5e56f916946092da8c34f50
   RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
   STPopup: f32dc6a944b57311b6d2d6e3afd789f83a0c4cbc

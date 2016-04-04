@@ -283,8 +283,20 @@
         
     }
 
-    
 }
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:@"stalkMyFollower"]|| [identifier isEqualToString:@"stalkFollower"]||[identifier isEqualToString:@"media2"]) {
+        if ([InAppHelper isSubscriptionAvailable]) {
+            return YES;
+        }else
+        {
+            [PopUpManager showSubscriptionPopupWith:self];
+        }
+    }
+    return NO;
+}
+
 
 #pragma mark - Date Selection
 
